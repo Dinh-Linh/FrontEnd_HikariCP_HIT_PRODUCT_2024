@@ -25,6 +25,9 @@ roomKtx = "2.6.1"
 #Retrofit
 retrofit = "2.9.0"
 
+#Splash Screen
+splashScreen = "1.0.1"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -50,6 +53,9 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx"
 #Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+#Splash Screen
+splash-screen = {module = "androidx.core:core-splashscreen", version.ref = "splashScreen"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -81,5 +81,9 @@ dependencies {
 
     // Logging
     implementation(libs.logging.interceptor)
+
+    //Splash Screen
+    runtimeOnly(libs.splash.screen)
+
 }
 
