@@ -83,7 +83,7 @@ dependencies {
     implementation(libs.logging.interceptor)
 
     //Splash Screen
-    runtimeOnly(libs.splash.screen)
+    implementation(libs.splash.screen)
 
 }
 
