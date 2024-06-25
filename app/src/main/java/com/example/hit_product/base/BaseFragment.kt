@@ -17,7 +17,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     protected val binding: VB
         get() = _binding as VB
 
-    protected abstract val viewModel : BaseViewModel<Any?>
+    protected abstract val viewModel : BaseViewModel
 
     protected val loadingDialog by lazy { context?.let { Dialog(it) } }
 
