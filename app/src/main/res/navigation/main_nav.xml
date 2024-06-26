@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_splash_screen" >
         <action
             android:id="@+id/action_splashScreenFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
