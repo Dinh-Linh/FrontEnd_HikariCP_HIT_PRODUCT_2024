@@ -27,7 +27,7 @@ class SplashScreenFragment : BaseFragment<FragmentSplashScreenBinding>(FragmentS
     override fun setOnClick() {
         binding.splashScreen.alpha = 0f
         binding.splashScreen.animate().alpha(1f).setDuration(1500).withEndAction {
-            requireActivity().runOnUiThread{
+            requireActivity().runOnUiThread {
                 findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
             }
         }.start()
