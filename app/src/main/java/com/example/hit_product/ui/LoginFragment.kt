@@ -3,6 +3,7 @@ package com.example.hit_product.ui
 import android.app.Dialog
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.data.source.Account
@@ -15,6 +16,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     private val loginDialogFailure by lazy { DialogLoginFailure(requireContext()) }
     private val dialog by lazy { Dialog(requireContext()) }
+    private val toast by lazy { CustomViewToast(requireContext()) }
 
     private val listAccount = mutableListOf(
         Account("user1", "password1"),
@@ -42,18 +44,30 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             val username = binding.edtUsername.text.toString()
             val password = binding.edtPassword.text.toString()
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                val isAccountValid =
-                    listAccount.any { it.username == username && it.password == password }
-                if (isAccountValid) {
-                    Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_LONG).show()
-                } else {
-                    loginDialogFailure.show()
-                }
+                dialog.showLoading()
+                binding.btnLogin.postDelayed({
+                    val isAccountValid =
+                        listAccount.any { it.username == username && it.password == password }
+                    if (isAccountValid) {
+                        dialog.dismiss()
+                        toast.makeText(
+                            requireContext(),
+                            "Login Successful",
+                            CustomViewToast.SHORT,
+                            R.drawable.success_icon_toast
+                        ).show()
+                    } else {
+                        dialog.dismiss()
+                        loginDialogFailure.show()
+                    }
+                }, 2000)
+
             } else {
-                Toast.makeText(
+                toast.makeText(
                     requireContext(),
-                    "Hãy nhập tên đăng nhập và mật khẩu",
-                    Toast.LENGTH_LONG
+                    "Vui lòng nhâ tên đăng nhập và mật khẩu",
+                    CustomViewToast.SHORT,
+                    R.drawable.warning_icon_toast
                 ).show()
             }
         }
