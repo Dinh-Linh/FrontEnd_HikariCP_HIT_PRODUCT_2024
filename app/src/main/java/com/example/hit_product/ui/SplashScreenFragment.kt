@@ -1,13 +1,11 @@
 package com.example.hit_product.ui
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.databinding.FragmentSplashScreenBinding
-
 
 
 class SplashScreenFragment : BaseFragment<FragmentSplashScreenBinding>(FragmentSplashScreenBinding::inflate) {
@@ -27,8 +25,8 @@ class SplashScreenFragment : BaseFragment<FragmentSplashScreenBinding>(FragmentS
     }
 
     override fun setOnClick() {
-        binding.splashScreen.alpha = 0.8f
-        binding.splashScreen.animate().setDuration(1500).withEndAction {
+        binding.splashScreen.alpha = 0f
+        binding.splashScreen.animate().alpha(1f).setDuration(1500).withEndAction {
             requireActivity().runOnUiThread{
                 findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
             }
