@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_shape">
+    <TextView
+        android:id="@+id/alertTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_light"/>
+
+    <TextView
+        android:id="@+id/alertMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:fontFamily="@font/poppins_light"/>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:backgroundTint="@color/orange"
+        android:padding="12dp"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins_light "/>
+</LinearLayout>
