@@ -1,5 +1,6 @@
 package com.example.hit_product.base
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,10 @@ abstract class BaseFragment<VB : ViewBinding>(
     private var _binding : VB? = null
     protected val binding: VB
         get() = _binding as VB
+
+    abstract val viewModel : BaseViewModel
+
+    protected  val loadingDialog by lazy { context?.let { Dialog(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +37,15 @@ abstract class BaseFragment<VB : ViewBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.loading.observe(viewLifecycleOwner){
+            if(it){
+                if(loadingDialog?.isShowing == false){
 
+                }
+            } else{
+                loadingDialog?.dismiss()
+            }
+        }
 
         bindData()
         observeData()
