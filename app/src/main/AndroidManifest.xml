@@ -15,17 +15,8 @@
         android:theme="@style/Theme.HIT_Product"
         tools:targetApi="31">
         <activity
-            android:name=".ui.ToastView"
-            android:exported="false" />
-        <activity
-            android:name=".ui.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.ForgetFragment"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
