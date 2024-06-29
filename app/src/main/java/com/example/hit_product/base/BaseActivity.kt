@@ -10,6 +10,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
+
 abstract class BaseActivity<VB: ViewBinding>(
     private val bindingInflater : (LayoutInflater) -> VB
 ) : AppCompatActivity(){
@@ -23,11 +24,11 @@ abstract class BaseActivity<VB: ViewBinding>(
         _binding = bindingInflater(layoutInflater)
         setContentView(binding.root)
 
-        //Lấy data về
         initData()
 
-        //Đẩy data lên
+
         bindData()
+
         setOnClick()
     }
 

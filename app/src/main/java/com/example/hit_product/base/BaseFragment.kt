@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavInflater
 import androidx.viewbinding.ViewBinding
-import com.example.hit_product.utils.extension.showLoading
+
 
 abstract class BaseFragment<VB : ViewBinding>(
     private val bindingInflater: (LayoutInflater) -> VB
@@ -17,9 +16,9 @@ abstract class BaseFragment<VB : ViewBinding>(
     protected val binding: VB
         get() = _binding as VB
 
-    protected abstract val viewModel : BaseViewModel
+    abstract val viewModel : BaseViewModel
 
-    protected val loadingDialog by lazy { context?.let { Dialog(it) } }
+    protected  val loadingDialog by lazy { context?.let { Dialog(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +40,13 @@ abstract class BaseFragment<VB : ViewBinding>(
         viewModel.loading.observe(viewLifecycleOwner){
             if(it){
                 if(loadingDialog?.isShowing == false){
-                    loadingDialog?.showLoading()
+
                 }
             } else{
                 loadingDialog?.dismiss()
             }
         }
+
         bindData()
         observeData()
         setOnClick()
