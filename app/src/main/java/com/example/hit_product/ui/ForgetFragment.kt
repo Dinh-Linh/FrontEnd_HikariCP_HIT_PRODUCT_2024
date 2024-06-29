@@ -17,11 +17,11 @@ class ForgetFragment : BaseFragment<FragmentForgetBinding>(FragmentForgetBinding
         get() = ViewModelProvider(this)[BaseViewModel::class.java]
 
     private val listAccount = mutableListOf(
-        Account("001", "username1", "password1", "2004", "2010", "2010"),
-        Account("002", "username2", "password2", "2004", "2010", "2010"),
-        Account("003", "username3", "password3", "2004", "2010", "2010"),
-        Account("004", "username4", "password4", "2004", "2010", "2010"),
-        Account("005", "username5", "password5", "2004", "2010", "2010")
+        Account("001", "user1", "password1", "2004", "2010", "2010"),
+        Account("002", "user2", "password2", "2004", "2010", "2010"),
+        Account("003", "user3", "password3", "2004", "2010", "2010"),
+        Account("004", "user4", "password4", "2004", "2010", "2010"),
+        Account("005", "user5", "password5", "2004", "2010", "2010")
     )
 
     override fun initData() {}
