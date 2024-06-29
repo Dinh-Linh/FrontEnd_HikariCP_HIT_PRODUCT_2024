@@ -1,11 +1,14 @@
 package com.example.hit_product.ui
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.TextView
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
@@ -92,8 +95,8 @@ class ForgetFragment : BaseFragment<FragmentForgetBinding>(FragmentForgetBinding
             }
         }
 
-        binding.btnBackToLogin.setOnClickListener {
-            showAlertDialog("Thông báo", "Quay lại màn hình đăng nhập")
+        binding.btnBackToLogin.setOnClickListener{
+            findNavController().navigate(R.id.action_forgetFragment_to_loginFragment)
         }
     }
 
