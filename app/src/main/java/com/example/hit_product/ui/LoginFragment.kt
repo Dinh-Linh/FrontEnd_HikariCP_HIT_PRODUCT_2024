@@ -3,6 +3,7 @@ package com.example.hit_product.ui
 import android.app.Dialog
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
@@ -70,6 +71,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     R.drawable.warning_icon_toast
                 ).show()
             }
+        }
+
+        binding.forgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgetFragment)
         }
     }
 
