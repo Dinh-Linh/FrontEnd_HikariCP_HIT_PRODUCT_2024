@@ -6,11 +6,11 @@ import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.WindowManager
 import androidx.viewbinding.ViewBinding
-import com.example.hit_product.databinding.DialogComonLoadingBinding
+import com.example.hit_product.databinding.DialogCommonLoadingBinding
 
 
 fun Dialog.showLoading(
-    binding: ViewBinding = DialogComonLoadingBinding.inflate(layoutInflater),
+    binding: ViewBinding = DialogCommonLoadingBinding.inflate(layoutInflater),
     isTouchOutSideCancelable: Boolean = false,
     marginY:Int = -170
 ) {
@@ -30,3 +30,4 @@ fun Dialog.showLoading(
     setCanceledOnTouchOutside(false)
     show()
 }
+

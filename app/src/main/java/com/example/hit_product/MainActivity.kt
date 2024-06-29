@@ -17,7 +17,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     override fun bindData() {
-        dialog.showLoading()
+
     }
 
     override fun setOnClick() {
