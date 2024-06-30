@@ -85,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_logo"
                 android:fontFamily="@font/poppins_light"
+                android:inputType="textPassword"
                 android:hint="Mật khẩu" />
         </com.google.android.material.textfield.TextInputLayout>
 
