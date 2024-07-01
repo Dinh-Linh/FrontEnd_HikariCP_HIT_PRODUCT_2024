@@ -12,8 +12,23 @@
         android:id="@+id/mainNavContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_nav" />
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:backgroundColor="@color/orange"
+        app:cornerRadius="20dp"
+        app:duration="0"
+        app:iconSize="20sp"
+        app:indicatorColor="@color/orange"
+        app:indicatorRadius="20dp"
+        app:itemFontFamily="@font/poppins_light"
+        app:menu="@menu/bottom_navigation"
+        app:textSize="14sp" />
 
 </LinearLayout>

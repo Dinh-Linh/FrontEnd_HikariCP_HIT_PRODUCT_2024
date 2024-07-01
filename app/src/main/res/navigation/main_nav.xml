@@ -15,6 +15,9 @@
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/zoom_in"
             app:exitAnim="@anim/zoom_out" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -24,6 +27,9 @@
         <action
             android:id="@+id/action_loginFragment_to_forgetFragment"
             app:destination="@id/forgetFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgetFragment"
@@ -33,4 +39,9 @@
             android:id="@+id/action_forgetFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.hit_product.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

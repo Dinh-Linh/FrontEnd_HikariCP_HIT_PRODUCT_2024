@@ -25,6 +25,9 @@ roomKtx = "2.6.1"
 #Retrofit
 retrofit = "2.9.0"
 
+#Navigation Bar
+navigationBar = "1.7.9"
+
 #Splash Screen
 splashScreen = "1.0.1"
 
@@ -56,6 +59,9 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 
 #Splash Screen
 splash-screen = {module = "androidx.core:core-splashscreen", version.ref = "splashScreen"}
+
+#navigation bar
+navigation-bar = {module =  "com.github.ibrahimsn98:SmoothBottomBar", version.ref = "navigationBar"}
 
 
 [plugins]

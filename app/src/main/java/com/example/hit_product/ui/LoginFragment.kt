@@ -1,6 +1,7 @@
 package com.example.hit_product.ui
 
 import android.app.Dialog
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -10,6 +11,7 @@ import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.data.source.Account
 import com.example.hit_product.databinding.FragmentLoginBinding
 import com.example.hit_product.utils.extension.showLoading
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
     override val viewModel: BaseViewModel

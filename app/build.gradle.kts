@@ -85,5 +85,8 @@ dependencies {
     //Splash Screen
     implementation(libs.splash.screen)
 
+    //Navigation Bar
+    implementation(libs.navigation.bar)
+
 }
 
