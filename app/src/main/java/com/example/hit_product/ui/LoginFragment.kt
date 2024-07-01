@@ -53,12 +53,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                         listAccount.any { it.username == username && it.password == password }
                     if (isAccountValid) {
                         dialog.dismiss()
-                        toast.makeText(
-                            requireContext(),
-                            "Login Successful",
-                            CustomViewToast.SHORT,
-                            R.drawable.success_icon_toast
-                        ).show()
+//                        toast.makeText(
+//                            requireContext(),
+//                            "Login Successful",
+//                            CustomViewToast.SHORT,
+//                            R.drawable.success_icon_toast
+//                        ).show()
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                     } else {
                         dialog.dismiss()
                         loginDialogFailure.show()
@@ -78,6 +79,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         binding.forgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgetFragment)
         }
+
     }
 
 }
