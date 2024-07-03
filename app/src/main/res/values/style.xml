@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <style name="CustomTextViewStyle">
+            <item name="android:fontFamily">@font/poppins_bold</item>
+            <item name="android:textColor">@color/orange</item>
+            <item name="android:textSize">26sp</item>
+        </style>
+</resources>

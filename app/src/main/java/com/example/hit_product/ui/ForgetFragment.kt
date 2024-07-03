@@ -1,30 +1,26 @@
 package com.example.hit_product.ui
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.TextView
 
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.source.Account
+import com.example.hit_product.data.source.Members
 import com.example.hit_product.databinding.FragmentForgetBinding
 
 class ForgetFragment : BaseFragment<FragmentForgetBinding>(FragmentForgetBinding::inflate) {
     override val viewModel: BaseViewModel
         get() = ViewModelProvider(this)[BaseViewModel::class.java]
 
-    private val listAccount = mutableListOf(
-        Account("001", "user1", "password1", "2004", "2010", "2010"),
-        Account("002", "user2", "password2", "2004", "2010", "2010"),
-        Account("003", "user3", "password3", "2004", "2010", "2010"),
-        Account("004", "user4", "password4", "2004", "2010", "2010"),
-        Account("005", "user5", "password5", "2004", "2010", "2010")
+    private val listMembers = mutableListOf(
+        Members("1", null, null, null, null, null, null, null, null, null, null, "user1", "pass1", null, null, null),
+        Members("2", null, null, null, null, null, null, null, null, null, null, "user2", "pass2", null, null, null),
+        Members("3", null, null, null, null, null, null, null, null, null, null, "user3", "pass3", null, null, null),
     )
 
     override fun initData() {}
@@ -58,23 +54,23 @@ class ForgetFragment : BaseFragment<FragmentForgetBinding>(FragmentForgetBinding
                     showAlertDialog("Thông báo", "Vui lòng xác nhận sinh nhật câu lạc bộ")
                 }
                 else -> {
-                    val account = listAccount.find {
-                        it.userID == userID &&
+                    val account = listMembers.find {
+                        it.id == userID &&
                                 it.username == username &&
-                                it.dateOfBirth == dateOfBirth &&
-                                it.dateOfClub1 == dateOfClub1 &&
-                                it.dateOfClub2 == dateOfClub2
+                                it.birth == dateOfBirth &&
+                                it.birth == dateOfClub1 &&
+                                it.birth == dateOfClub2
                     }
 
                     if (account != null) {
                         showAlertDialog("Thông báo", "Khôi phục mật khẩu thành công, mật khẩu của bạn là: ${account.password}")
                     } else {
                         val errorMessages = mutableListOf<String>()
-                        val matchingAccounts = listAccount.filter { it.userID == userID }
+                        val matchingAccounts = listMembers.filter { it.id == userID }
                         val matchingUsernames = matchingAccounts.filter { it.username == username }
-                        val matchingDob = matchingUsernames.filter { it.dateOfBirth == dateOfBirth }
-                        val matchingClub1 = matchingDob.filter { it.dateOfClub1 == dateOfClub1 }
-                        val matchingClub2 = matchingClub1.filter { it.dateOfClub2 == dateOfClub2 }
+                        val matchingDob = matchingUsernames.filter { it.birth == dateOfBirth }
+                        val matchingClub1 = matchingDob.filter { it.birth == dateOfClub1 }
+                        val matchingClub2 = matchingClub1.filter { it.birth == dateOfClub2 }
 
                         if (matchingAccounts.isEmpty()) {
                             errorMessages.add("Mã sinh viên không chính xác")

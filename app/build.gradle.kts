@@ -87,6 +87,8 @@ dependencies {
 
     //Navigation Bar
     implementation(libs.navigation.bar)
+    //Card View
+    implementation (libs.androidx.cardview)
 
 }
 

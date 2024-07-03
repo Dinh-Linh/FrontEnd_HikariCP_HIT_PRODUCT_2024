@@ -1,17 +1,14 @@
 package com.example.hit_product.ui
 
 import android.app.Dialog
-import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.source.Account
+import com.example.hit_product.data.source.Members
 import com.example.hit_product.databinding.FragmentLoginBinding
 import com.example.hit_product.utils.extension.showLoading
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
     override val viewModel: BaseViewModel
@@ -21,12 +18,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     private val dialog by lazy { Dialog(requireContext()) }
     private val toast by lazy { CustomViewToast(requireContext()) }
 
-    private val listAccount = mutableListOf(
-        Account("001", "user1","password1", "2004", "2010", "2010"),
-        Account("002", "user2", "password2", "2004", "2010", "2010"),
-        Account("003", "user3", "password3", "2004", "2010", "2010"),
-        Account("004", "user4", "password4", "2004", "2010", "2010"),
-        Account("005", "user5", "password5", "2004", "2010", "2010"),
+    private val listMembers = mutableListOf(
+        Members("1", null, null, null, null, null, null, null, null, null, null, "user1", "pass1", null, null, null),
+        Members("2", null, null, null, null, null, null, null, null, null, null, "user2", "pass2", null, null, null),
+        Members("3", null, null, null, null, null, null, null, null, null, null, "user3", "pass3", null, null, null),
     )
 
     override fun initData() {
@@ -50,7 +45,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 dialog.showLoading()
                 binding.btnLogin.postDelayed({
                     val isAccountValid =
-                        listAccount.any { it.username == username && it.password == password }
+                        listMembers.any { it.username == username && it.password == password }
                     if (isAccountValid) {
                         dialog.dismiss()
 //                        toast.makeText(

@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#F06C25</color>
     <color name="light_orange">#F7B28C</color>
-    <color name="badgeColor">#FF0000</color>
+    <color name="red">#FF0000</color>
+
 </resources>
