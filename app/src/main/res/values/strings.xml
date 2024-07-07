@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HIT_Product</string>
+    <string name="app_name">My HIT</string>
     <string name="loading">Loading</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,4 +1,4 @@
-package com.example.hit_product.ui
+package com.example.hit_product.ui.fragment
 
 import android.app.AlertDialog
 import android.view.LayoutInflater

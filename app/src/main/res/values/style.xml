@@ -5,4 +5,10 @@
             <item name="android:textColor">@color/orange</item>
             <item name="android:textSize">26sp</item>
         </style>
+    <style name="BottomNavigationViewTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="itemIconTint">@color/orange</item>
+        <item name="itemTextColor">@color/orange</item>
+        <item name="itemIconPadding">@color/bottom_nav_item_color_active</item>
+        <item name="itemTextAppearanceActive">@color/bottom_nav_item_color_active</item>
+    </style>
 </resources>
