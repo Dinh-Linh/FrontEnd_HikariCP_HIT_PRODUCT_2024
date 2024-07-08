@@ -13,12 +13,15 @@ class HomeViewModel : BaseViewModel(){
     private val homeRepository = HomeRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
+    private val _classes = MutableLiveData<List<Classes>>()
+    val classes: LiveData<List<Classes>> get() = _classes
     fun getAllClass(token : String){
         executeTask(
             request = {
                 homeRepository.getAllClass(token)
             },
             onSuccess = {
+                _classes.value = it
                 Log.d("HomeViewModel", it.toString())
             },
             onError = {

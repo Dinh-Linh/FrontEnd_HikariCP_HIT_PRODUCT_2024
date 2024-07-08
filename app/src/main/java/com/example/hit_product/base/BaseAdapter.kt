@@ -13,10 +13,10 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     private val bindingInflate: (LayoutInflater) -> VB,
     private val dataList: MutableList<T> = mutableListOf()
 ) : Adapter<BaseViewHolder<VB>>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
-        val binding = bindingInflate(LayoutInflater.from((parent.context)))
-        return BaseViewHolder(binding)
-    }
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
+//        val binding = bindingInflate(LayoutInflater.from((parent.context)))
+//        return BaseViewHolder(binding)
+//    }
 
     override fun getItemCount(): Int {
         return dataList.size

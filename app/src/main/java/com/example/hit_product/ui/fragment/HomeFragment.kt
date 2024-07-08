@@ -1,5 +1,6 @@
 package com.example.hit_product.ui.fragment
 
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.base.BaseFragment
@@ -42,7 +43,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun initData() {
         requireActivity().getToken()?.let { viewModel.getAllClass(it) }
-        //classAdapter.setDataList(listClass)
+        classAdapter.setDataList(listClass)
     }
 
     override fun bindData() {
@@ -51,7 +52,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun observeData() {
-
+        viewModel.classes.observe(viewLifecycleOwner, Observer {
+            classAdapter.setDataList(it.toMutableList())
+        })
     }
 
     override fun setOnClick() {
