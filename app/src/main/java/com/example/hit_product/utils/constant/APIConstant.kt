@@ -10,6 +10,6 @@ object APIConstant {
         const val MEMBERS = "member"
         const val MEMBER_BY_ID = "member/{id}"
         const val LOGIN = "api/v1/auth/login"
-
+        const val SCHEDULE = "api/schedule/events/class"
     }
 }
