@@ -3,8 +3,10 @@ package com.example.hit_product.base
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.viewbinding.ViewBinding
+import com.example.hit_product.databinding.ClassTodayBinding
 
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
