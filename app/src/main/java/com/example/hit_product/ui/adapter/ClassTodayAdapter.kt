@@ -11,9 +11,9 @@ import com.example.hit_product.databinding.ClassTodayBinding
 import java.util.Locale
 
 class ClassTodayAdapter() : BaseAdapter<Classes, ClassTodayBinding>(ClassTodayBinding::inflate) {
-    @SuppressLint("SetTextI18n")
 
     private val classList = mutableListOf<Classes>()
+    @SuppressLint("SetTextI18n")
     override fun bindData(binding: ClassTodayBinding, item: Classes, position: Int) {
         val dateFormat = SimpleDateFormat("HH.mm", Locale.getDefault())
         binding.className.text = item.name
@@ -33,10 +33,5 @@ class ClassTodayAdapter() : BaseAdapter<Classes, ClassTodayBinding>(ClassTodayBi
         val binding = ClassTodayBinding.inflate(inflate, parent, false)
         return BaseViewHolder(binding)
     }
-//    @SuppressLint("NotifyDataSetChanged")
-//    fun setDataList(newList: List<Classes>) {
-//        classList.clear()
-//        classList.addAll(newList)
-//        notifyDataSetChanged()
-//    }
+
 }
