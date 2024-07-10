@@ -20,5 +20,17 @@
         android:id="@+id/loginFragment"
         android:name="com.example.hit_product.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_forgetFragment"
+            app:destination="@id/forgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetFragment"
+        android:name="com.example.hit_product.ui.ForgetEmailFragment"
+        android:label="ForgetFragment" >
+        <action
+            android:id="@+id/action_forgetFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

@@ -15,6 +15,18 @@
         android:theme="@style/Theme.HIT_Product"
         tools:targetApi="31">
         <activity
+            android:name=".ui.OtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fragment_OTP"
+            android:exported="false" />
+        <activity
+            android:name=".ui.NoficationActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
