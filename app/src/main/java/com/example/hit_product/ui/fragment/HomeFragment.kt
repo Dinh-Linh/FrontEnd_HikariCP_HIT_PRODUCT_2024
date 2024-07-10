@@ -16,34 +16,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
     private val classAdapter = ClassTodayAdapter()
-    private val listClass = mutableListOf(
-        Classes(name = "Math 101",
-            location = "Room 201",
-            startTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 11); set(Calendar.MINUTE, 0) }.time,
-            endTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 13); set(Calendar.MINUTE, 0) }.time
-        ),
-        Classes(name = "History 101", null,
-            location = "Room 202", null, null,
-            startTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 11); set(Calendar.MINUTE, 0) }.time,
-            endTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 13); set(Calendar.MINUTE, 0) }.time
-        ),
-        Classes(name = "Physic 101",
-            location = "Room 203",
-            startTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 11); set(Calendar.MINUTE, 0) }.time,
-            endTime = Calendar.getInstance()
-                .apply { set(Calendar.HOUR_OF_DAY, 13); set(Calendar.MINUTE, 0) }.time
-        ),
-
-        )
 
     override fun initData() {
         requireActivity().getToken()?.let { viewModel.getAllClass(it) }
-        classAdapter.setDataList(listClass)
     }
 
     override fun bindData() {
