@@ -1,4 +1,4 @@
-package com.example.hit_product.ui
+package com.example.hit_product.ui.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController

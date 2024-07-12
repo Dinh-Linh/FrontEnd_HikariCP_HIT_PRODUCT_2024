@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HIT_Product"
         tools:targetApi="31">
         <activity
+            android:name=".ClassTodayAdapter"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
