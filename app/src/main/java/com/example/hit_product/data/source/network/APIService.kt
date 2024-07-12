@@ -1,5 +1,7 @@
 package com.example.hit_product.data.source.network
 
+import android.telecom.Call
+import androidx.annotation.CheckResult
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.Classes
 import com.example.hit_product.utils.constant.APIConstant
@@ -26,6 +28,7 @@ interface APIService {
 
     @GET(APIConstant.EndPoint.GETEVENTBYDATE)
     suspend fun getEventByDate(@Query("day") day : String, @Header("Authorization") token: String) : List<Classes>
+
 
 
 }

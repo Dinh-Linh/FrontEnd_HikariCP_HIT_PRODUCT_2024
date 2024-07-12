@@ -36,4 +36,5 @@ object RetrofitClient {
             .addInterceptor(interceptor)
         return okHttpClient.build()
     }
+
 }
