@@ -21,7 +21,9 @@
             android:id="@+id/action_splashScreenFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/splashScreenFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -30,12 +32,16 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_forgetFragment"
-            app:destination="@id/forgetFragment" />
+            app:destination="@id/forgetFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/forgetFragment"

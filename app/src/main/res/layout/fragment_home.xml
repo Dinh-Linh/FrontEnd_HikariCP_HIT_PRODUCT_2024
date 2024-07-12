@@ -23,7 +23,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/person"
+                android:src="@drawable/icon_person"
                 android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
 
@@ -60,6 +60,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/btn_login"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/notification" />
             </androidx.cardview.widget.CardView>
 
@@ -100,6 +104,8 @@
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
                 android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -131,6 +137,8 @@
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
                 android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical">
 
                 <ImageView
