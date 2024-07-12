@@ -3,18 +3,20 @@ package com.example.hit_product.base
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.viewbinding.ViewBinding
+import com.example.hit_product.databinding.ClassTodayBinding
 
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
     private val bindingInflate: (LayoutInflater) -> VB,
     private val dataList: MutableList<T> = mutableListOf()
 ) : Adapter<BaseViewHolder<VB>>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
-        val binding = bindingInflate(LayoutInflater.from((parent.context)))
-        return BaseViewHolder(binding)
-    }
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
+//        val binding = bindingInflate(LayoutInflater.from((parent.context)))
+//        return BaseViewHolder(binding)
+//    }
 
     override fun getItemCount(): Int {
         return dataList.size

@@ -1,5 +1,6 @@
-package com.example.hit_product.ui
+package com.example.hit_product.ui.fragment
 
+import android.content.Context.MODE_PRIVATE
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
@@ -25,10 +26,18 @@ class SplashScreenFragment : BaseFragment<FragmentSplashScreenBinding>(FragmentS
     }
 
     override fun setOnClick() {
+        val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+        val token = pref.getString("token", null)
         binding.splashScreen.alpha = 0f
         binding.splashScreen.animate().alpha(1f).setDuration(1500).withEndAction {
             requireActivity().runOnUiThread {
-                findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
+                if (!token.isNullOrBlank()){
+                    findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
+                }
+                else{
+                    findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
+                }
+
             }
         }.start()
     }
