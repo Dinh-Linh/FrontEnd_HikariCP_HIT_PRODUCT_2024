@@ -11,6 +11,8 @@ import retrofit2.http.Query
 
 data class LoginRequest(val emailOrPhone: String, val password: String)
 data class LoginResponse(val accessToken: String)
+data class ChangePasswordRequest(val memberID:String, val oldPassword :String, val newPassword: String)
+data class ChangePasswordResponse(val success: Boolean, val message: String)
 
 interface APIService {
     @POST(APIConstant.EndPoint.LOGIN)
@@ -24,4 +26,6 @@ interface APIService {
 
     @GET(APIConstant.EndPoint.GETEVENTBYDATE)
     suspend fun getEventByDate(@Query("day") day : String, @Header("Authorization") token: String) : List<Classes>
+
+
 }

@@ -12,5 +12,6 @@ object APIConstant {
         const val LOGIN = "api/v1/auth/login"
         const val SCHEDULE = "api/schedule/events/class"
         const val GETEVENTBYDATE = "api/schedule/events/date"
+        const val CHANGE_PASSWORD = "api/v1/member/changePassword"
     }
 }
