@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class BaseRepository {
+open class BaseRepository {
     suspend fun <T> getResult(
         request : suspend CoroutineScope.() -> T
     ): DataState<T> {
