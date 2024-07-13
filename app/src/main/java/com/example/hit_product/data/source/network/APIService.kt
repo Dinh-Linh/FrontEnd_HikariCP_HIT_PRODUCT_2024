@@ -4,6 +4,7 @@ import android.telecom.Call
 import androidx.annotation.CheckResult
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.Classes
+import com.example.hit_product.data.Information
 import com.example.hit_product.utils.constant.APIConstant
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -11,24 +12,36 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Query
 
-data class LoginRequest(val emailOrPhone: String, val password: String)
+data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val accessToken: String)
-data class ChangePasswordRequest(val memberID:String, val oldPassword :String, val newPassword: String)
-data class ChangePasswordResponse(val success: Boolean, val message: String)
 
 interface APIService {
     @POST(APIConstant.EndPoint.LOGIN)
-    suspend fun login(@Body loginRequest: LoginRequest): ApiResponse<LoginResponse>
+    suspend fun login(
+        @Body loginRequest: LoginRequest
+    ): ApiResponse<LoginResponse>
 
     @GET(APIConstant.EndPoint.SCHEDULE)
-    suspend fun getAllClass(@Header("Authorization") token : String) : List<Classes>
+    suspend fun getAllClass(
+        @Header("Authorization") token : String
+    ) : List<Classes>
 
     @GET(APIConstant.EndPoint.SCHEDULE)
-    suspend fun getClassByDay(@Query("day") day : String, @Header("Authorization") token: String) : List<Classes>
+    suspend fun getClassByDay(
+        @Query("day") day : String,
+        @Header("Authorization") token: String
+    ) : List<Classes>
 
     @GET(APIConstant.EndPoint.GETEVENTBYDATE)
-    suspend fun getEventByDate(@Query("day") day : String, @Header("Authorization") token: String) : List<Classes>
+    suspend fun getEventByDate(
+        @Query("day") day : String,
+        @Header("Authorization") token: String
+    ) : List<Classes>
 
+    @GET(APIConstant.EndPoint.USER_INFORMATION)
+    suspend fun getUserInformation(
+        @Header("Authorization") token: String
 
+    ):List<Information>
 
 }

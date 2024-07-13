@@ -6,14 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.source.Members
 import com.example.hit_product.data.source.network.LoginRequest
 import com.example.hit_product.databinding.FragmentLoginBinding
 import com.example.hit_product.ui.CustomViewToast
 import com.example.hit_product.ui.DialogLoginFailure
 import com.example.hit_product.ui.view_model.LoginViewModel
-import com.example.hit_product.utils.extension.showLoading
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
     override val viewModel: LoginViewModel

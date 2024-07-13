@@ -76,6 +76,7 @@
                 android:elevation="2dp"
                 android:textColor="@color/white"
                 tools:ignore="SmallSp" />
+
         </FrameLayout>
     </LinearLayout>
 
