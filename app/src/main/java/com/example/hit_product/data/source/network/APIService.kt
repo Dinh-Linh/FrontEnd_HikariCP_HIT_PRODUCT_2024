@@ -16,12 +16,19 @@ interface ApiService {
     @POST(APIConstant.EndPoint.LOGIN)
     suspend fun login(@Body loginRequest: LoginRequest): ApiResponse<LoginResponse>
 
-    @GET(APIConstant.EndPoint.SCHEDULE)
-    suspend fun getAllClass(@Header("Authorization") token : String) : List<Classes>
+    @GET(APIConstant.EndPoint.CLASS)
+    suspend fun getAllClass(@Header("Authorization") token: String): List<Classes>
 
-    @GET(APIConstant.EndPoint.SCHEDULE)
-    suspend fun getClassByDay(@Query("day") day : String,@Header("Authorization") token: String) : List<Classes>
+    @GET(APIConstant.EndPoint.CLASS)
+    suspend fun getClassByDay(
+        @Query("date") date: String,
+        @Query("type") type: String,
+        @Header("Authorization") token: String
+    ): ApiResponse<Classes?>
 
     @GET(APIConstant.EndPoint.GETEVENTBYDATE)
-    suspend fun getEventByDate(@Query("day") day : String,@Header("Authorization") token: String) : List<Classes>
+    suspend fun getEventByDate(
+        @Query("day") day: String,
+        @Header("Authorization") token: String
+    ): List<Classes>
 }

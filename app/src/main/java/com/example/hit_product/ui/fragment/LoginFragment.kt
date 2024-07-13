@@ -47,7 +47,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 loginRequest,
                 onLoginSuccess = { apiResponse ->
                     val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
-                    pref.edit().putString("token", "Bearer ${apiResponse.data.accessToken}").commit()
+                    pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
                     findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                 },
             )

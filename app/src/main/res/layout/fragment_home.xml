@@ -165,6 +165,13 @@
         android:textSize="16sp"
         android:fontFamily="@font/poppins_bold"/>
 
+    <TextView
+        android:id="@+id/tvNoEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="There are no events for today"
+        android:gravity="center"
+        style="@style/CustomTextViewStyle"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclToday"
         android:layout_width="match_parent"

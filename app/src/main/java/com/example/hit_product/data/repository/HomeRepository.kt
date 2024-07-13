@@ -6,9 +6,9 @@ import com.example.hit_product.data.Classes
 import com.example.hit_product.data.source.network.ApiService
 
 class HomeRepository(private val apiService: ApiService) : BaseRepository() {
-    suspend fun getAllClass(token : String) : DataState<List<Classes>>{
+    suspend fun getClassByDay(date: String, type: String, token: String): DataState<Classes?> {
         return getResult {
-            apiService.getAllClass(token)
+            apiService.getClassByDay(date, type, token).data
         }
     }
 }
