@@ -12,4 +12,5 @@
     <color name="colorSecondaryDark">#018786</color>
     <color name="colorOnSecondary">#000000</color>
     <color name="bottom_nav_item_color_active">#C3C6C7</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

@@ -55,5 +55,14 @@
         android:id="@+id/homeFragment"
         android:name="com.example.hit_product.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_timetableFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:destination="@id/timetableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.example.hit_product.ui.fragment.TimetableFragment"
+        android:label="TimetableFragment" />
 </navigation>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnPreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous" />
+
+        <TextView
+            android:id="@+id/tv_week_range"
+            style="@style/fontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Thời khoá biểu"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnPre"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/previous" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mon"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mon" />
+
+            <TextView
+                android:id="@+id/dayMon"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineMon"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tue"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tue" />
+
+            <TextView
+                android:id="@+id/dayTue"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineTue"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/wed"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wed" />
+
+            <TextView
+                android:id="@+id/dayWed"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineWed"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/thu"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thu" />
+
+            <TextView
+                android:id="@+id/dayThu"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineThu"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fri"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fri" />
+
+            <TextView
+                android:id="@+id/dayFri"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineFri"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sat"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sat" />
+
+            <TextView
+                android:id="@+id/daySat"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineSat"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sun"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sun" />
+
+            <TextView
+                android:id="@+id/daySun"
+                style="@style/fontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28" />
+
+            <View
+                android:id="@+id/lineSun"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnNext"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_activities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        tools:itemCount="5"
+        tools:listitem="@layout/class_today" />
+</LinearLayout>

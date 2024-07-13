@@ -11,4 +11,13 @@
         <item name="itemIconPadding">@color/bottom_nav_item_color_active</item>
         <item name="itemTextAppearanceActive">@color/bottom_nav_item_color_active</item>
     </style>
+
+    <style name="fontStyle">
+        <item name="fontFamily">
+            @font/poppins_medium
+        </item>
+        <item name="textColor">
+            @color/black
+        </item>
+    </style>
 </resources>
