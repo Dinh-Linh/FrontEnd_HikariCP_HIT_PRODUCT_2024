@@ -1,7 +1,5 @@
 package com.example.hit_product.data.source.network
 
-import android.telecom.Call
-import androidx.annotation.CheckResult
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.Classes
 import com.example.hit_product.data.Information
@@ -15,33 +13,28 @@ import retrofit2.http.Query
 data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val accessToken: String)
 
-interface APIService {
+interface ApiService {
     @POST(APIConstant.EndPoint.LOGIN)
-    suspend fun login(
-        @Body loginRequest: LoginRequest
-    ): ApiResponse<LoginResponse>
+    suspend fun login(@Body loginRequest: LoginRequest): ApiResponse<LoginResponse>
 
-    @GET(APIConstant.EndPoint.SCHEDULE)
-    suspend fun getAllClass(
-        @Header("Authorization") token : String
-    ) : List<Classes>
+    @GET(APIConstant.EndPoint.CLASS)
+    suspend fun getAllClass(@Header("Authorization") token: String): List<Classes>
 
-    @GET(APIConstant.EndPoint.SCHEDULE)
+    @GET(APIConstant.EndPoint.CLASS)
     suspend fun getClassByDay(
-        @Query("day") day : String,
+        @Query("date") date: String,
+        @Query("type") type: String,
         @Header("Authorization") token: String
-    ) : List<Classes>
+    ): ApiResponse<Classes?>
 
     @GET(APIConstant.EndPoint.GETEVENTBYDATE)
     suspend fun getEventByDate(
-        @Query("day") day : String,
+        @Query("day") day: String,
         @Header("Authorization") token: String
-    ) : List<Classes>
-
+    ): List<Classes>
     @GET(APIConstant.EndPoint.USER_INFORMATION)
     suspend fun getUserInformation(
         @Header("Authorization") token: String
-
     ):List<Information>
 
 }

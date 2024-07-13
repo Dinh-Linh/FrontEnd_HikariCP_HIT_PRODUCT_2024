@@ -27,26 +27,8 @@ class OTPFragment : BaseFragment<FragmentOTPBinding>(FragmentOTPBinding::inflate
 
     override fun setOnClick() {
         binding.btnConfirmOTP.setOnClickListener {
-            val userOTP = binding.edtOTP.text.toString()
 
-            when {
-                userOTP.isEmpty() -> {
-                    Toast.makeText(requireContext(), "Vui lòng nhập OTP", Toast.LENGTH_SHORT).show()
-                }
-
-                else -> {
-
-                }
-            }
         }
 
-        binding.btnBackToLogin.setOnClickListener{
-            findNavController().navigate(R.id.action_OTPFragment_to_loginFragment)
-        }
-        binding.btnConfirmOTP.setOnClickListener{
-            findNavController().navigate(R.id.action_OTPFragment_to_newPasswordFragment)
-        }
     }
-
-
 }

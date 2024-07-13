@@ -1,5 +1,7 @@
 [versions]
 agp = "8.5.0"
+bubblenavigation = "1.0.7"
+cardview = "1.0.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -25,10 +27,14 @@ roomKtx = "2.6.1"
 #Retrofit
 retrofit = "2.9.0"
 
+#Navigation Bar
+navigationBar = "1.7.9"
+
 #Splash Screen
 splashScreen = "1.0.1"
 
 [libraries]
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -56,6 +62,9 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 
 #Splash Screen
 splash-screen = {module = "androidx.core:core-splashscreen", version.ref = "splashScreen"}
+
+#navigation bar
+navigation-bar = {module =  "com.github.ibrahimsn98:SmoothBottomBar", version.ref = "navigationBar"}
 
 
 [plugins]

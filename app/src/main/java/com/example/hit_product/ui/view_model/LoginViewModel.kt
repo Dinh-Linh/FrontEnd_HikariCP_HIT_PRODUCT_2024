@@ -4,15 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.data.repository.LoginRepository
-import com.example.hit_product.data.source.network.APIService
+import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.LoginRequest
 import com.example.hit_product.data.source.network.LoginResponse
 import com.example.hit_product.data.source.network.RetrofitClient
 
-
 class LoginViewModel : BaseViewModel() {
     private val loginRepo = LoginRepository(
-        RetrofitClient.getInstance().create(APIService::class.java)
+        RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
     val error = MutableLiveData<String>(null)
@@ -31,3 +30,4 @@ class LoginViewModel : BaseViewModel() {
         )
     }
 }
+

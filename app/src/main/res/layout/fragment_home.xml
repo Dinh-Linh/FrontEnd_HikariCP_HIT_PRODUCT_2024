@@ -23,7 +23,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/person"
+                android:src="@drawable/icon_person"
                 android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
 
@@ -60,6 +60,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/btn_login"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/notification" />
             </androidx.cardview.widget.CardView>
 
@@ -76,7 +80,6 @@
                 android:elevation="2dp"
                 android:textColor="@color/white"
                 tools:ignore="SmallSp" />
-
         </FrameLayout>
     </LinearLayout>
 
@@ -101,6 +104,8 @@
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
                 android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -132,6 +137,8 @@
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
                 android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -158,10 +165,17 @@
         android:textSize="16sp"
         android:fontFamily="@font/poppins_bold"/>
 
+    <TextView
+        android:id="@+id/tvNoEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="There are no events for today"
+        android:gravity="center"
+        style="@style/CustomTextViewStyle"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclToday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="5"
-        tools:listitem="@layout/class_today" />
+        tools:listitem="@layout/class_today"
+        tools:itemCount="5"/>
 </LinearLayout>

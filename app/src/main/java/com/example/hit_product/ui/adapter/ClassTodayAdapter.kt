@@ -13,13 +13,12 @@ import java.util.Locale
 class ClassTodayAdapter() : BaseAdapter<Classes, ClassTodayBinding>(ClassTodayBinding::inflate) {
 
     private val classList = mutableListOf<Classes>()
-
     @SuppressLint("SetTextI18n")
     override fun bindData(binding: ClassTodayBinding, item: Classes, position: Int) {
         val dateFormat = SimpleDateFormat("HH.mm", Locale.getDefault())
         binding.className.text = item.name
         binding.location.text = item.location
-        binding.time.text = "${dateFormat.format(item.startTime)} - ${dateFormat.format(item.endTime)}"
+        //binding.time.text = "${dateFormat.format(item.startTime)} - ${dateFormat.format(item.endTime)}"
     }
 
     override fun onItemClick(binding: ClassTodayBinding, item: Classes, position: Int) {

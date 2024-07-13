@@ -14,10 +14,16 @@
             android:id="@+id/action_splashScreenFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/zoom_in"
-            app:exitAnim="@anim/zoom_out" />
+            app:exitAnim="@anim/zoom_out"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashScreenFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -26,10 +32,16 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_forgetFragment"
-            app:destination="@id/forgetFragment" />
+            app:destination="@id/forgetFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/forgetFragment"
@@ -46,33 +58,33 @@
         android:id="@+id/homeFragment"
         android:name="com.example.hit_product.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/OTPFragment"
-        android:name="com.example.hit_product.ui.fragment.OTPFragment"
-        android:label="OTPFragment" >
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_OTPFragment_to_newPasswordFragment"
-            app:destination="@id/newPasswordFragment" />
-        <action
-            android:id="@+id/action_OTPFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/newPasswordFragment"
-        android:name="com.example.hit_product.ui.fragment.NewPasswordFragment"
-        android:label="NewPasswordFragment" >
-        <action
-            android:id="@+id/action_newPasswordFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_homeFragment_to_informationFragment"
+            app:destination="@id/informationFragment" />
     </fragment>
     <fragment
         android:id="@+id/informationFragment"
         android:name="com.example.hit_product.ui.fragment.InformationFragment"
         android:label="fragment_information"
-        tools:layout="@layout/fragment_information" >
+        tools:layout="@layout/fragment_information" />
+    <fragment
+        android:id="@+id/OTPFragment"
+        android:name="com.example.hit_product.ui.fragment.OTPFragment"
+        android:label="OTPFragment" >
         <action
-            android:id="@+id/action_informationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_OTPFragment_to_forgetFragment"
+            app:destination="@id/forgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment3"
+        android:name="com.example.hit_product.ui.fragment.NewPasswordFragment"
+        android:label="NewPasswordFragment" >
+        <action
+            android:id="@+id/action_newPasswordFragment3_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
+        <action
+            android:id="@+id/action_newPasswordFragment3_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

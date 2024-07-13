@@ -6,12 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.data.repository.InformationRepository
 import com.example.hit_product.data.Information
-import com.example.hit_product.data.source.network.APIService
+import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.RetrofitClient
 
 class InformationViewModel : BaseViewModel(){
     private val informationRepository = InformationRepository(
-        RetrofitClient.getInstance().create(APIService::class.java)
+        RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
     private val _userInformation = MutableLiveData<List<Information>>()
