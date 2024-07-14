@@ -8,10 +8,12 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.databinding.FragmentTimetableBinding
+import com.example.hit_product.ui.adapter.ClassTodayAdapter
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -25,6 +27,8 @@ class TimetableFragment :
     private var previouslyClickedDay: TextView? = null
     private var previouslyClickedDate: TextView? = null
     private var previouslyClickedLine: View? = null
+    private val adapter = ClassTodayAdapter()
+
     override val viewModel: BaseViewModel
         get() = ViewModelProvider(this)[BaseViewModel::class.java]
 
@@ -37,6 +41,8 @@ class TimetableFragment :
 
     override fun bindData() {
         updateWeekView()
+        binding.classList.adapter = adapter
+        binding.classList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 
     override fun observeData() {
