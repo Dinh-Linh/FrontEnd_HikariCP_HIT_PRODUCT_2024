@@ -1,5 +1,7 @@
 package com.example.hit_product.ui.fragment
 
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
+import com.example.hit_product.data.Information
 import com.example.hit_product.databinding.FragmentForgetBinding
 import com.example.hit_product.databinding.FragmentInformationBinding
 import com.example.hit_product.ui.adapter.ClassInformationAdapter
@@ -33,10 +36,18 @@ class InformationFragment : BaseFragment<FragmentInformationBinding>(FragmentInf
     }
 
     override fun observeData() {
-        viewModel.userInformation.observe(viewLifecycleOwner, Observer {
-            informationAdapter.setDataList(it.toMutableList())
+        viewModel.userInformation.observe(viewLifecycleOwner, Observer { informationList ->
+            if(informationList == null){
+                binding.rclUserInformation.visibility = View.GONE
+                Log.d("Information List", "is Empty")
+            }else{
+                binding.rclUserInformation.visibility = View.VISIBLE
+                informationAdapter.setDataList(listOf(informationList).toMutableList())
+                Log.d("Information List", "is Ready")
+            }
         })
     }
+
 
     override fun setOnClick() {
 

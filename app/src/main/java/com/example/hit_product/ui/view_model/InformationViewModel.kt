@@ -14,8 +14,8 @@ class InformationViewModel : BaseViewModel(){
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
-    private val _userInformation = MutableLiveData<List<Information>>()
-    val userInformation:LiveData<List<Information>> get() = _userInformation
+    private val _userInformation = MutableLiveData<Information>()
+    val userInformation: LiveData<Information> get() = _userInformation
 
     fun getUserInformation(token: String){
         executeTask(
@@ -24,10 +24,10 @@ class InformationViewModel : BaseViewModel(){
             },
             onSuccess = {
                 _userInformation.value = it
-                Log.d("InformationViewModel", it.toString())
+                Log.d("InformationViewModel", "Success: $it")
             },
-            onError = {
-                Log.d("InformationViewModel", it.toString())
+            onError = {error ->
+                Log.d("InformationViewModel", "Error: $error" )
 
             }
         )

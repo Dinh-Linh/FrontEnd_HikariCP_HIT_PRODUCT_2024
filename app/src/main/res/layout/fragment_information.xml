@@ -26,4 +26,5 @@
         android:layout_height="wrap_content"
         tools:itemCount="1"
         tools:listitem="@layout/class_information" />
+
 </LinearLayout>

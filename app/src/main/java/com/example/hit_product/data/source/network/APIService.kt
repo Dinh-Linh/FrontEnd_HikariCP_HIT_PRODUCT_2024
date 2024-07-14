@@ -13,6 +13,7 @@ import retrofit2.http.Query
 data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val accessToken: String)
 
+
 interface ApiService {
     @POST(APIConstant.EndPoint.LOGIN)
     suspend fun login(@Body loginRequest: LoginRequest): ApiResponse<LoginResponse>
@@ -32,9 +33,11 @@ interface ApiService {
         @Query("day") day: String,
         @Header("Authorization") token: String
     ): List<Classes>
+
     @GET(APIConstant.EndPoint.USER_INFORMATION)
     suspend fun getUserInformation(
         @Header("Authorization") token: String
-    ):List<Information>
+    ):ApiResponse<Information?>
+
 
 }

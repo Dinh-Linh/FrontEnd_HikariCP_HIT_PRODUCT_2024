@@ -9,7 +9,9 @@ import com.example.hit_product.databinding.ClassInformationBinding
 
 
 class ClassInformationAdapter() : BaseAdapter<Information, ClassInformationBinding>(ClassInformationBinding::inflate){
+
     private val userInformation = mutableListOf<Information>()
+
 
     override fun bindData(binding: ClassInformationBinding, item: Information, position: Int) {
         binding.birth.text = item.birth
@@ -17,6 +19,7 @@ class ClassInformationAdapter() : BaseAdapter<Information, ClassInformationBindi
         binding.email.text = item.email
         binding.phone.text = item.phone
         binding.address.text = item.address
+
     }
 
     override fun onItemClick(binding: ClassInformationBinding, item: Information, position: Int) {
@@ -31,6 +34,7 @@ class ClassInformationAdapter() : BaseAdapter<Information, ClassInformationBindi
         val binding = ClassInformationBinding.inflate(inflate, parent, false)
         return BaseViewHolder(binding)
     }
+
 
 
 }
