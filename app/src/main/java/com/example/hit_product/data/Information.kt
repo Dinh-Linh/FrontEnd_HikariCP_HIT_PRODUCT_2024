@@ -5,7 +5,7 @@ data class Information(
     val username: String,
     val fullName: String,
     val email: String,
-    val avatar: String,
+    val avatar: String?,
     val phone: String,
     val address: String,
     val className: String,
@@ -13,7 +13,7 @@ data class Information(
     val gen: String,
     val numberCourse: Int,
     val status: String,
-    val qr: String,
+    val qr: String?,
     val role: Role
 )
 
