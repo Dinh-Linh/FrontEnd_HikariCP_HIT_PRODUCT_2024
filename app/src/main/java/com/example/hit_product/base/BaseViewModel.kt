@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import retrofit2.Response
 
 
 open class BaseViewModel : ViewModel() {
@@ -36,6 +37,8 @@ open class BaseViewModel : ViewModel() {
             }
         }
     }
+
+
 
     fun showLoading() {
         _loading.value = true

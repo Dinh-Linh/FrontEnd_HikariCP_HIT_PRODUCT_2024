@@ -18,17 +18,33 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavContainer) as NavHostFragment
         val navController = navHostFragment.navController
 
+
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment, R.id.timetableFragment -> {
-                    bottomBar.visibility = View.GONE
+                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment, R.id.timetableFragment-> {
+                    binding.bottomBar.visibility = View.GONE
                 }
                 else -> {
-                    bottomBar.visibility = View.VISIBLE
+                    binding.bottomBar.visibility = View.VISIBLE
                 }
             }
         }
+        binding.bottomBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navHome -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.navProfile -> {
+                    navController.navigate(R.id.informationFragment)
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
     override fun initData() {
 
     }
@@ -40,6 +56,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun setOnClick() {
         val bottomBar = binding.bottomBar
         bottomBar.visibility = View.GONE
+
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(this, R.id.bottomBar)
