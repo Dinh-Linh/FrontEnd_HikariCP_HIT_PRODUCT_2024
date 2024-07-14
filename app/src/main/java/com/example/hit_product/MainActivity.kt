@@ -8,23 +8,25 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.hit_product.base.BaseActivity
 import com.example.hit_product.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate){
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     private val dialog by lazy { Dialog(this) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         val bottomBar = binding.bottomBar
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavContainer) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.mainNavContainer) as NavHostFragment
         val navController = navHostFragment.navController
 
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment, R.id.timetableFragment-> {
+                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment, R.id.timetableFragment -> {
                     binding.bottomBar.visibility = View.GONE
                 }
+
                 else -> {
                     binding.bottomBar.visibility = View.VISIBLE
                 }
@@ -36,8 +38,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     navController.navigate(R.id.homeFragment)
                     true
                 }
+
                 R.id.navProfile -> {
                     navController.navigate(R.id.informationFragment)
+                    true
+                }
+                R.id.navInf -> {
+                    true
+                }
+                R.id.navSetting -> {
                     true
                 }
                 else -> false
@@ -58,6 +67,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         bottomBar.visibility = View.GONE
 
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(this, R.id.bottomBar)
         val destination = navController.currentDestination
