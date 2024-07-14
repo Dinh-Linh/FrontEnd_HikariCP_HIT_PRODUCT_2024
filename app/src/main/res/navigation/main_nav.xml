@@ -64,5 +64,9 @@
     <fragment
         android:id="@+id/timetableFragment"
         android:name="com.example.hit_product.ui.fragment.TimetableFragment"
-        android:label="TimetableFragment" />
+        android:label="TimetableFragment" >
+        <action
+            android:id="@+id/action_timetableFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

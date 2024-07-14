@@ -4,16 +4,21 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.databinding.FragmentTimetableBinding
 import com.example.hit_product.ui.adapter.ClassTodayAdapter
+import com.example.hit_product.ui.view_model.HomeViewModel
+import com.example.hit_product.utils.extension.getToken
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -29,14 +34,16 @@ class TimetableFragment :
     private var previouslyClickedLine: View? = null
     private val adapter = ClassTodayAdapter()
 
-    override val viewModel: BaseViewModel
-        get() = ViewModelProvider(this)[BaseViewModel::class.java]
+    override val viewModel: HomeViewModel
+        get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
     override fun initData() {
         calendar = Calendar.getInstance()
         calendar.firstDayOfWeek = Calendar.MONDAY
         weekDates = getCurrentWeekDate()
-
+        val currentDate = weekDates[0]
+        val formatedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(currentDate)
+        requireActivity().getToken()?.let { viewModel.getClassByDay(formatedDate,"Class", it) }
     }
 
     override fun bindData() {
@@ -46,7 +53,15 @@ class TimetableFragment :
     }
 
     override fun observeData() {
-
+        viewModel.classes.observe(viewLifecycleOwner, Observer { classList ->
+            if (classList == null) {
+                adapter.setDataList(mutableListOf())
+                Log.d("Class list", " is empty")
+            } else {
+                adapter.setDataList(listOf(classList).toMutableList())
+                Log.d("Class list", " is available")
+            }
+        })
     }
 
     @SuppressLint("ResourceAsColor")
@@ -86,7 +101,15 @@ class TimetableFragment :
                 previouslyClickedDay = dayName
                 previouslyClickedDate = dayDate
                 previouslyClickedLine = dayLine
+
+                val selectedDate = weekDates[i]
+                val formatedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate)
+                requireActivity().getToken()?.let { viewModel.getClassByDay(formatedDate, "Class", it) }
             }
+        }
+
+        binding.btnPreView.setOnClickListener{
+            findNavController().navigate(R.id.action_timetableFragment_to_homeFragment)
         }
     }
 
