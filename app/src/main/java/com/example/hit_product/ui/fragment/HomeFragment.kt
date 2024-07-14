@@ -1,5 +1,6 @@
 package com.example.hit_product.ui.fragment
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
@@ -14,6 +15,7 @@ import com.example.hit_product.data.source.local.Converters
 import com.example.hit_product.databinding.FragmentHomeBinding
 import com.example.hit_product.ui.adapter.ClassTodayAdapter
 import com.example.hit_product.ui.view_model.HomeViewModel
+import com.example.hit_product.ui.view_model.InformationViewModel
 import com.example.hit_product.utils.extension.getToken
 import java.util.Calendar
 import java.util.Date
@@ -22,6 +24,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override val viewModel: HomeViewModel
         get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
+    private val viewModel2 : InformationViewModel
+        get() = ViewModelProvider(this)[InformationViewModel::class.java]
     private val classAdapter = ClassTodayAdapter()
 
 
@@ -31,6 +35,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         Log.d("currentDate: ", "$currentDate")
         Log.d("formatDate: ", formatDate)
         requireActivity().getToken()?.let { viewModel.getClassByDay(formatDate, "Class", it) }
+
+        requireActivity().getToken()?.let { viewModel2.getUserInformation(it) }
     }
 
     override fun bindData() {
@@ -39,6 +45,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun observeData() {
         viewModel.classes.observe(viewLifecycleOwner, Observer { classList ->
             if (classList == null) {
@@ -50,6 +57,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 binding.rclToday.visibility = View.VISIBLE
                 classAdapter.setDataList(listOf(classList).toMutableList())
                 Log.d("Class list", " is available")
+            }
+        })
+
+        viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
+            inf?.let {
+                binding.memberName.text = "Hello ${it.fullName}"
             }
         })
     }
