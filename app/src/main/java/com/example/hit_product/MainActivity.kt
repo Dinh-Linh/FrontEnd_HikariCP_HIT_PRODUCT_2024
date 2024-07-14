@@ -22,7 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment -> {
+                R.id.splashScreenFragment, R.id.loginFragment, R.id.forgetFragment, R.id.timetableFragment-> {
                     binding.bottomBar.visibility = View.GONE
                 }
                 else -> {

@@ -30,5 +30,6 @@ class OTPFragment : BaseFragment<FragmentOTPBinding>(FragmentOTPBinding::inflate
 
         }
 
+
     }
 }
