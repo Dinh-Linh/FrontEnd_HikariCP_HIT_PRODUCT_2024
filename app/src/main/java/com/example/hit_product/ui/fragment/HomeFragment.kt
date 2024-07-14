@@ -4,8 +4,10 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.Visibility
+import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.data.Classes
 import com.example.hit_product.data.source.local.Converters
@@ -28,22 +30,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         val formatDate = Converters().getCurrentDate(currentDate)
         Log.d("currentDate: ", "$currentDate")
         Log.d("formatDate: ", formatDate)
-        requireActivity().getToken()?.let { viewModel.getClassByDay(formatDate, "Class",it) }
+        requireActivity().getToken()?.let { viewModel.getClassByDay(formatDate, "Class", it) }
     }
 
     override fun bindData() {
         binding.rclToday.adapter = classAdapter
-        binding.rclToday.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rclToday.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 
     override fun observeData() {
-        viewModel.classes.observe(viewLifecycleOwner, Observer {classList ->
-            if (classList == null){
+        viewModel.classes.observe(viewLifecycleOwner, Observer { classList ->
+            if (classList == null) {
                 binding.tvNoEvent.visibility = View.VISIBLE
                 binding.rclToday.visibility = View.GONE
                 Log.d("Class list", " is empty")
-            }
-            else{
+            } else {
                 binding.tvNoEvent.visibility = View.GONE
                 binding.rclToday.visibility = View.VISIBLE
                 classAdapter.setDataList(listOf(classList).toMutableList())
@@ -53,6 +55,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun setOnClick() {
-
+        binding.timeTable.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_timetableFragment)
+        }
     }
 }
