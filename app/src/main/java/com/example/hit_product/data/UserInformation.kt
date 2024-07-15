@@ -1,6 +1,6 @@
 package com.example.hit_product.data
 
-data class Information(
+data class UserInformation(
     val id: String,
     val username: String,
     val fullName: String,
