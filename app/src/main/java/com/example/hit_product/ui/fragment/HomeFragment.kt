@@ -7,25 +7,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.transition.Visibility
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.Classes
 import com.example.hit_product.data.source.local.Converters
 import com.example.hit_product.databinding.FragmentHomeBinding
 import com.example.hit_product.ui.adapter.ClassTodayAdapter
 import com.example.hit_product.ui.view_model.HomeViewModel
-import com.example.hit_product.ui.view_model.InformationViewModel
+import com.example.hit_product.ui.view_model.UserInformationViewModel
 import com.example.hit_product.utils.extension.getToken
 import java.util.Calendar
-import java.util.Date
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     override val viewModel: HomeViewModel
         get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
-    private val viewModel2 : InformationViewModel
-        get() = ViewModelProvider(this)[InformationViewModel::class.java]
+    private val viewModel2 : UserInformationViewModel
+        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
     private val classAdapter = ClassTodayAdapter()
 
 
@@ -70,6 +67,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun setOnClick() {
         binding.timeTable.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_timetableFragment)
+        }
+
+        binding.schedule.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_classRegistrationFragment)
         }
     }
 }
