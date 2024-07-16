@@ -6,14 +6,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.ClassRegistration
 import com.example.hit_product.databinding.FragmentClassRegistrationBinding
 
 
 class ClassRegistrationFragment :
     BaseFragment<FragmentClassRegistrationBinding>(FragmentClassRegistrationBinding::inflate) {
-    private val fmClassRegistered = ClassRegisteredFragment()
-    private val fmListClass = ListClassFragment()
+    private val fmClassRegistered = CourseRegisteredFragment()
+    private val fmListClass = ListCourseFragment()
     override val viewModel: BaseViewModel
         get() = ViewModelProvider(this)[BaseViewModel::class.java]
 

@@ -4,21 +4,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.ClassRegistration
+import com.example.hit_product.data.CourseRegistration
 import com.example.hit_product.databinding.FragmentClassRegisteredBinding
-import com.example.hit_product.ui.adapter.ListClassAdapter
+import com.example.hit_product.ui.adapter.ListCourseAdapter
 
-class ClassRegisteredFragment :
+class CourseRegisteredFragment :
     BaseFragment<FragmentClassRegisteredBinding>(FragmentClassRegisteredBinding::inflate) {
     override val viewModel: BaseViewModel
         get() = ViewModelProvider(this)[BaseViewModel::class.java]
 
     private val fakeDataListClass = mutableListOf(
-        ClassRegistration("1", "Android Class", null, "Nguyen Duy Minh Quan", null, null, null),
-        ClassRegistration("2", "ReactJS Class", null, "Nguyen Thi Trang", null, null, null),
+        CourseRegistration("1", "Android Class", null, "Nguyen Duy Minh Quan", null, null, null),
+        CourseRegistration("2", "ReactJS Class", null, "Nguyen Thi Trang", null, null, null),
     )
 
-    private val adapter = ListClassAdapter()
+    private val adapter = ListCourseAdapter()
     override fun initData() {
         adapter.setDataList(fakeDataListClass)
     }

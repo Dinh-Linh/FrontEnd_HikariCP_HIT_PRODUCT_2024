@@ -87,25 +87,21 @@
         tools:layout="@layout/fragment_class_information" />
     <fragment
         android:id="@+id/classRegisteredFragment"
-        android:name="com.example.hit_product.ui.fragment.ClassRegisteredFragment"
+        android:name="com.example.hit_product.ui.fragment.CourseRegisteredFragment"
         android:label="fragment_class_registered"
-        tools:layout="@layout/fragment_class_registered" >
-        <action
-            android:id="@+id/action_classRegisteredFragment_to_classInformationFragment"
-            app:destination="@id/classInformationFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_class_registered" />
     <fragment
         android:id="@+id/classRegistrationFragment"
         android:name="com.example.hit_product.ui.fragment.ClassRegistrationFragment"
         android:label="fragment_class_registration"
-        tools:layout="@layout/fragment_class_registration" />
-    <fragment
-        android:id="@+id/listClassFragment"
-        android:name="com.example.hit_product.ui.fragment.ListClassFragment"
-        android:label="fragment_list_class"
-        tools:layout="@layout/fragment_list_class" >
+        tools:layout="@layout/fragment_class_registration" >
         <action
-            android:id="@+id/action_listClassFragment_to_classInformationFragment"
+            android:id="@+id/action_classRegistrationFragment_to_classInformationFragment"
             app:destination="@id/classInformationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/listClassFragment"
+        android:name="com.example.hit_product.ui.fragment.ListCourseFragment"
+        android:label="fragment_list_class"
+        tools:layout="@layout/fragment_list_class" />
 </navigation>

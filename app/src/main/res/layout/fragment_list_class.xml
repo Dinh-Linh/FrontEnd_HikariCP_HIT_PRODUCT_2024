@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.fragment.ListClassFragment">
+    tools:context=".ui.fragment.ListCourseFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        tools:listitem="@layout/class_item"
+        tools:listitem="@layout/course_item"
         tools:itemCount="5"/>
 
 </LinearLayout>
