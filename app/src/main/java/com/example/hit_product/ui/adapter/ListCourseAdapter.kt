@@ -6,7 +6,6 @@ import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
 import com.example.hit_product.data.CourseRegistration
 import com.example.hit_product.databinding.CourseItemBinding
-import com.example.hit_product.ui.fragment.ClassInformationFragment
 
 class ListCourseAdapter :
     BaseAdapter<CourseRegistration, CourseItemBinding>(CourseItemBinding::inflate) {

@@ -3,6 +3,7 @@ package com.example.hit_product.ui.fragment
 import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
@@ -56,6 +57,10 @@ class ClassRegistrationFragment :
             binding.viewListClass.setBackgroundColor(Color.TRANSPARENT)
             binding.tvClassRegistered.setTextColor(Color.rgb(240, 108, 37))
             binding.viewClassRegistered.setBackgroundColor(Color.rgb(240, 108, 37))
+        }
+
+        binding.btnPre.setOnClickListener {
+            findNavController().navigate(R.id.action_classRegistrationFragment_to_homeFragment)
         }
     }
 }

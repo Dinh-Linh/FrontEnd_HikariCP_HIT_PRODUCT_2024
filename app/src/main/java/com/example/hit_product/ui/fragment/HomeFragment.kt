@@ -59,7 +59,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
             inf?.let {
-                binding.memberName.text = "Hello ${it.fullName}"
+                binding.memberName.text = "Hi ${it.fullName}"
             }
         })
     }

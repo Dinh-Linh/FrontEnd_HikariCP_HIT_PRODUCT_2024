@@ -37,18 +37,22 @@ class ListCourseFragment :
         binding.rclListClass.adapter = adapter
         binding.rclListClass.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        adapter.onClick = {
-            findNavController().navigate(R.id.action_classRegistrationFragment_to_classInformationFragment)
+        adapter.onClick = { item ->
+            val bundler = Bundle()
+            bundler.putSerializable("course", item)
+            findNavController().navigate(
+                R.id.action_classRegistrationFragment_to_classInformationFragment,
+                bundler
+            )
         }
 
     }
 
     override fun observeData() {
         viewModel.listCourse.observe(viewLifecycleOwner, Observer { courses ->
-            if (courses == null){
+            if (courses == null) {
                 Log.d("List course: ", "is Empty")
-            }
-            else{
+            } else {
                 adapter.setDataList(courses.toMutableList())
             }
         })
