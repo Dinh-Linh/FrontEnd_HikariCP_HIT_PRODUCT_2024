@@ -87,7 +87,7 @@
         tools:layout="@layout/fragment_class_information" />
     <fragment
         android:id="@+id/classRegisteredFragment"
-        android:name="com.example.hit_product.ui.fragment.ClassRegisteredFragment"
+        android:name="com.example.hit_product.ui.fragment.CourseRegisteredFragment"
         android:label="fragment_class_registered"
         tools:layout="@layout/fragment_class_registered" >
         <action
@@ -101,7 +101,7 @@
         tools:layout="@layout/fragment_class_registration" />
     <fragment
         android:id="@+id/listClassFragment"
-        android:name="com.example.hit_product.ui.fragment.ListClassFragment"
+        android:name="com.example.hit_product.ui.fragment.ListCourseFragment"
         android:label="fragment_list_class"
         tools:layout="@layout/fragment_list_class" >
         <action

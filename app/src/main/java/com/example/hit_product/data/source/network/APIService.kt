@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.Classes
 import com.example.hit_product.data.UserInformation
+import com.example.hit_product.data.CourseResponse
 import com.example.hit_product.utils.constant.APIConstant
 import okhttp3.Response
 import retrofit2.http.Body
@@ -46,6 +47,7 @@ interface ApiService {
         @Body email: String
     ):LiveData<Response>
 
-
+    @GET(APIConstant.EndPoint.LIST_COURSE)
+    suspend fun getAllCourse(@Header("Authorization") token: String) : ApiResponse<CourseResponse>
 
 }

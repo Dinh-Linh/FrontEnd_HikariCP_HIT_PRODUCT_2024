@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.fragment.ClassRegisteredFragment">
+    tools:context=".ui.fragment.CourseRegisteredFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -38,6 +38,6 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         tools:itemCount="5"
-        tools:listitem="@layout/class_item_registered" />
+        tools:listitem="@layout/course_item_registered" />
 
 </LinearLayout>
