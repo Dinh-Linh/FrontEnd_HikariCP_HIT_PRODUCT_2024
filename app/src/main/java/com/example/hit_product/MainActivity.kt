@@ -44,6 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     true
                 }
                 R.id.navInf -> {
+                    navController.navigate(R.id.introductionFragment)
                     true
                 }
                 R.id.navSetting -> {

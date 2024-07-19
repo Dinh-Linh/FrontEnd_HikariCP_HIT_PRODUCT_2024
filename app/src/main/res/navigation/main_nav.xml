@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_homeFragment_to_informationFragment"
             app:destination="@id/informationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -77,4 +80,9 @@
         android:name="com.example.hit_product.ui.fragment.InformationFragment"
         android:label="fragment_information"
         tools:layout="@layout/fragment_information" />
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="com.example.hit_product.ui.fragment.IntroductionFragment"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction" />
 </navigation>
