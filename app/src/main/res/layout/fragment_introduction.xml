@@ -47,8 +47,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_login"
                     android:backgroundTint="@color/white"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:padding="10dp"
                     android:src="@drawable/notification" />
             </androidx.cardview.widget.CardView>
@@ -167,7 +165,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="110dp"
-                        android:layout_height="180dp"
+                        android:layout_height="150dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"
                         app:cardCornerRadius="20dp">
@@ -206,7 +204,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="110dp"
-                        android:layout_height="180dp"
+                        android:layout_height="150dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         app:cardCornerRadius="20dp">
@@ -243,7 +241,7 @@
                     android:orientation="vertical">
                     <androidx.cardview.widget.CardView
                         android:layout_width="110dp"
-                        android:layout_height="180dp"
+                        android:layout_height="150dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         app:cardCornerRadius="20dp">
@@ -274,10 +272,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -285,24 +279,317 @@
                 android:gravity="center"
                 android:text="CÁC BAN VÀ BỘ PHẬN CỦA CLB"
                 android:textSize="19sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom ="20dp"/>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="70dp"
                 android:orientation="horizontal">
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="center|right">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_login"
+                        android:backgroundTint="@color/white"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ban_truyen_thong"
+                            android:layout_margin="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Ban truyền thông"
+                            android:textSize="12sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="center|right">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_login"
+                        android:backgroundTint="@color/white"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ban_su_kien"
+                            android:layout_margin="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Ban sự kiện"
+                            android:textSize="12sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="center|right">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_login"
+                        android:backgroundTint="@color/white"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ban_dao_tao_va_pt"
+                            android:layout_margin="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Ban đào tạo và phát triển"
+                            android:textSize="12sp"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="center|right">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_login"
+                        android:backgroundTint="@color/white"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/team_dev" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Bộ phận phát triển phần mềm - team Dev"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="center|right">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_login"
+                        android:backgroundTint="@color/white"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bo_phan_giam_sat"
+                            android:layout_margin="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Bộ phận giám sát chất lượng thiết kế"
+                            android:textSize="12sp"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="HOẠT ĐỘNG CHỦ YẾU"
+                    android:textSize="19sp"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Trao đổi kiến thức chuyên ngành"
+                    android:textSize="15sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Tổ chức các khóa học định kỳ, các nhóm học tập giúp các thành viên của CLB, sinh viên HaUI có đam mê với các ngành CNTT, muốn trau dồi kỹ năng của bản thân."
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/orange"
+                        android:text="20+"
+                        android:textSize="20sp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:text="Số lượng lớp và nhóm được mở ra và đào tạo trong năm của CLB."/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/orange"
+                        android:text="600+"
+                        android:textSize="20sp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:text="Số lượng thành viên của CLB đã tham gia quá trình học tập, đào tạo."/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Hoạt động ngoại khóa  "
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom ="20dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:background="@drawable/hoat_dong_ngoai_khoa"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Các lớp học   "
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom ="20dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:background="@drawable/lop_hoc_public"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>
