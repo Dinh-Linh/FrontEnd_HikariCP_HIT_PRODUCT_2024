@@ -17,5 +17,7 @@ object APIConstant {
         const val FORGOT_PASSWORD = "api/v1/auth/forgot-password"
         const val CONFIRM_OTP = "api/v1/auth/confirm_otp"
         const val LIST_COURSE = "user/course"
+        const val REGISTER_COURSE = "user/register"
+        const val LOGOUT = "api/v1/auth/logout"
     }
 }
