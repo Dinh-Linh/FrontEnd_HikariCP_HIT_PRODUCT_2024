@@ -54,6 +54,9 @@
             android:id="@+id/action_homeFragment_to_informationFragment"
             app:destination="@id/informationFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_classRegistrationFragment"
+            app:destination="@id/classRegistrationFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_introductionFragment"
             app:destination="@id/introductionFragment" />
         <action
@@ -73,6 +76,36 @@
         android:name="com.example.hit_product.ui.fragment.UserInformationFragment"
         android:label="fragment_information"
         tools:layout="@layout/fragment_information" />
+    <fragment
+        android:id="@+id/classInformationFragment"
+        android:name="com.example.hit_product.ui.fragment.ClassDetailsFragment"
+        android:label="fragment_class_information"
+        tools:layout="@layout/fragment_class_details" />
+    <fragment
+        android:id="@+id/classRegisteredFragment"
+        android:name="com.example.hit_product.ui.fragment.CourseRegisteredFragment"
+        android:label="fragment_class_registered"
+        tools:layout="@layout/fragment_class_registered" />
+    <fragment
+        android:id="@+id/classRegistrationFragment"
+        android:name="com.example.hit_product.ui.fragment.ClassRegistrationFragment"
+        android:label="fragment_class_registration"
+        tools:layout="@layout/fragment_class_registration" >
+        <action
+            android:id="@+id/action_classRegistrationFragment_to_classInformationFragment"
+            app:destination="@id/classInformationFragment" />
+        <action
+            android:id="@+id/action_classRegistrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listClassFragment"
+        android:name="com.example.hit_product.ui.fragment.ListCourseFragment"
+        android:label="fragment_list_class"
+        tools:layout="@layout/fragment_list_class" />
     <fragment
         android:id="@+id/introductionFragment"
         android:name="com.example.hit_product.ui.fragment.IntroductionFragment"

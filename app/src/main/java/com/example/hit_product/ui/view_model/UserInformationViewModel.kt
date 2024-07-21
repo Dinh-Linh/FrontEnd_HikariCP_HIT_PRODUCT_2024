@@ -9,8 +9,8 @@ import com.example.hit_product.data.UserInformation
 import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.RetrofitClient
 
-class InformationViewModel : BaseViewModel(){
-    private val informationRepository = UserInformationRepository(
+class UserInformationViewModel : BaseViewModel(){
+    private val userInformationRepository = UserInformationRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
@@ -20,7 +20,7 @@ class InformationViewModel : BaseViewModel(){
     fun getUserInformation(token: String){
         executeTask(
             request = {
-                informationRepository.getUserInformation(token)
+                userInformationRepository.getUserInformation(token)
             },
             onSuccess = {
                 _userInformation.value = it

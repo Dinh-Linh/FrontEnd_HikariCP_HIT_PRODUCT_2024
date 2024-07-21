@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.databinding.FragmentInformationBinding
 import com.example.hit_product.ui.adapter.UserInformationAdapter
-import com.example.hit_product.ui.view_model.InformationViewModel
+import com.example.hit_product.ui.view_model.UserInformationViewModel
 import com.example.hit_product.utils.extension.getToken
 
 class UserInformationFragment : BaseFragment<FragmentInformationBinding>(FragmentInformationBinding::inflate) {
-    override val viewModel: InformationViewModel
-        get() = ViewModelProvider(this)[InformationViewModel::class.java]
+    override val viewModel: UserInformationViewModel
+        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
 
     private val informationAdapter = UserInformationAdapter()
 

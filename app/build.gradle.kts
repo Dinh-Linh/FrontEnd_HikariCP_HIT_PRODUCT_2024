@@ -90,5 +90,7 @@ dependencies {
     //Card View
     implementation (libs.androidx.cardview)
 
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+
 }
 

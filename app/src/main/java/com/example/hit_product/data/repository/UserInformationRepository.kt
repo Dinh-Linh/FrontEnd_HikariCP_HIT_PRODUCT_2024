@@ -13,6 +13,5 @@ class UserInformationRepository(
         return getResult {
             apiService.getUserInformation(token).data
         }
-
     }
 }
