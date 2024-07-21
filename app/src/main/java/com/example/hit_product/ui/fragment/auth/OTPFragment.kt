@@ -1,11 +1,10 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.auth
 
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.source.network.OTPRequest
 import com.example.hit_product.databinding.FragmentOTPBinding
 import com.example.hit_product.ui.DialogOTPFailure
 import com.example.hit_product.ui.view_model.OTPViewModel

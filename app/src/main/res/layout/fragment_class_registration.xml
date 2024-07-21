@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="12dp"
-    tools:context=".ui.fragment.ClassRegistrationFragment">
+    tools:context=".ui.fragment.classroom.ClassRegistrationFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".ui.fragment.SplashScreenFragment">
+    tools:context=".ui.fragment.main_app.SplashScreenFragment">
 
    <LinearLayout
        android:id="@+id/splashScreen"

@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import android.os.Build
 import android.util.Log
