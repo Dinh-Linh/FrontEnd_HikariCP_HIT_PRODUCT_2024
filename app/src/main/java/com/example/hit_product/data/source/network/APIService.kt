@@ -15,6 +15,11 @@ import retrofit2.http.Query
 
 data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val accessToken: String)
+data class EmailRequest(val email: String)
+data class EmailResponse(val accessToken: String)
+data class OTPResponse(val accessToken: String)
+data class OTPRequest(val email: String, val otp: String, val newPassword: String)
+
 data class LogoutResponse(val status: String, val message: String)
 
 data class RegisterCourseResponse(val memberId: String, val courseId: String, val status: String)
@@ -48,6 +53,16 @@ interface ApiService {
     suspend fun getOTP(
         @Body email: String
     ): LiveData<Response>
+    suspend fun sendOTP(
+        @Body emailRequest: EmailRequest
+    ):ApiResponse<EmailResponse>
+
+
+    @POST(APIConstant.EndPoint.CONFIRM_OTP)
+    suspend fun verifyOTP(
+        @Body otpRequest: OTPRequest
+    ):ApiResponse<OTPResponse>
+
 
     @GET(APIConstant.EndPoint.LIST_COURSE)
     suspend fun getAllCourse(@Header("Authorization") token: String): ApiResponse<CourseResponse>

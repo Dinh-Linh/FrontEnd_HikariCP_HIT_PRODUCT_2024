@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:top="150dp"
+        android:left="40dp">
+        <bitmap
+
+            android:src="@drawable/ellipse"/>
+    </item>
+
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:top="80dp"
+        android:left="70dp"
+        android:bottom="-50dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/ellipse"/>
+    </item>
+
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:top="50dp"
+        android:left="-100dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/ellipse"/>
+    </item>
+</layer-list>

@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.databinding.FragmentInformationBinding
@@ -40,7 +41,6 @@ class UserInformationFragment : BaseFragment<FragmentInformationBinding>(Fragmen
             }
         })
     }
-
 
     override fun setOnClick() {
 

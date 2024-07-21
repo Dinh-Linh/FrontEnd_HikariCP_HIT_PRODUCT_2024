@@ -25,7 +25,7 @@ class DialogLoginFailure(context: Context) : Dialog(context) {
         btnAgree = findViewById(R.id.btnAgree)
         this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         btnAgree.setOnClickListener {
-            dismiss()// Tắt dialog khi click
+            dismiss() // Tắt dialog khi click
         }
         if (!checkNetwork(this.context)) {
             findViewById<TextView>(R.id.bugLogin).text = "Vui lòng kiểm tra lại kết nối mạng"
@@ -36,6 +36,7 @@ class DialogLoginFailure(context: Context) : Dialog(context) {
         }
     }
 
+    @SuppressLint("MissingPermission")
     @Suppress("DEPRECATION")
     private fun checkNetwork(context: Context): Boolean {
         val connectManager =

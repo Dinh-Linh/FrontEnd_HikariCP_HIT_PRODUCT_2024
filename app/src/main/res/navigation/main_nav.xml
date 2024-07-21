@@ -31,25 +31,15 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_forgetFragment"
-            app:destination="@id/forgetFragment"
-            app:enterAnim="@anim/zoom_in"
-            app:exitAnim="@anim/zoom_out"/>
-        <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true"
             app:enterAnim="@anim/zoom_in"
             app:exitAnim="@anim/zoom_out"/>
-    </fragment>
-    <fragment
-        android:id="@+id/forgetFragment"
-        android:name="com.example.hit_product.ui.fragment.ForgetFragment"
-        android:label="ForgetFragment" >
         <action
-            android:id="@+id/action_forgetFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_loginFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -66,6 +56,12 @@
         <action
             android:id="@+id/action_homeFragment_to_classRegistrationFragment"
             app:destination="@id/classRegistrationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -110,4 +106,50 @@
         android:name="com.example.hit_product.ui.fragment.ListCourseFragment"
         android:label="fragment_list_class"
         tools:layout="@layout/fragment_list_class" />
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="com.example.hit_product.ui.fragment.IntroductionFragment"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.hit_product.ui.fragment.EmailFragment"
+        android:label="fragment_forget_email"
+        tools:layout="@layout/fragment_forget_email" >
+        <action
+            android:id="@+id/action_emailFragment_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
+        <action
+            android:id="@+id/action_emailFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPFragment"
+        android:name="com.example.hit_product.ui.fragment.OTPFragment"
+        android:label="fragment_o_t_p"
+        tools:layout="@layout/fragment_o_t_p" >
+        <action
+            android:id="@+id/action_OTPFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+        <action
+            android:id="@+id/action_OTPFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.example.hit_product.ui.fragment.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" >
+        <action
+            android:id="@+id/action_newPasswordFragment_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
+        <action
+            android:id="@+id/action_newPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.hit_product.ui.fragment.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
