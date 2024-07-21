@@ -6,16 +6,16 @@ import com.bumptech.glide.Glide
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
-import com.example.hit_product.data.Information
+import com.example.hit_product.data.UserInformation
 import com.example.hit_product.databinding.ClassInformationBinding
 
 
-class ClassInformationAdapter() : BaseAdapter<Information, ClassInformationBinding>(ClassInformationBinding::inflate){
+class UserInformationAdapter() : BaseAdapter<UserInformation, ClassInformationBinding>(ClassInformationBinding::inflate){
 
-    private val userInformation = mutableListOf<Information>()
+    private val userInformation = mutableListOf<UserInformation>()
 
 
-    override fun bindData(binding: ClassInformationBinding, item: Information, position: Int) {
+    override fun bindData(binding: ClassInformationBinding, item: UserInformation, position: Int) {
 
         binding.birth.text = item.birth
         binding.gen.text = item.gen
@@ -39,7 +39,7 @@ class ClassInformationAdapter() : BaseAdapter<Information, ClassInformationBindi
     }
 
 
-    override fun onItemClick(binding: ClassInformationBinding, item: Information, position: Int) {
+    override fun onItemClick(binding: ClassInformationBinding, item: UserInformation, position: Int) {
 
     }
 

@@ -3,32 +3,29 @@ package com.example.hit_product.ui.view_model
 import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.repository.LoginRepository
+import com.example.hit_product.data.repository.EmailRepository
 import com.example.hit_product.data.source.network.ApiService
-import com.example.hit_product.data.source.network.LoginRequest
-import com.example.hit_product.data.source.network.LoginResponse
+import com.example.hit_product.data.source.network.EmailRequest
+import com.example.hit_product.data.source.network.EmailResponse
 import com.example.hit_product.data.source.network.RetrofitClient
 
-class LoginViewModel : BaseViewModel() {
-    private val loginRepo = LoginRepository(
+class EmailViewModel : BaseViewModel(){
+    private val emailRepo = EmailRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
     val error = MutableLiveData<String>(null)
 
-    fun login(loginRequest: LoginRequest, onLoginSuccess : (ApiResponse<LoginResponse>) ->Unit){
+    fun email(emailRequest: EmailRequest, onEmailSuccess: (ApiResponse<EmailResponse>) -> Unit){
         executeTask(
             request = {
-                loginRepo.login(loginRequest)
+                emailRepo.otpConfirm(emailRequest)
             },
             onSuccess = { response ->
-                onLoginSuccess(response)
+                onEmailSuccess(response)
             },
             onError = {exception ->
                 error.value = exception.message
-
             }
-        )
-    }
+        )}
 }
-
