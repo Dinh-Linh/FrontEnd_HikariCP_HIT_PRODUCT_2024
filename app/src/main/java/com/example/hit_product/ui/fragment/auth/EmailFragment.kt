@@ -1,15 +1,13 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.auth
 
 import android.content.Context.MODE_PRIVATE
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.data.source.network.EmailRequest
 import com.example.hit_product.databinding.FragmentForgetEmailBinding
 import com.example.hit_product.ui.DialogEmailFailure
-import com.example.hit_product.ui.DialogLoginFailure
 import com.example.hit_product.ui.view_model.EmailViewModel
 
 class EmailFragment : BaseFragment<FragmentForgetEmailBinding>(FragmentForgetEmailBinding::inflate) {

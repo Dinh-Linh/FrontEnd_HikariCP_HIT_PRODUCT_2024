@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.SettingFragment"
+    tools:context=".ui.fragment.main_app.SettingFragment"
     android:background="@drawable/setting_bg"
     android:orientation="vertical">
 

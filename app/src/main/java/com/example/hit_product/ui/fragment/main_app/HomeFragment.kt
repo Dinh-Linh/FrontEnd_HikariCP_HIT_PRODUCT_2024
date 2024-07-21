@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.main_app
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -59,7 +59,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
             inf?.let {
-                binding.memberName.text = "Hello ${it.fullName}"
+                binding.memberName.text = "Hi ${it.fullName}"
             }
         })
     }
@@ -67,6 +67,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun setOnClick() {
         binding.timeTable.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_timetableFragment)
+        }
+
+        binding.schedule.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_classRegistrationFragment)
         }
     }
 }

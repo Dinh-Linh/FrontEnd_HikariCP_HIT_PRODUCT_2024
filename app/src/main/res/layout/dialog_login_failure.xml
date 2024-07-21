@@ -15,12 +15,13 @@
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
+        android:id="@+id/bugLogin"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
-        android:text="Vui lòng kiểm tra lại thông tin đăng nhập" />
+        android:text="" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAgree"
         android:layout_width="match_parent"

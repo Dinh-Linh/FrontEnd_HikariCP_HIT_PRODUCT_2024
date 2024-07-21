@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.main_app
 
 import android.content.Context.MODE_PRIVATE
 import androidx.lifecycle.ViewModelProvider

@@ -1,20 +1,16 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Color
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.base.BaseViewModel
 import com.example.hit_product.databinding.FragmentTimetableBinding
 import com.example.hit_product.ui.adapter.ClassTodayAdapter
 import com.example.hit_product.ui.view_model.HomeViewModel

@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.auth
 
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
