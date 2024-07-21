@@ -1,11 +1,9 @@
 package com.example.hit_product.data.source.network
 
-import androidx.lifecycle.LiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.Classes
-import com.example.hit_product.data.Information
+import com.example.hit_product.data.UserInformation
 import com.example.hit_product.utils.constant.APIConstant
-import okhttp3.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -14,6 +12,11 @@ import retrofit2.http.Query
 
 data class LoginRequest(val username: String, val password: String)
 data class LoginResponse(val accessToken: String)
+data class EmailRequest(val email: String)
+data class EmailResponse(val accessToken: String)
+data class OTPResponse(val accessToken: String)
+data class OTPRequest(val email: String, val otp: String, val newPassword: String)
+
 
 
 interface ApiService {
@@ -39,12 +42,20 @@ interface ApiService {
     @GET(APIConstant.EndPoint.USER_INFORMATION)
     suspend fun getUserInformation(
         @Header("Authorization") token: String
-    ):ApiResponse<Information?>
+    ):ApiResponse<UserInformation?>
+
 
     @POST(APIConstant.EndPoint.FORGOT_PASSWORD)
-    suspend fun getOTP(
-        @Body email: String
-    ):LiveData<Response>
+    suspend fun sendOTP(
+        @Body emailRequest: EmailRequest
+    ):ApiResponse<EmailResponse>
+
+
+    @POST(APIConstant.EndPoint.CONFIRM_OTP)
+    suspend fun verifyOTP(
+        @Body otpRequest: OTPRequest
+    ):ApiResponse<OTPResponse>
+
 
 
 

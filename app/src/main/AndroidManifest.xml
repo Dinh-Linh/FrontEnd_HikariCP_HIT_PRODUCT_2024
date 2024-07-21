@@ -16,6 +16,15 @@
         android:theme="@style/Theme.HIT_Product"
         tools:targetApi="31">
         <activity
+            android:name=".ui.fragment.OTPFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fragment.NewPasswordFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fragment.EmailFragment"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

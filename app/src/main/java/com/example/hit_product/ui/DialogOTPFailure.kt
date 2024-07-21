@@ -8,16 +8,16 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.hit_product.R
 
-class DialogLoginFailure(context: Context) : Dialog(context) {
+class DialogOTPFailure(context: Context) : Dialog(context){
 
-    private lateinit var btnAgree: Button
+    private lateinit var btnAgreeOTP: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_login_failure)
-        btnAgree = findViewById(R.id.btnAgree)
+        setContentView(R.layout.dialog_otp_failure)
+        btnAgreeOTP = findViewById(R.id.btnAgreeInOTP)
         this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        btnAgree.setOnClickListener {
+        btnAgreeOTP.setOnClickListener{
             dismiss()
         }
     }
