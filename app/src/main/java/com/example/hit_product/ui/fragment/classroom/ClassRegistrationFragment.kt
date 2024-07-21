@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import android.annotation.SuppressLint
 import android.graphics.Color

@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
