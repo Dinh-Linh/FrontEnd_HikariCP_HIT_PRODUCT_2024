@@ -1,10 +1,12 @@
 package com.example.hit_product
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 
 class MyApplication : Application() {
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
     }
 

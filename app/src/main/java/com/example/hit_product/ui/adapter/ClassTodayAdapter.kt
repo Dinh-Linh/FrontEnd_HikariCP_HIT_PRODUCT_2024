@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
-import com.example.hit_product.data.Classes
+import com.example.hit_product.data.data_class.Classes
 import com.example.hit_product.databinding.ClassTodayBinding
 import java.util.Locale
 
