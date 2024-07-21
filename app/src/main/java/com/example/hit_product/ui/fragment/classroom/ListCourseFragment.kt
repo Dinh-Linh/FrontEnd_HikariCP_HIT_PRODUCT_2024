@@ -1,4 +1,4 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.CourseRegistration
 import com.example.hit_product.databinding.FragmentListClassBinding
 import com.example.hit_product.ui.adapter.ListCourseAdapter
 import com.example.hit_product.ui.view_model.ListCourseViewModel

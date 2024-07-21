@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.CourseRegistration
+import com.example.hit_product.data.data_class.CourseRegistration
 import com.example.hit_product.data.repository.ListCourseRepository
 import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.RetrofitClient

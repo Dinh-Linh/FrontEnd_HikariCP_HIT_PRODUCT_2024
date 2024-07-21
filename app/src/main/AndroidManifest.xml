@@ -18,13 +18,13 @@
         android:theme="@style/Theme.HIT_Product"
         tools:targetApi="31">
         <activity
-            android:name=".ui.fragment.OTPFragment"
+            android:name=".ui.fragment.auth.OTPFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.fragment.NewPasswordFragment"
+            android:name=".ui.fragment.auth.NewPasswordFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.fragment.EmailFragment"
+            android:name=".ui.fragment.auth.EmailFragment"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"

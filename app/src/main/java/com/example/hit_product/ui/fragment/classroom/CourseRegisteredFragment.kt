@@ -1,10 +1,10 @@
-package com.example.hit_product.ui.fragment
+package com.example.hit_product.ui.fragment.classroom
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.CourseRegistration
+import com.example.hit_product.data.data_class.CourseRegistration
 import com.example.hit_product.databinding.FragmentClassRegisteredBinding
 import com.example.hit_product.ui.adapter.ListCourseAdapter
 

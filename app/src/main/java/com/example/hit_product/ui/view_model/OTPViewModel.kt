@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.base.DataState
+import com.example.hit_product.data.data_class.OTPRequest
+import com.example.hit_product.data.data_class.OTPResponse
 import com.example.hit_product.data.repository.OTPRepository
 import com.example.hit_product.data.source.network.ApiService
-import com.example.hit_product.data.source.network.OTPRequest
-import com.example.hit_product.data.source.network.OTPResponse
 import com.example.hit_product.data.source.network.RetrofitClient
 import kotlinx.coroutines.launch
 
