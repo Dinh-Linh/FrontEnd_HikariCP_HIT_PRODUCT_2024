@@ -42,6 +42,7 @@ class UserInformationFragment : BaseFragment<FragmentInformationBinding>(Fragmen
         })
     }
 
+
     override fun setOnClick() {
 
     }
