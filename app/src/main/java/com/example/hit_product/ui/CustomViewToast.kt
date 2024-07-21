@@ -28,7 +28,6 @@ class CustomViewToast(context: Context) : Toast(context) {
         toast.view = layout
         toast.duration = if (duration == LONG) LENGTH_LONG else LENGTH_SHORT
         return toast
-
     }
 
 }
