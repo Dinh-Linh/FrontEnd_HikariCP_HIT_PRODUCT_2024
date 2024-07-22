@@ -6,7 +6,7 @@ import com.example.hit_product.data.data_class.LogoutResponse
 import com.example.hit_product.data.source.network.ApiService
 
 class SettingRepository(private val apiService: ApiService) : BaseRepository() {
-    suspend fun logOut(token : String) : DataState<LogoutResponse>{
+    suspend fun logout(token : String) : DataState<LogoutResponse>{
         return getResult {
             apiService.logout(token).data!!
         }

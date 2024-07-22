@@ -21,6 +21,7 @@ class SettingViewModel : BaseViewModel() {
             onSuccess = {
                 val sharedPreferences = MyApplication.context.getSharedPreferences("account", MODE_PRIVATE)
                 sharedPreferences.edit().remove("token").commit()
+                Log.d("Token: ", it.toString())
             },
             onError = {
                 Log.e("LogOut Error: ", it.message.toString())
