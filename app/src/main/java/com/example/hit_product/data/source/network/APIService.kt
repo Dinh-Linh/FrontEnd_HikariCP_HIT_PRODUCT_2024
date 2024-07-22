@@ -2,9 +2,7 @@ package com.example.hit_product.data.source.network
 
 import androidx.lifecycle.LiveData
 import com.example.hit_product.base.ApiResponse
-import com.example.hit_product.data.Classes
-import com.example.hit_product.data.CourseResponse
-import com.example.hit_product.data.UserInformation
+import com.example.hit_product.data.data_class.*
 import com.example.hit_product.utils.constant.APIConstant
 import okhttp3.Response
 import retrofit2.http.Body
@@ -12,17 +10,6 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Query
-
-data class LoginRequest(val username: String, val password: String)
-data class LoginResponse(val accessToken: String)
-data class EmailRequest(val email: String)
-data class EmailResponse(val accessToken: String)
-data class OTPResponse(val accessToken: String)
-data class OTPRequest(val email: String, val otp: String, val newPassword: String)
-
-data class LogoutResponse(val status: String, val message: String)
-
-data class RegisterCourseResponse(val memberId: String, val courseId: String, val status: String)
 
 interface ApiService {
     @POST(APIConstant.EndPoint.LOGIN)

@@ -3,10 +3,10 @@ package com.example.hit_product.ui.view_model
 import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.base.BaseViewModel
+import com.example.hit_product.data.data_class.LoginRequest
+import com.example.hit_product.data.data_class.LoginResponse
 import com.example.hit_product.data.repository.LoginRepository
 import com.example.hit_product.data.source.network.ApiService
-import com.example.hit_product.data.source.network.LoginRequest
-import com.example.hit_product.data.source.network.LoginResponse
 import com.example.hit_product.data.source.network.RetrofitClient
 
 class LoginViewModel : BaseViewModel() {

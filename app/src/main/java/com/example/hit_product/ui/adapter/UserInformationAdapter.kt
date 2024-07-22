@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
-import com.example.hit_product.data.UserInformation
+import com.example.hit_product.data.data_class.UserInformation
 import com.example.hit_product.databinding.ClassInformationBinding
 
 

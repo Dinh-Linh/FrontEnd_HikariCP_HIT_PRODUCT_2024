@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.source.network.LoginRequest
+import com.example.hit_product.data.data_class.LoginRequest
 import com.example.hit_product.databinding.FragmentLoginBinding
 import com.example.hit_product.ui.CustomViewToast
 import com.example.hit_product.ui.DialogLoginFailure

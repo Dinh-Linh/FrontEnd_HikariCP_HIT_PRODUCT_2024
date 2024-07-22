@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.source.network.EmailRequest
+import com.example.hit_product.data.data_class.EmailRequest
 import com.example.hit_product.databinding.FragmentForgetEmailBinding
 import com.example.hit_product.ui.DialogEmailFailure
 import com.example.hit_product.ui.view_model.EmailViewModel

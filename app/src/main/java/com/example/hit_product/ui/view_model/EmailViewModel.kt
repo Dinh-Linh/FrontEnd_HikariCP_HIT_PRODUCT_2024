@@ -3,10 +3,10 @@ package com.example.hit_product.ui.view_model
 import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.base.BaseViewModel
+import com.example.hit_product.data.data_class.EmailRequest
+import com.example.hit_product.data.data_class.EmailResponse
 import com.example.hit_product.data.repository.EmailRepository
 import com.example.hit_product.data.source.network.ApiService
-import com.example.hit_product.data.source.network.EmailRequest
-import com.example.hit_product.data.source.network.EmailResponse
 import com.example.hit_product.data.source.network.RetrofitClient
 
 class EmailViewModel : BaseViewModel(){
