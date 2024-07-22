@@ -16,7 +16,7 @@ class SettingViewModel : BaseViewModel() {
     fun logOut(token: String){
         executeTask(
             request = {
-                settingRepository.logOut(token)
+                settingRepository.logout(token)
             },
             onSuccess = {
                 val sharedPreferences = MyApplication.context.getSharedPreferences("account", MODE_PRIVATE)
