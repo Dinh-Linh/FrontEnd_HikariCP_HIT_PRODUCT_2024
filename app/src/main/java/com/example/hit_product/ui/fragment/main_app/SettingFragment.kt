@@ -30,7 +30,7 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(FragmentSettingBind
         binding.logOut.setOnClickListener {
             val token = requireActivity().getToken()
             if (token != null){
-                viewModel.logout(token)
+                viewModel.logOut(token)
                 findNavController().navigate(R.id.action_settingFragment_to_loginFragment)
             }
             else{
