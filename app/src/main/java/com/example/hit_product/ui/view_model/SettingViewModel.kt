@@ -13,10 +13,10 @@ class SettingViewModel : BaseViewModel() {
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
-    fun logout(token: String){
+    fun logOut(token: String){
         executeTask(
             request = {
-                settingRepository.logout(token)
+                settingRepository.logOut(token)
             },
             onSuccess = {
                 val sharedPreferences = MyApplication.context.getSharedPreferences("account", MODE_PRIVATE)
