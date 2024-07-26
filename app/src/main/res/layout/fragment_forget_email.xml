@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.auth.EmailFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,10 +84,10 @@
                 android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_shape"
                 android:fontFamily="@font/poppins_light"
                 android:hint="Email..."
-                android:textColor="@color/orange" />
+                android:textColor="@color/orange"
+                android:textCursorDrawable="@drawable/custom_cursor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

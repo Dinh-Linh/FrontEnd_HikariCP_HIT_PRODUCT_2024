@@ -77,7 +77,6 @@
             android:weightSum="12">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSavePassword"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
@@ -93,10 +92,13 @@
 
             </androidx.appcompat.widget.AppCompatButton>
 
-            <androidx.appcompat.widget.SwitchCompat
+            <Switch
+                android:id="@+id/switchSavePassword"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:thumb="@drawable/thumb"
+                app:track="@drawable/track"/>
 
         </LinearLayout>
 

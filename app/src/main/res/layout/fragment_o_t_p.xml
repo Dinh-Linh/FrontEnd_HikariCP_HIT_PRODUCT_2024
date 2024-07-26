@@ -83,8 +83,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nhập OTP"
-                android:background="@drawable/background_shape"
-                android:fontFamily="@font/poppins_light"/>
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/orange"
+                android:textCursorDrawable="@drawable/custom_cursor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

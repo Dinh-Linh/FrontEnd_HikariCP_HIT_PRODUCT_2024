@@ -16,4 +16,5 @@
     <color name="gray">#575C6B</color>
     <color name="colorTrackOff">#494949</color>
     <color name="colorThumbOff">#858585</color>
+    <color name="information_bg_color">#F4925D</color>
 </resources>
