@@ -26,7 +26,7 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(FragmentSettingBind
     }
 
     override fun setOnClick() {
-        binding.logOut.setOnClickListener {
+        binding.btnlogOut.setOnClickListener {
             val token = requireActivity().getToken()
             if (token != null){
                 viewModel.logOut(token)

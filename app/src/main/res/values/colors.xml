@@ -14,4 +14,6 @@
     <color name="bottom_nav_item_color_active">#C3C6C7</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="gray">#575C6B</color>
+    <color name="colorTrackOff">#494949</color>
+    <color name="colorThumbOff">#858585</color>
 </resources>
