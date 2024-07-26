@@ -1,4 +1,4 @@
-package com.example.hit_product.data
+package com.example.hit_product.data.data_class
 
 data class EmailOTP(
     val email: String,

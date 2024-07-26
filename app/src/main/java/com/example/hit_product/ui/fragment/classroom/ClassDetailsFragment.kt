@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.data.CourseRegistration
+import com.example.hit_product.data.data_class.CourseRegistration
 import com.example.hit_product.databinding.FragmentClassDetailsBinding
 import com.example.hit_product.ui.view_model.ListCourseViewModel
 import com.example.hit_product.utils.extension.getToken

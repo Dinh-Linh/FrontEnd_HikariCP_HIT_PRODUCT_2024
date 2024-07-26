@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
-import com.example.hit_product.data.CourseRegistration
+import com.example.hit_product.data.data_class.CourseRegistration
 import com.example.hit_product.databinding.CourseItemBinding
 
 class ListCourseAdapter :
