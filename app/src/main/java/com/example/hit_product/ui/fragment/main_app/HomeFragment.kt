@@ -23,6 +23,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private val viewModel2 : UserInformationViewModel
         get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
+
+
     private val classAdapter = ClassTodayAdapter()
 
 
@@ -34,6 +36,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         requireActivity().getToken()?.let { viewModel.getClassByDay(formatDate, "Class", it) }
 
         requireActivity().getToken()?.let { viewModel2.getUserInformation(it) }
+
     }
 
     override fun bindData() {

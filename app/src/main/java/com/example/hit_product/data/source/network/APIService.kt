@@ -59,4 +59,5 @@ interface ApiService {
 
     @POST(APIConstant.EndPoint.LOGOUT)
     suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
+
 }

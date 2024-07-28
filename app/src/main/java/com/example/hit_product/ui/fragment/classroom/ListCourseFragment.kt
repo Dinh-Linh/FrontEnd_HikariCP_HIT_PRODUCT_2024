@@ -60,4 +60,5 @@ class ListCourseFragment :
     override fun setOnClick() {
 
     }
+
 }
