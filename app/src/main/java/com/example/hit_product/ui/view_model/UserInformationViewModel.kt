@@ -24,7 +24,7 @@ class UserInformationViewModel : BaseViewModel(){
             },
             onSuccess = {
                 _userInformation.value = it
-                Log.d("InformationViewModel", "Success: $it")
+                //Log.d("InformationViewModel", "Success: $it")
             },
             onError = {error ->
                 Log.d("InformationViewModel", "Error: $error" )

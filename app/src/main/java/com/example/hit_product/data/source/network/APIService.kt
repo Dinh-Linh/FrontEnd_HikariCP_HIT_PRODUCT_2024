@@ -37,9 +37,6 @@ interface ApiService {
     ): ApiResponse<UserInformation?>
 
     @POST(APIConstant.EndPoint.FORGOT_PASSWORD)
-    suspend fun getOTP(
-        @Body email: String
-    ): LiveData<Response>
     suspend fun sendOTP(
         @Body emailRequest: EmailRequest
     ):ApiResponse<EmailResponse>
@@ -50,17 +47,18 @@ interface ApiService {
         @Body otpRequest: OTPRequest
     ):ApiResponse<OTPResponse>
 
-
     @GET(APIConstant.EndPoint.LIST_COURSE)
     suspend fun getAllCourse(@Header("Authorization") token: String): ApiResponse<CourseResponse>
 
     @POST(APIConstant.EndPoint.REGISTER_COURSE)
     suspend fun registerCourse(
         @Header("Authorization") token: String,
-        @Query("subscriberId") subscriberId: String,
-        @Query("courseId") courseId: String
+        @Body request: RegisterCourseRequest
     ) : ApiResponse<RegisterCourseResponse>
 
     @POST(APIConstant.EndPoint.LOGOUT)
     suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
+
+    @GET(APIConstant.EndPoint.GET_REGISTERED_BY_NAME)
+    suspend fun getRegisteredByName(@Header("Authorization") token: String, @Query("name") username : String) : ApiResponse<List<RegisterCourseResponse>>
 }

@@ -8,4 +8,7 @@
     <string name="introduction">Introduction</string>
     <string name="setting">Setting</string>
     <string name="profile">Profile</string>
+    <string name="cai_dat">Cài đặt</string>
+    <string name="registered">ĐÃ ĐĂNG KÝ</string>
+    <string name="pending">ĐANG CHỜ XỬ LÝ</string>
 </resources>

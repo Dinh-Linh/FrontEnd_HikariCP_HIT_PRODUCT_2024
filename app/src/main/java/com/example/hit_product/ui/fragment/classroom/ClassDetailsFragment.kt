@@ -2,12 +2,19 @@ package com.example.hit_product.ui.fragment.classroom
 
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.data.data_class.CourseRegistration
+import com.example.hit_product.data.data_class.RegisterCourseRequest
 import com.example.hit_product.databinding.FragmentClassDetailsBinding
+import com.example.hit_product.ui.CustomViewToast
 import com.example.hit_product.ui.view_model.ListCourseViewModel
+import com.example.hit_product.ui.view_model.RegistrationViewModel
+import com.example.hit_product.ui.view_model.UserInformationViewModel
 import com.example.hit_product.utils.extension.getToken
 
 class ClassDetailsFragment :
@@ -15,7 +22,17 @@ class ClassDetailsFragment :
     override val viewModel: ListCourseViewModel
         get() = ViewModelProvider(this)[ListCourseViewModel::class.java]
 
+    private val viewModelUser: UserInformationViewModel
+        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
+
+    private val viewModelRegistration: RegistrationViewModel
+        get() = ViewModelProvider(this)[RegistrationViewModel::class.java]
+
+    private val customViewToast by lazy { CustomViewToast(requireContext()) }
+
     private var courseRegistration: CourseRegistration? = null
+    private var subscriberId: String? = null
+    private var courseId: String? = null
 
     override fun initData() {
         requireActivity().getToken().let { viewModel.getAllCourse(it!!) }
@@ -25,6 +42,8 @@ class ClassDetailsFragment :
         } else {
             arguments?.getSerializable("course") as CourseRegistration
         }
+
+        requireActivity().getToken().let { viewModelUser.getUserInformation(it!!) }
     }
 
 
@@ -39,11 +58,68 @@ class ClassDetailsFragment :
     }
 
     override fun observeData() {
-
+        viewModelUser.userInformation.observe(viewLifecycleOwner, Observer { inf ->
+            Log.d("User Information", inf.toString())
+            inf?.let {
+                subscriberId = it.id
+                Log.d("Subscriber Id: ", subscriberId.toString())
+                courseId = courseRegistration?.id
+                val registerCourseRequest =
+                    RegisterCourseRequest(subscriberId.toString(), courseId.toString())
+                requireActivity().getToken()?.let { token ->
+                    viewModelRegistration.registerCourse(
+                        token,
+                        registerCourseRequest,
+                        onRegisterCourseResponse = { response ->
+                            if (response.status == "PENDING") {
+                                binding.btnClassRegistration.text =
+                                    context?.getString(R.string.pending)
+                            } else if (response.status == "ACCEPT") {
+                                binding.btnClassRegistration.text =
+                                    context?.getString(R.string.registered)
+                            }
+                        })
+                }
+            } ?: run {
+                Log.d("User Inf: ", "null")
+            }
+        })
     }
 
     override fun setOnClick() {
-
+        courseId = courseRegistration?.id
+        val registerCourseRequest =
+            RegisterCourseRequest(subscriberId.toString(), courseId.toString())
+        binding.btnClassRegistration.setOnClickListener {
+            Log.d("UserId: ", subscriberId.toString())
+            Log.d("Course Id: ", courseId.toString())
+            requireActivity().getToken()?.let { token ->
+                viewModelRegistration.registerCourse(
+                    token,
+                    registerCourseRequest,
+                    onRegisterCourseResponse = { response ->
+                        if (response.status == "PENDING") {
+                            customViewToast.makeText(
+                                requireContext(),
+                                "Đăng ký thành công. Đang chờ xử lý",
+                                Toast.LENGTH_LONG.toLong(),
+                                R.drawable.success_icon_toast
+                            ).show()
+                            binding.btnClassRegistration.text = context?.getString(R.string.pending)
+                        } else if (response.status == "REJECT") {
+                            customViewToast.makeText(
+                                requireContext(),
+                                "Đăng ký thất bại. Bạn chỉ được đăng ký tối đa 2 lớp học",
+                                Toast.LENGTH_LONG.toLong(),
+                                R.drawable.failure_icon_toast
+                            ).show()
+                        } else if (response.status == "ACCEPT") {
+                            binding.btnClassRegistration.text =
+                                context?.getString(R.string.registered)
+                        }
+                    })
+            }
+        }
     }
 
 }
