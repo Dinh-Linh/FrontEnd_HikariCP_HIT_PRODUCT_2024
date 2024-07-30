@@ -22,7 +22,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
 
     override fun initData() {
-
+        val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+        if (pref.getBoolean("saved_password", false)) {
+            val savedUsername = pref.getString("saved_username", "")
+            val savedPassword = pref.getString("saved_password", "")
+            binding.edtUsername.setText(savedUsername)
+            binding.edtPassword.setText(savedPassword)
+        }
     }
 
     override fun bindData() {
@@ -48,7 +54,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 onLoginSuccess = { apiResponse ->
                     val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                     pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
+                    if (pref.getBoolean("saved_password", false)) {
+                        pref.edit().putString("saved_username", username)
+                        pref.edit().putString("saved_password", password)
+                    }
+                    pref.edit().apply()
                     findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+
                 },
             )
         }

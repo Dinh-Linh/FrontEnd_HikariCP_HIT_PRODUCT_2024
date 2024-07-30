@@ -45,6 +45,7 @@ class EmailFragment : BaseFragment<FragmentForgetEmailBinding>(FragmentForgetEma
                 }
             )
         }
+
         binding.btnBackToLogin.setOnClickListener {
             findNavController().navigate(R.id.action_emailFragment_to_loginFragment)
         }
