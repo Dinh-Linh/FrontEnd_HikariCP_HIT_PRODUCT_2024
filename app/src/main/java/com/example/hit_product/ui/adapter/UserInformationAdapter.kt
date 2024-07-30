@@ -26,9 +26,9 @@ class UserInformationAdapter() : BaseAdapter<UserInformation, ClassInformationBi
         binding.className.text = item.className
 
         Glide.with(binding.avatar.context)
-            .load(item.avatar ?: R.drawable.hit_image)
-            .placeholder(R.drawable.hit_image)
-            .error(R.drawable.hit_image)
+            .load(item.avatar ?: R.drawable.fake_infor)
+            .placeholder(R.drawable.fake_infor)
+            .error(R.drawable.fake_infor)
             .into(binding.avatar)
 
         Glide.with(binding.qr.context)

@@ -20,4 +20,7 @@
             @color/black
         </item>
     </style>
+    <style name="saveSwitchButton">
+        <item name="android:colorControlActivated">@color/light_orange</item>
+    </style>
 </resources>
