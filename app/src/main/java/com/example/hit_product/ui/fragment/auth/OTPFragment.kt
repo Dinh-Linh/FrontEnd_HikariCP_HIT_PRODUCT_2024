@@ -1,6 +1,5 @@
 package com.example.hit_product.ui.fragment.auth
 
-
 import android.content.Context.MODE_PRIVATE
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -8,13 +7,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.data.data_class.OTPRequest
-import com.example.hit_product.databinding.FragmentOTPBinding
+import com.example.hit_product.databinding.FragmentOtpBinding
 import com.example.hit_product.ui.DialogEmailFailure
 import com.example.hit_product.ui.DialogOTPFailure
 import com.example.hit_product.ui.view_model.OTPViewModel
 
 
-class OTPFragment : BaseFragment<FragmentOTPBinding>(FragmentOTPBinding::inflate) {
+class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate) {
     override val viewModel: OTPViewModel
         get() = ViewModelProvider(this)[OTPViewModel::class.java]
 

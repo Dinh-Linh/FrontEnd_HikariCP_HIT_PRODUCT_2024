@@ -14,15 +14,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:background="@drawable/notification_bg"
-        android:padding="10dp">
-<!--        <TextView-->
-<!--            android:id="@+id/timeClass"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:fontFamily="@font/poppins_medium"-->
-<!--            android:text="Time"-->
-<!--            android:textSize="16sp" />-->
-
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/nameClass"
@@ -31,7 +23,8 @@
             android:fontFamily="@font/poppins_medium"
             android:text="Class Name"
             android:textColor="@color/orange"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/address"
@@ -39,7 +32,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
             android:text="Address"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
 
