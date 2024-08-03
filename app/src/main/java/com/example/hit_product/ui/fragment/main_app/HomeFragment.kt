@@ -75,8 +75,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.schedule.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_classRegistrationFragment)
         }
-        binding.btnNotification.setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_notificationFragment)
+        binding.btnPersonalNotification.setOnClickListener{
         }
     }
 }
