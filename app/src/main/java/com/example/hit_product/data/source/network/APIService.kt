@@ -39,7 +39,6 @@ interface ApiService {
         @Body emailRequest: EmailRequest
     ):ApiResponse<EmailResponse>
 
-
     @POST(APIConstant.EndPoint.CONFIRM_OTP)
     suspend fun verifyOTP(
         @Body otpRequest: OTPRequest

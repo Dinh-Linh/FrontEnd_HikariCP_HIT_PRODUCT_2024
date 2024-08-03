@@ -19,7 +19,7 @@ class EmailViewModel : BaseViewModel(){
     fun email(emailRequest: EmailRequest, onEmailSuccess: (ApiResponse<EmailResponse>) -> Unit){
         executeTask(
             request = {
-                emailRepo.otpConfirm(emailRequest)
+                emailRepo.sendOTP(emailRequest)
             },
             onSuccess = { response ->
                 onEmailSuccess(response)
