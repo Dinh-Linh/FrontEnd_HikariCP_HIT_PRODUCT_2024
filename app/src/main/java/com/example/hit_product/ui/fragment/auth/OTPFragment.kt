@@ -9,6 +9,7 @@ import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.data.data_class.OTPRequest
 import com.example.hit_product.databinding.FragmentOTPBinding
+import com.example.hit_product.ui.DialogEmailFailure
 import com.example.hit_product.ui.DialogOTPFailure
 import com.example.hit_product.ui.view_model.OTPViewModel
 
@@ -19,6 +20,7 @@ class OTPFragment : BaseFragment<FragmentOTPBinding>(FragmentOTPBinding::inflate
 
 
     private val otpDialogFailure by lazy { DialogOTPFailure(requireContext())}
+    private val emailDialogFailure by lazy { DialogEmailFailure(requireContext()) }
 
     override fun initData() {}
 

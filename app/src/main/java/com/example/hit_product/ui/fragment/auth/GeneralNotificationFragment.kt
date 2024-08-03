@@ -9,12 +9,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
-import com.example.hit_product.databinding.FragmentNotificationBinding
+import com.example.hit_product.databinding.FragmentGeneralNotificationBinding
 import com.example.hit_product.ui.adapter.GeneralNotificationAdapter
 import com.example.hit_product.ui.view_model.NotificationViewModel
 import com.example.hit_product.utils.extension.getToken
 
-class NotificationFragment : BaseFragment<FragmentNotificationBinding>(FragmentNotificationBinding::inflate){
+class GeneralNotificationFragment : BaseFragment<FragmentGeneralNotificationBinding>(FragmentGeneralNotificationBinding::inflate){
     override val viewModel: NotificationViewModel
         get() = ViewModelProvider(this)[NotificationViewModel::class.java]
 
@@ -46,7 +46,7 @@ class NotificationFragment : BaseFragment<FragmentNotificationBinding>(FragmentN
 
     override fun setOnClick() {
         binding.btnBackToHome.setOnClickListener {
-            findNavController().navigate(R.id.action_notificationFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_generalNotificationFragment_to_introductionFragment)
         }
     }
 
