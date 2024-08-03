@@ -15,4 +15,5 @@ class IntroductionFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_introduction, container, false)
     }
 
+
 }

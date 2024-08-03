@@ -27,12 +27,16 @@
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_medium"/>
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rclNotification"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:itemCount="5"
-        tools:listitem="@layout/class_notification" />
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rclNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="11"
+            tools:listitem="@layout/class_notification" />
+    </ScrollView>
 
 
 </LinearLayout>
