@@ -19,6 +19,6 @@ object APIConstant {
         const val LIST_COURSE = "user/course"
         const val REGISTER_COURSE = "user/register"
         const val LOGOUT = "api/v1/auth/logout"
-
+        const val NOTIFICATION = "/user/notification/general"
     }
 }

@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listGeneralNotification"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp"
-    android:background="@drawable/btn_login"
     android:backgroundTint="@color/white"
-    android:layout_marginBottom="20dp"
     android:gravity="center">
-    <View
-        android:layout_width="2dp"
-        android:layout_height="match_parent"
-        android:background="@color/orange"
-        android:layout_marginEnd="8dp"/>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/notification_bg"
+        android:padding="10dp">
+<!--        <TextView-->
+<!--            android:id="@+id/timeClass"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Time"-->
+<!--            android:textSize="16sp" />-->
+
 
         <TextView
-            android:id="@+id/className"
+            android:id="@+id/nameClass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:text="Class Name"
+            android:textColor="@color/orange"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
@@ -37,10 +42,5 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="time" />
 
 </LinearLayout>

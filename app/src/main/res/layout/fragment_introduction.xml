@@ -44,6 +44,7 @@
                 app:cardCornerRadius="20dp">
 
                 <ImageView
+                    android:id="@+id/btnNotification"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_login"
@@ -51,7 +52,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="10dp"
-                    android:src="@drawable/notification" />
+                    android:src="@drawable/notification"/>
             </androidx.cardview.widget.CardView>
 
             <TextView
