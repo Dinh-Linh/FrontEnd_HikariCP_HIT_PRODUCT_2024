@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/setting_bg"
     android:orientation="vertical"
-    tools:context=".ui.fragment.main_app.SettingFragment">
+    tools:context=".ui.fragment.auth.SettingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:text="Cài đặt"
+            android:text="@string/cai_dat"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.468"
@@ -93,12 +93,13 @@
             </androidx.appcompat.widget.AppCompatButton>
 
             <Switch
-                android:id="@+id/switchSavePassword"
+                android:id="@+id/btnSwitchSavePassword"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:thumb="@drawable/thumb"
                 app:track="@drawable/track"/>
+
 
         </LinearLayout>
 

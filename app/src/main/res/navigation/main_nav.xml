@@ -156,7 +156,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.hit_product.ui.fragment.main_app.SettingFragment"
+        android:name="com.example.hit_product.ui.fragment.auth.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" >
         <action
