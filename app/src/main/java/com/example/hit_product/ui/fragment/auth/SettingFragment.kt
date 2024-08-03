@@ -39,6 +39,9 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(FragmentSettingBind
                 findNavController().navigate(R.id.action_settingFragment_to_loginFragment)
             }
         }
+        binding.btnAccount.setOnClickListener{
+            findNavController().navigate(R.id.action_settingFragment_to_accountFragment)
+        }
 
         binding.btnSwitchSavePassword.setOnCheckedChangeListener { _, isChecked ->
             val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)

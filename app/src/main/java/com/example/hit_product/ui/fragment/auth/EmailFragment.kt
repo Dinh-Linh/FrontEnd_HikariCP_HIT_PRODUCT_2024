@@ -1,6 +1,7 @@
 package com.example.hit_product.ui.fragment.auth
 
 import android.content.Context.MODE_PRIVATE
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
@@ -42,6 +43,9 @@ class EmailFragment : BaseFragment<FragmentForgetEmailBinding>(FragmentForgetEma
                     val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                     pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
                     findNavController().navigate(R.id.action_emailFragment_to_OTPFragment)
+                    context?.let {
+                        Toast.makeText(it, "Đã gửi OTP", Toast.LENGTH_SHORT).show()
+                    }
                 }
             )
         }

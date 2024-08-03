@@ -16,17 +16,22 @@ class OTPViewModel : BaseViewModel(){
     private val otpRepo = OTPRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
-    private val _error = MutableLiveData<String?>()
-    val error: LiveData<String?> get() = _error
+    val error = MutableLiveData<String>(null)
 
-    fun verifyOTP(otpRequest: OTPRequest, onOtpSuccess: (ApiResponse<OTPResponse>)-> Unit){
-        viewModelScope.launch {
-            try{
+    fun otp(otpRequest: OTPRequest, onOTPSuccess: (ApiResponse<OTPResponse>)->Unit){
+        executeTask(
+            request = {
+                otpRepo.otpConfirm(otpRequest)
+            },
+            onSuccess = {response ->
+                onOTPSuccess(response)
 
-            }catch (e: Exception){
-                _error.value = e.message
+            },
+            onError = {exception ->
+                error.value = exception.message
             }
-        }
+
+        )
     }
 
 }

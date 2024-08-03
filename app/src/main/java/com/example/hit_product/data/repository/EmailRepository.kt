@@ -10,7 +10,7 @@ import com.example.hit_product.data.source.network.ApiService
 
 
 class EmailRepository(private val apiService: ApiService) : BaseRepository() {
-    suspend fun otpConfirm(emailRequest: EmailRequest) : DataState<ApiResponse<EmailResponse>>{
+    suspend fun sendOTP(emailRequest: EmailRequest) : DataState<ApiResponse<EmailResponse>>{
         return getResult {
             apiService.sendOTP(emailRequest)
         }
