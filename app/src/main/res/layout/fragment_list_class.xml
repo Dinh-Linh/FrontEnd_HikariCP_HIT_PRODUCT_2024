@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        tools:listitem="@layout/course_item"
-        tools:itemCount="5"/>
+        tools:itemCount="5"
+        tools:listitem="@layout/course_item" />
 
 </LinearLayout>
