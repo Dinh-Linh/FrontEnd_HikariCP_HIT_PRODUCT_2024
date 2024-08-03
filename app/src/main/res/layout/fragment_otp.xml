@@ -13,8 +13,9 @@
         android:orientation="horizontal">
         <ImageButton
             android:id="@+id/btnBackToLogin"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
             android:padding="5dp"
             android:scaleX="1.25"
             android:scaleY="1.25"
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="Quên mật khẩu"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_light"/>
 
@@ -127,7 +128,8 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="@color/text_input_stroke_color"
-                app:hintTextColor="@color/text_input_stroke_color">
+                app:hintTextColor="@color/text_input_stroke_color"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNewPassword"
@@ -150,7 +152,8 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="@color/text_input_stroke_color"
-                app:hintTextColor="@color/text_input_stroke_color">
+                app:hintTextColor="@color/text_input_stroke_color"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtConfirmNewPassword"

@@ -20,5 +20,6 @@ object APIConstant {
         const val REGISTER_COURSE = "user/register"
         const val LOGOUT = "api/v1/auth/logout"
         const val NOTIFICATION = "user/notification/general"
+        const val PERSONAL_NOTIFICATION = "user/notification/personal"
     }
 }
