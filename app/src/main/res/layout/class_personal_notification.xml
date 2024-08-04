@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/listGeneralNotification"
+    android:id="@+id/listPersonalNotification"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -17,21 +17,21 @@
         android:padding="5dp">
 
         <TextView
-            android:id="@+id/nameClass"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Class Name"
+            android:text="Name"
             android:textColor="@color/orange"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
-            android:text="Address"
+            android:text="Details"
             android:textSize="16sp"
             android:layout_margin="5dp"/>
     </LinearLayout>

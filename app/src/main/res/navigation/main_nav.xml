@@ -69,6 +69,9 @@
         <action
             android:id="@+id/action_homeFragment_to_settingFragment2"
             app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_personal_NotificationFragment"
+            app:destination="@id/personal_NotificationFragment" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -181,5 +184,13 @@
         <action
             android:id="@+id/action_generalNotificationFragment_to_introductionFragment"
             app:destination="@id/introductionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personal_NotificationFragment"
+        android:name="com.example.hit_product.ui.fragment.auth.PersonalNotificationFragment"
+        android:label="Personal_NotificationFragment" >
+        <action
+            android:id="@+id/action_personal_NotificationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

@@ -35,7 +35,7 @@ class GeneralNotificationFragment : BaseFragment<FragmentGeneralNotificationBind
     }
 
     override fun observeData() {
-        viewModel.listGeneralNotification.observe(viewLifecycleOwner, Observer { generalNotification ->
+        viewModel.listGeneralGeneralNotification.observe(viewLifecycleOwner, Observer { generalNotification ->
             if(generalNotification == null){
                 Log.d("General notification: ", "is null")
             }else{

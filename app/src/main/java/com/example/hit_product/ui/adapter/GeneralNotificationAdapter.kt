@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
-import com.example.hit_product.data.data_class.Notification
+import com.example.hit_product.data.data_class.GeneralNotification
 import com.example.hit_product.databinding.ClassNotificationBinding
 
 class GeneralNotificationAdapter :
-    BaseAdapter<Notification, ClassNotificationBinding>(ClassNotificationBinding::inflate){
-        var onclick: ((Notification)->Unit)? = null
-    override fun bindData(binding: ClassNotificationBinding, item: Notification, position: Int) {
+    BaseAdapter<GeneralNotification, ClassNotificationBinding>(ClassNotificationBinding::inflate){
+        var onclick: ((GeneralNotification)->Unit)? = null
+    override fun bindData(binding: ClassNotificationBinding, item: GeneralNotification, position: Int) {
         binding.nameClass.text = item.name
         binding.address.text = item.detail
     }
 
-    override fun onItemClick(binding: ClassNotificationBinding, item: Notification, position: Int) {
+    override fun onItemClick(binding: ClassNotificationBinding, item: GeneralNotification, position: Int) {
         binding.listGeneralNotification.setOnClickListener{
             onclick?.invoke(item)
         }
