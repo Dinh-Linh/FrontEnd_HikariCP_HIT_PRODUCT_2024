@@ -61,6 +61,13 @@
             app:destination="@id/introductionFragment" />
         <action
             android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment2"
             app:destination="@id/settingFragment" />
     </fragment>
     <fragment
@@ -110,7 +117,12 @@
         android:id="@+id/introductionFragment"
         android:name="com.example.hit_product.ui.fragment.main_app.IntroductionFragment"
         android:label="fragment_introduction"
-        tools:layout="@layout/fragment_introduction" />
+        tools:layout="@layout/fragment_introduction" >
+        <action android:id="@+id/action_introductionFragment_to_notificationFragment" />
+        <action
+            android:id="@+id/action_introductionFragment_to_generalNotificationFragment"
+            app:destination="@id/generalNotificationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/emailFragment"
         android:name="com.example.hit_product.ui.fragment.auth.EmailFragment"
@@ -127,26 +139,19 @@
         android:id="@+id/OTPFragment"
         android:name="com.example.hit_product.ui.fragment.auth.OTPFragment"
         android:label="fragment_o_t_p"
-        tools:layout="@layout/fragment_o_t_p" >
-        <action
-            android:id="@+id/action_OTPFragment_to_newPasswordFragment"
-            app:destination="@id/newPasswordFragment" />
+        tools:layout="@layout/fragment_otp" >
         <action
             android:id="@+id/action_OTPFragment_to_emailFragment"
             app:destination="@id/emailFragment" />
+        <action
+            android:id="@+id/action_OTPFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
         android:name="com.example.hit_product.ui.fragment.auth.NewPasswordFragment"
         android:label="fragment_new_password"
-        tools:layout="@layout/fragment_new_password" >
-        <action
-            android:id="@+id/action_newPasswordFragment_to_OTPFragment"
-            app:destination="@id/OTPFragment" />
-        <action
-            android:id="@+id/action_newPasswordFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_new_password" />
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.hit_product.ui.fragment.auth.SettingFragment"
@@ -156,5 +161,25 @@
             android:id="@+id/action_settingFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_settingFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.hit_product.ui.fragment.auth.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalNotificationFragment"
+        android:name="com.example.hit_product.ui.fragment.auth.GeneralNotificationFragment"
+        android:label="GeneralNotificationFragment" >
+        <action
+            android:id="@+id/action_generalNotificationFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment" />
     </fragment>
 </navigation>

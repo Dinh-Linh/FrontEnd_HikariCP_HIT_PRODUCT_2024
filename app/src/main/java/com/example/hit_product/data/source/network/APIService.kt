@@ -1,10 +1,8 @@
 package com.example.hit_product.data.source.network
 
-import androidx.lifecycle.LiveData
 import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.data_class.*
 import com.example.hit_product.utils.constant.APIConstant
-import okhttp3.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -41,7 +39,6 @@ interface ApiService {
         @Body emailRequest: EmailRequest
     ):ApiResponse<EmailResponse>
 
-
     @POST(APIConstant.EndPoint.CONFIRM_OTP)
     suspend fun verifyOTP(
         @Body otpRequest: OTPRequest
@@ -58,6 +55,11 @@ interface ApiService {
 
     @POST(APIConstant.EndPoint.LOGOUT)
     suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
+
+    @GET(APIConstant.EndPoint.NOTIFICATION)
+    suspend fun getGeneralNotification(
+        @Header("Authorization") token: String
+    ):ApiResponse<NotificationResponse>
 
     @GET(APIConstant.EndPoint.GET_REGISTERED_BY_NAME)
     suspend fun getRegisteredByName(@Header("Authorization") token: String, @Query("name") username : String) : ApiResponse<List<RegisterCourseResponse>>

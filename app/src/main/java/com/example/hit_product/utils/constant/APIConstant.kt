@@ -15,10 +15,12 @@ object APIConstant {
         const val CHANGE_PASSWORD = "api/v1/member/changePassword"
         const val USER_INFORMATION = "api/v1/user/current"
         const val FORGOT_PASSWORD = "api/v1/auth/forgot-password"
-        const val CONFIRM_OTP = "api/v1/auth/confirm_otp"
+        const val CONFIRM_OTP = "api/v1/auth/confirm-otp"
         const val LIST_COURSE = "user/course"
         const val REGISTER_COURSE = "user/register"
         const val LOGOUT = "api/v1/auth/logout"
         const val GET_REGISTERED_BY_NAME = "user/register/name"
+        const val NOTIFICATION = "user/notification/general"
+        const val PERSONAL_NOTIFICATION = "user/notification/personal"
     }
 }
