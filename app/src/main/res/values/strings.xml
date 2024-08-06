@@ -11,4 +11,5 @@
     <string name="cai_dat">Cài đặt</string>
     <string name="registered">ĐÃ ĐĂNG KÝ</string>
     <string name="pending">ĐANG CHỜ XỬ LÝ</string>
+    <string name="toast_regis_failure">Đăng ký thất bại. Bạn chỉ được đăng ký tối đa 2 lớp học</string>
 </resources>

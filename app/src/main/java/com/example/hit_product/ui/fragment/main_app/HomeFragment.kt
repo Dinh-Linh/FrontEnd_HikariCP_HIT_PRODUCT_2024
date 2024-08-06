@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.data.source.local.Converters
@@ -21,8 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override val viewModel: HomeViewModel
         get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
-    private val viewModel2 : UserInformationViewModel
-        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
+    private val viewModel2: UserInformationViewModel
+        get() = ViewModelProvider(requireActivity())[UserInformationViewModel::class.java]
 
 
     private val classAdapter = ClassTodayAdapter()
@@ -63,6 +64,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
             inf?.let {
                 binding.memberName.text = "Hi ${it.fullName}"
+                //Glide.with(requireContext()).load(it.avatar).into(binding.avatar)
             }
         })
     }
@@ -75,7 +77,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.schedule.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_classRegistrationFragment)
         }
-        binding.btnPersonalNotification.setOnClickListener{
+        binding.btnPersonalNotification.setOnClickListener {
         }
     }
 }

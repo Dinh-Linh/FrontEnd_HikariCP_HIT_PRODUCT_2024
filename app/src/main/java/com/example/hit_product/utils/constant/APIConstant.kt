@@ -22,5 +22,6 @@ object APIConstant {
         const val GET_REGISTERED_BY_NAME = "user/register/name"
         const val NOTIFICATION = "user/notification/general"
         const val PERSONAL_NOTIFICATION = "user/notification/personal"
+        const val CANCEL_REGISTER = "user/cancel-register"
     }
 }
