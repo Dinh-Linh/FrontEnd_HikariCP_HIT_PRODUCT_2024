@@ -60,7 +60,13 @@ interface ApiService {
     @GET(APIConstant.EndPoint.NOTIFICATION)
     suspend fun getGeneralNotification(
         @Header("Authorization") token: String
-    ): ApiResponse<NotificationResponse>
+    ):ApiResponse<NotificationResponse>
+
+    @GET(APIConstant.EndPoint.PERSONAL_NOTIFICATION)
+    suspend fun getPersonalNotification(
+        @Query("memberId") memberId: String,
+        @Header("Authorization") token: String
+    ):ApiResponse<PersonalNotifyResponse>
 
     @GET(APIConstant.EndPoint.GET_REGISTERED_BY_NAME)
     suspend fun getRegisteredByName(
