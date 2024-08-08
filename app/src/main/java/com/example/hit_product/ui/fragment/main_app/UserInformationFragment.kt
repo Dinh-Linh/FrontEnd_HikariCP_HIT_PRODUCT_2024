@@ -14,7 +14,7 @@ import com.example.hit_product.utils.extension.getToken
 
 class UserInformationFragment : BaseFragment<FragmentInformationBinding>(FragmentInformationBinding::inflate) {
     override val viewModel: UserInformationViewModel
-        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
+        get() = ViewModelProvider(requireActivity())[UserInformationViewModel::class.java]
 
     private val informationAdapter = UserInformationAdapter()
 

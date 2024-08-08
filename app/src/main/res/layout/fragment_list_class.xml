@@ -6,11 +6,6 @@
     android:orientation="vertical"
     tools:context=".ui.fragment.classroom.ListCourseFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This is list class fragment"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclListClass"
         android:layout_width="match_parent"

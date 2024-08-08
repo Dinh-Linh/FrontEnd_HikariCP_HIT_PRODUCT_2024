@@ -4,6 +4,7 @@ import com.example.hit_product.base.ApiResponse
 import com.example.hit_product.data.data_class.*
 import com.example.hit_product.utils.constant.APIConstant
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
@@ -50,9 +51,8 @@ interface ApiService {
     @POST(APIConstant.EndPoint.REGISTER_COURSE)
     suspend fun registerCourse(
         @Header("Authorization") token: String,
-        @Query("subscriberId") subscriberId: String,
-        @Query("courseId") courseId: String
-    ) : ApiResponse<RegisterCourseResponse>
+        @Body request: RegisterCourseRequest
+    ): ApiResponse<RegisterCourseResponse>
 
     @POST(APIConstant.EndPoint.LOGOUT)
     suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
@@ -68,4 +68,16 @@ interface ApiService {
         @Header("Authorization") token: String
     ):ApiResponse<PersonalNotifyResponse>
 
+    @GET(APIConstant.EndPoint.GET_REGISTERED_BY_NAME)
+    suspend fun getRegisteredByName(
+        @Header("Authorization") token: String,
+        @Query("name") username: String
+    ): ApiResponse<ResponseRegistered>
+
+    @DELETE(APIConstant.EndPoint.CANCEL_REGISTER)
+    suspend fun cancelRegistered(
+        @Header("Authorization") token: String,
+        @Query("registerId") registerId: String,
+        @Query("memberId") memberId: String
+    ): ApiResponse<CancelRegisteredResponse>
 }

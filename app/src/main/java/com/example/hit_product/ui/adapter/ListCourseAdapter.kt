@@ -1,5 +1,6 @@
 package com.example.hit_product.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hit_product.base.BaseAdapter
@@ -10,6 +11,7 @@ import com.example.hit_product.databinding.CourseItemBinding
 class ListCourseAdapter :
     BaseAdapter<CourseRegistration, CourseItemBinding>(CourseItemBinding::inflate) {
     var onClick: ((CourseRegistration) -> Unit)? = null
+    private var items = mutableListOf<CourseRegistration>()
     override fun bindData(binding: CourseItemBinding, item: CourseRegistration, position: Int) {
         binding.leader.text = item.leader
         binding.className.text = item.name
