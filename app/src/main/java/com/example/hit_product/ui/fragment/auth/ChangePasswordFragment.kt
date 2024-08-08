@@ -22,7 +22,7 @@ import com.example.hit_product.ui.view_model.UserInformationViewModel
 import com.example.hit_product.utils.extension.getToken
 
 
-class ChangePasswordFragment : DialogFragment() {
+class ChangePasswordFragment : DialogFragment(){
 
     private lateinit var binding: FragmentChangePasswordBinding
     private lateinit var memberId: String
@@ -93,13 +93,20 @@ class ChangePasswordFragment : DialogFragment() {
             val newPassword = binding.edtNewPassword.text.toString()
             val confirmNewPassword = binding.edtConfirmNewPassword.text.toString()
             val changePasswordRequest = ChangePasswordRequest(memberId, oldPassword, newPassword)
-
             if (newPassword == confirmNewPassword) {
                 viewModel.changePassword(
                     changePasswordRequest,
                     onChangePWSuccess = { apiResponse ->
+                        val token = requireActivity().getToken()
+                        if(token != null){
+                            Log.d("ChangePasswordFragment", "Token is not null: $token")
+                        }else{
+                            Log.d("ChangePasswordFragment", "Token is null")
+                        }
+
                         val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                         pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
+
                         customViewToast.makeText(requireContext(), "Đổi mật khẩu thành công!", Toast.LENGTH_LONG.toLong(), R.drawable.success_icon_toast).show()
                     }
                 )

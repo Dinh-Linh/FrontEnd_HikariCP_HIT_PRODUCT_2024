@@ -32,7 +32,6 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate
             }
         }
     }
-
     override fun setOnClick() {
         binding.btnConfirmOTP.setOnClickListener {
             val otp = binding.edtOTP.text.toString()
@@ -59,7 +58,6 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate
             }
 
         }
-
         binding.btnBackToLogin.setOnClickListener {
             findNavController().navigate(R.id.action_OTPFragment_to_emailFragment)
         }
