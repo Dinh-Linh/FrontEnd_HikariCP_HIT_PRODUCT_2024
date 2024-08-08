@@ -1,10 +1,5 @@
 package com.example.hit_product.ui.fragment.auth
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,6 +33,11 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         binding.btnBackToSetting.setOnClickListener {
             findNavController().navigate(R.id.action_accountFragment_to_settingFragment)
         }
+        binding.btnChangePassword.setOnClickListener {
+            val dialog = ChangePasswordFragment()
+            dialog.show(parentFragmentManager, "ChangePasswordDialog")
+        }
+
     }
 
 }
