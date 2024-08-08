@@ -8,6 +8,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ApiService {
@@ -80,4 +81,9 @@ interface ApiService {
         @Query("registerId") registerId: String,
         @Query("memberId") memberId: String
     ): ApiResponse<CancelRegisteredResponse>
+
+    @PUT(APIConstant.EndPoint.CHANGE_PASSWORD)
+    suspend fun changeUserPassword(
+        @Body changePasswordRequest: ChangePasswordRequest
+    ):ApiResponse<ChangePasswordResponse>
 }
