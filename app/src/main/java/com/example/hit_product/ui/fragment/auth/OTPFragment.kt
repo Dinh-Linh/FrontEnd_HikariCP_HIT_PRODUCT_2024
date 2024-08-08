@@ -48,13 +48,13 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate
                         pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
                         findNavController().navigate(R.id.action_OTPFragment_to_loginFragment)
                         context?.let {
-                            Toast.makeText(it, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(it, "Đổi mật khẩu thành công, yêu cầu đăng nhập lại!", Toast.LENGTH_SHORT).show()
                         }
                     }
                 )
             }else{
                 context?.let {
-                    Toast.makeText(it, "Mật khẩu xác nhận không khớp", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(it, "Mật khẩu nhập lại không khớp!", Toast.LENGTH_SHORT).show()
                 }
             }
 

@@ -4,25 +4,26 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.hit_product.base.BaseViewModel
-import com.example.hit_product.data.data_class.Notification
-import com.example.hit_product.data.repository.NotificationRepository
+import com.example.hit_product.data.data_class.GeneralNotification
+import com.example.hit_product.data.repository.GeneralNotificationRepository
 import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.RetrofitClient
 
 class NotificationViewModel : BaseViewModel(){
-    private val listGeneralNotiRepo = NotificationRepository(
+    private val listGeneralNotiRepo = GeneralNotificationRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
 
-    private val _listNotification = MutableLiveData<List<Notification>>()
-    val listGeneralNotification: LiveData<List<Notification>> get() = _listNotification
+    private val _listGeneralNotification = MutableLiveData<List<GeneralNotification>>()
+    val listGeneralGeneralNotification: LiveData<List<GeneralNotification>> get() = _listGeneralNotification
+
     fun getGeneralNotification(token: String){
         executeTask(
             request = {
                 listGeneralNotiRepo.getGeneralNotification(token)
             },
             onSuccess = {
-                _listNotification.value = it
+                _listGeneralNotification.value = it
                 Log.d("General Notification", it.toString())
             },
             onError = {

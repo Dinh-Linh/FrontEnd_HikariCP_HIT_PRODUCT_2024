@@ -38,12 +38,12 @@ interface ApiService {
     @POST(APIConstant.EndPoint.FORGOT_PASSWORD)
     suspend fun sendOTP(
         @Body emailRequest: EmailRequest
-    ): ApiResponse<EmailResponse>
+    ):ApiResponse<EmailResponse>
 
     @POST(APIConstant.EndPoint.CONFIRM_OTP)
     suspend fun verifyOTP(
         @Body otpRequest: OTPRequest
-    ): ApiResponse<OTPResponse>
+    ):ApiResponse<OTPResponse>
 
     @GET(APIConstant.EndPoint.LIST_COURSE)
     suspend fun getAllCourse(@Header("Authorization") token: String): ApiResponse<CourseResponse>
@@ -55,12 +55,18 @@ interface ApiService {
     ): ApiResponse<RegisterCourseResponse>
 
     @POST(APIConstant.EndPoint.LOGOUT)
-    suspend fun logout(@Header("Authorization") token: String): ApiResponse<LogoutResponse>
+    suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
 
     @GET(APIConstant.EndPoint.NOTIFICATION)
     suspend fun getGeneralNotification(
         @Header("Authorization") token: String
-    ): ApiResponse<NotificationResponse>
+    ):ApiResponse<NotificationResponse>
+
+    @GET(APIConstant.EndPoint.PERSONAL_NOTIFICATION)
+    suspend fun getPersonalNotification(
+        @Query("memberId") memberId: String,
+        @Header("Authorization") token: String
+    ):ApiResponse<PersonalNotifyResponse>
 
     @GET(APIConstant.EndPoint.GET_REGISTERED_BY_NAME)
     suspend fun getRegisteredByName(
