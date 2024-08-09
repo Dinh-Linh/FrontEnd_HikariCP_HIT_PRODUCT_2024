@@ -14,6 +14,7 @@ class PersonalNotificationAdapter: BaseAdapter<GeneralNotification, ClassPersona
         item: GeneralNotification,
         position: Int
     ) {
+        binding.time.text = item.sendDate
         binding.name.text = item.name
         binding.detail.text = item.detail
     }

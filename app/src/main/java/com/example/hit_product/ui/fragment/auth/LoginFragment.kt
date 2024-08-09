@@ -65,14 +65,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     viewModel.login(
                         loginRequest,
                         onLoginSuccess = { apiResponse ->
-                            val pref =
-                                requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+                            val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                             val editor = pref.edit()
                             editor.putString("token", "Bearer ${apiResponse.data?.accessToken}")
-                            if (pref.getBoolean("save_password", false)) {
-                                editor.putString("saved_username", username)
-                                editor.putString("saved_password", password)
-                            }
+                            editor.putString("saved_username", username)
+                            editor.putString("saved_password", password)
                             editor.commit()
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                             dialog.dismiss()
@@ -81,12 +78,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 }, 1500)
 
             } else {
-                toast.makeText(
-                    requireContext(),
-                    "Vui lòng nhập tên đăng nhập và mật khẩu",
-                    CustomViewToast.SHORT,
-                    R.drawable.warning_icon_toast
-                ).show()
+                toast.makeText(requireContext(), "Vui lòng nhập tên đăng nhập và mật khẩu", CustomViewToast.SHORT, R.drawable.warning_icon_toast).show()
             }
 
         }
