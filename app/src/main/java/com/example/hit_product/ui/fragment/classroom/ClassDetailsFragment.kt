@@ -1,6 +1,8 @@
 package com.example.hit_product.ui.fragment.classroom
 
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -56,7 +58,7 @@ class ClassDetailsFragment :
             binding.className.text = name
             binding.leaderName.text = leader
             binding.introClass.text = detail
-            Glide.with(requireContext()).load(picture).into(binding.avtLeader)
+            Glide.with(requireContext()).load("$picture").into(binding.avtLeader)
         }
     }
 
@@ -146,6 +148,7 @@ class ClassDetailsFragment :
                                 binding.btnClassRegistration.text =
                                     context?.getString(R.string.pending)
                                 isRegistered = true
+                                navigateToNextScreenWithDelay()
                             }
                         })
                 }
@@ -189,5 +192,9 @@ class ClassDetailsFragment :
         }
     }
 
-
+    private fun navigateToNextScreenWithDelay() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            findNavController().navigate(R.id.action_classInformationFragment_to_classRegistrationFragment)
+        }, CustomViewToast.LONG)
+    }
 }

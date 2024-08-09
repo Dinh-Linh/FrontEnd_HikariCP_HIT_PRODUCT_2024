@@ -44,6 +44,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.rclToday.adapter = classAdapter
         binding.rclToday.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        Glide.with(requireContext()).load("https://gcs.tripi.vn/public-tripi/tripi-feed/img/474054xqs/anh-anime-con-gai-de-thuong_041404164.jpg").into(binding.avatar)
     }
 
     @SuppressLint("SetTextI18n")
@@ -64,7 +65,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
             inf?.let {
                 binding.memberName.text = "Hi ${it.fullName}"
-                //Glide.with(requireContext()).load(it.avatar).into(binding.avatar)
+                Glide.with(requireContext()).load("${it.avatar}").into(binding.avatar)
             }
         })
     }
