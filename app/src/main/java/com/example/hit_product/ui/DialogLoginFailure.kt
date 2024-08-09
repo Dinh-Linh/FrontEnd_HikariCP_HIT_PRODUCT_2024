@@ -34,6 +34,7 @@ class DialogLoginFailure(context: Context) : Dialog(context) {
             findViewById<TextView>(R.id.bugLogin).text = "Vui lòng kiểm tra lại thông tin đăng nhập"
             Log.d("Wifi: ", "Is available")
         }
+
     }
 
     @SuppressLint("MissingPermission")

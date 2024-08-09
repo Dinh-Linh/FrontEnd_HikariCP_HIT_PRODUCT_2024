@@ -111,14 +111,14 @@ class ClassDetailsFragment :
                     customViewToast.makeText(
                         requireContext(),
                         "Bạn đã đăng ký khoá học này",
-                        Toast.LENGTH_LONG.toLong(),
+                        CustomViewToast.LONG,
                         R.drawable.success_icon_toast
                     ).show()
                 } else {
                     customViewToast.makeText(
                         requireContext(),
                         "Bạn đã đăng ký khoá học này. Đang chờ xử lý",
-                        Toast.LENGTH_LONG.toLong(),
+                        CustomViewToast.LONG,
                         R.drawable.warning_icon_toast
                     ).show()
                 }
@@ -127,7 +127,7 @@ class ClassDetailsFragment :
                 customViewToast.makeText(
                     requireContext(),
                     "Đăng ký thất bại. Mỗi thành viên chỉ được đăng ký tối đa 2 lớp học",
-                    Toast.LENGTH_LONG.toLong(),
+                    CustomViewToast.LONG,
                     R.drawable.failure_icon_toast
                 ).show()
             } else {
@@ -140,7 +140,7 @@ class ClassDetailsFragment :
                                 customViewToast.makeText(
                                     requireContext(),
                                     "Đăng ký thành công. Đang chờ xử lý",
-                                    Toast.LENGTH_LONG.toLong(),
+                                    CustomViewToast.LONG,
                                     R.drawable.success_icon_toast
                                 ).show()
                                 binding.btnClassRegistration.text =

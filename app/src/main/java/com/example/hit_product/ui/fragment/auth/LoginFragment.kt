@@ -15,6 +15,7 @@ import com.example.hit_product.databinding.FragmentLoginBinding
 import com.example.hit_product.ui.CustomViewToast
 import com.example.hit_product.ui.DialogLoginFailure
 import com.example.hit_product.ui.view_model.LoginViewModel
+import com.example.hit_product.utils.extension.showLoading
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
     override val viewModel: LoginViewModel
@@ -32,9 +33,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     override fun observeData() {
-        viewModel.error.observe(viewLifecycleOwner){
-            if (it != null){
+        viewModel.error.observe(viewLifecycleOwner) {
+            if (it != null) {
                 loginDialogFailure.show()
+                dialog.dismiss()
             }
         }
     }
@@ -45,8 +47,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         if (pref.getBoolean("save_password", false)) {
             val savedUsername = pref.getString("saved_username", "")
             val savedPassword = pref.getString("saved_password", "")
-            Log.d("LoginFragment", "Saved username: $savedUsername")
-            Log.d("LoginFragment", "Saved password: $savedPassword")
             if (!savedUsername.isNullOrEmpty() && !savedPassword.isNullOrEmpty()) {
                 binding.edtUsername.setText(savedUsername)
                 binding.edtPassword.setText(savedPassword)
@@ -59,24 +59,36 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             val username = binding.edtUsername.text.toString()
             val password = binding.edtPassword.text.toString()
             val loginRequest = LoginRequest(username, password)
-            viewModel.login(
-                loginRequest,
-                onLoginSuccess = { apiResponse ->
-                    val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
-                    val editor = pref.edit()
-                    editor.putString("token", "Bearer ${apiResponse.data?.accessToken}")
-                    if (pref.getBoolean("save_password", false)) {
-                        editor.putString("saved_username", username)
-                        editor.putString("saved_password", password)
-                    }
-                    editor.commit()
-                    Log.d("LoginFragment", "Saving username: $username")
-                    Log.d("LoginFragment", "Saving password: $password")
-                    Log.d("LoginFragment", "Save password switch is checked: ${pref.getBoolean("save_password", false)}")
+            if (username.isNotEmpty() && password.isNotEmpty()) {
+                dialog.showLoading()
+                binding.btnLogin.postDelayed({
+                    viewModel.login(
+                        loginRequest,
+                        onLoginSuccess = { apiResponse ->
+                            val pref =
+                                requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+                            val editor = pref.edit()
+                            editor.putString("token", "Bearer ${apiResponse.data?.accessToken}")
+                            if (pref.getBoolean("save_password", false)) {
+                                editor.putString("saved_username", username)
+                                editor.putString("saved_password", password)
+                            }
+                            editor.commit()
+                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                            dialog.dismiss()
+                        },
+                    )
+                }, 1500)
 
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-                },
-            )
+            } else {
+                toast.makeText(
+                    requireContext(),
+                    "Vui lòng nhập tên đăng nhập và mật khẩu",
+                    CustomViewToast.SHORT,
+                    R.drawable.warning_icon_toast
+                ).show()
+            }
+
         }
 
         binding.forgotPassword.setOnClickListener {

@@ -23,6 +23,6 @@
     <item
         android:id="@+id/navProfile"
         android:title="Tài khoản"
-        android:icon="@drawable/inf_white"
+        android:icon="@drawable/icon_person"
         android:color = "@color/orange"/>
 </menu>

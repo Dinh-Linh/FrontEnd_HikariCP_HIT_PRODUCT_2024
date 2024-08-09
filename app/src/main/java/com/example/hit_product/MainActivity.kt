@@ -1,5 +1,6 @@
 package com.example.hit_product
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.Navigation.findNavController
@@ -11,7 +12,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.mainNavContainer) as NavHostFragment
         val navController = navHostFragment.navController
