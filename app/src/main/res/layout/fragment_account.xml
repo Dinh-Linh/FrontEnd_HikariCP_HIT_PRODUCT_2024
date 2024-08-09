@@ -49,22 +49,21 @@
             android:textSize="18sp"
             android:textColor="@color/black"/>
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/account_input_bg" >
+
             <TextView
+                android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/account_input_bg"
+                android:textSize="16sp"
                 android:text="This is Account"
-                android:gravity="center"/>
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/edit_2"
-                android:layout_gravity="right|center"
-                android:layout_margin="15dp"/>
-        </FrameLayout>
+                android:gravity="center|left"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -84,14 +83,19 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/account_input_bg">
+
             <TextView
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/account_input_bg"
-                android:gravity="center"
-                android:text="This is password"/>
+                android:gravity="center|left"
+                android:layout_marginLeft="20dp"
+                android:text="************" />
+
             <ImageButton
+                android:id="@+id/btnChangePassword"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/edit_2"

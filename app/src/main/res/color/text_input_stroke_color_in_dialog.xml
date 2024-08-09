@@ -5,5 +5,5 @@
 
     <!-- Trong suốt khi không được focus -->
     <item android:color="@color/white" android:state_focused="false" />
-    <item android:color="@color/orange" />
+    <item android:color="@color/grey_background_color"/>
 </selector>

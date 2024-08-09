@@ -62,7 +62,6 @@
                 android:paddingEnd="10dp"
                 android:text="Tài khoản"
                 android:textColor="@color/black">
-
             </androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
 

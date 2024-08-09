@@ -12,4 +12,5 @@
     <string name="registered">ĐÃ ĐĂNG KÝ</string>
     <string name="pending">ĐANG CHỜ XỬ LÝ</string>
     <string name="toast_regis_failure">Đăng ký thất bại. Bạn chỉ được đăng ký tối đa 2 lớp học</string>
+    <string name="Current_password">Mật khẩu hiện tại</string>
 </resources>

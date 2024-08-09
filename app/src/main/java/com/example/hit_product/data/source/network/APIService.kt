@@ -8,6 +8,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ApiService {
@@ -38,12 +39,12 @@ interface ApiService {
     @POST(APIConstant.EndPoint.FORGOT_PASSWORD)
     suspend fun sendOTP(
         @Body emailRequest: EmailRequest
-    ):ApiResponse<EmailResponse>
+    ): ApiResponse<EmailResponse>
 
     @POST(APIConstant.EndPoint.CONFIRM_OTP)
     suspend fun verifyOTP(
         @Body otpRequest: OTPRequest
-    ):ApiResponse<OTPResponse>
+    ): ApiResponse<OTPResponse>
 
     @GET(APIConstant.EndPoint.LIST_COURSE)
     suspend fun getAllCourse(@Header("Authorization") token: String): ApiResponse<CourseResponse>
@@ -55,12 +56,12 @@ interface ApiService {
     ): ApiResponse<RegisterCourseResponse>
 
     @POST(APIConstant.EndPoint.LOGOUT)
-    suspend fun logout(@Header("Authorization") token: String) : ApiResponse<LogoutResponse>
+    suspend fun logout(@Header("Authorization") token: String): ApiResponse<LogoutResponse>
 
     @GET(APIConstant.EndPoint.NOTIFICATION)
     suspend fun getGeneralNotification(
         @Header("Authorization") token: String
-    ):ApiResponse<NotificationResponse>
+    ): ApiResponse<NotificationResponse>
 
     @GET(APIConstant.EndPoint.PERSONAL_NOTIFICATION)
     suspend fun getPersonalNotification(
@@ -80,4 +81,9 @@ interface ApiService {
         @Query("registerId") registerId: String,
         @Query("memberId") memberId: String
     ): ApiResponse<CancelRegisteredResponse>
+
+    @PUT(APIConstant.EndPoint.CHANGE_PASSWORD)
+    suspend fun changeUserPassword(
+        @Body changePasswordRequest: ChangePasswordRequest
+    ):ApiResponse<ChangePasswordResponse>
 }

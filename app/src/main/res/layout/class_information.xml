@@ -16,7 +16,13 @@
             android:layout_gravity="center"
             android:layout_marginRight="60dp"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_image_information"
+            app:cardCornerRadius="80dp"
+            app:cardBackgroundColor="@color/orange">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="80dp">
 
             <ImageView
@@ -26,8 +32,9 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_alt_light" />
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
+        </androidx.cardview.widget.CardView>
         <FrameLayout
 
             android:layout_width="match_parent"
@@ -40,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
@@ -66,10 +73,10 @@
 
             <ImageView
                 android:id="@+id/qr"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="15dp"
                 android:layout_gravity="right|center"
-                android:layout_margin="30dp"
                 android:src="@drawable/user_box" />
 
         </FrameLayout>
