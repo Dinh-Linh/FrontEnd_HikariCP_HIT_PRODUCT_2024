@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.viewpager.widget.ViewPager
 import com.example.hit_product.base.BaseActivity
 import com.example.hit_product.databinding.ActivityMainBinding
 
