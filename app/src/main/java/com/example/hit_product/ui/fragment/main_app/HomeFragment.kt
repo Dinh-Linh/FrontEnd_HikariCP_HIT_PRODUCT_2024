@@ -22,8 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override val viewModel: HomeViewModel
         get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
-    private val viewModel2: UserInformationViewModel
-        get() = ViewModelProvider(requireActivity())[UserInformationViewModel::class.java]
+    private val viewModel2 : UserInformationViewModel
+        get() = ViewModelProvider(this)[UserInformationViewModel::class.java]
 
 
     private val classAdapter = ClassTodayAdapter()
