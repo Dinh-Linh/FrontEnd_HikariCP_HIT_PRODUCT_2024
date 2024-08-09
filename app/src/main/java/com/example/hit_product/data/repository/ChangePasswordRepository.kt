@@ -9,9 +9,9 @@ import com.example.hit_product.data.data_class.ChangePasswordResponse
 import com.example.hit_product.data.source.network.ApiService
 
 class ChangePasswordRepository (private val apiService: ApiService) : BaseRepository(){
-    suspend fun changePasswordConfirm(changePasswordRequest: ChangePasswordRequest) : DataState<ApiResponse<ChangePasswordResponse>>{
+    suspend fun changePasswordConfirm(token:String, changePasswordRequest: ChangePasswordRequest) : DataState<ApiResponse<ChangePasswordResponse>>{
         return getResult {
-            apiService.changeUserPassword(changePasswordRequest)
+            apiService.changeUserPassword(token, changePasswordRequest)
         }
     }
 }

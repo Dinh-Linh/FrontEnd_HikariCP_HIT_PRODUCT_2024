@@ -94,17 +94,11 @@ class ChangePasswordFragment : DialogFragment(){
             val newPassword = binding.edtNewPassword.text.toString()
             val confirmNewPassword = binding.edtConfirmNewPassword.text.toString()
             val changePasswordRequest = ChangePasswordRequest(memberId, oldPassword, newPassword)
+            val token = requireActivity().getToken()
             if (newPassword == confirmNewPassword) {
-                viewModel.changePassword(
+                viewModel.changePassword(token!!,
                     changePasswordRequest,
                     onChangePWSuccess = { apiResponse ->
-                        val token = requireActivity().getToken()
-                        if(token != null){
-                            Log.d("ChangePasswordFragment", "Token is not null: $token")
-                        }else{
-                            Log.d("ChangePasswordFragment", "Token is null")
-                        }
-
                         val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                         pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
 
