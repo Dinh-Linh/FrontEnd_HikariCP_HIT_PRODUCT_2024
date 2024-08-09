@@ -1,6 +1,8 @@
 package com.example.hit_product.ui.fragment.auth
 
 import android.content.Context.MODE_PRIVATE
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -45,7 +47,9 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate
                     onOTPSuccess = { apiResponse ->
                         val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                         pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
-                        findNavController().navigate(R.id.action_OTPFragment_to_loginFragment)
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            findNavController().navigate(R.id.action_OTPFragment_to_loginFragment)
+                        }, 2000)
                         context?.let {
                             Toast.makeText(it, "Đổi mật khẩu thành công, yêu cầu đăng nhập lại!", Toast.LENGTH_SHORT).show()
                         }
