@@ -4,20 +4,24 @@
     <item
         android:id="@+id/navHome"
         android:title="Trang chủ"
-        android:icon="@drawable/home_orange" />
+        android:icon="@drawable/home_orange"
+        android:color = "@color/orange" />
 
     <item
         android:id="@+id/navInf"
         android:title="Giới thiệu"
-        android:icon="@drawable/inf_orange"/>
+        android:icon="@drawable/inf_orange"
+        android:color = "@color/orange"/>
 
     <item
         android:id="@+id/navSetting"
         android:title="Cài đặt"
-        android:icon="@drawable/setting_orange"/>
+        android:icon="@drawable/setting_orange"
+        android:color = "@color/orange"/>
 
     <item
         android:id="@+id/navProfile"
         android:title="Tài khoản"
-        android:icon="@drawable/profile_orange"/>
+        android:icon="@drawable/profile_orange"
+        android:color = "@color/orange"/>
 </menu>
