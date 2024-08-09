@@ -11,6 +11,7 @@ class GeneralNotificationAdapter :
     BaseAdapter<GeneralNotification, ClassNotificationBinding>(ClassNotificationBinding::inflate){
         var onclick: ((GeneralNotification)->Unit)? = null
     override fun bindData(binding: ClassNotificationBinding, item: GeneralNotification, position: Int) {
+        binding.sendTime.text = item.sendDate
         binding.nameClass.text = item.name
         binding.address.text = item.detail
     }

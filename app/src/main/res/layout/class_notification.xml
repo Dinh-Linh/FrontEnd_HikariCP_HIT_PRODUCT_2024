@@ -15,6 +15,15 @@
         android:orientation="vertical"
         android:background="@drawable/notification_bg"
         android:padding="5dp">
+        <TextView
+            android:id="@+id/sendTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="SendTime"
+            android:textColor="@color/orange"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/nameClass"
