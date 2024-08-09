@@ -18,4 +18,5 @@
     <color name="colorThumbOff">#858585</color>
     <color name="information_bg_color">#F4925D</color>
     <color name="grey_background_color">#F7F8FD</color>
+    <color name="switch_track_on_">#FBE4D7</color>
 </resources>
