@@ -15,10 +15,10 @@ class ChangePasswordViewModel : BaseViewModel(){
     )
     val error = MutableLiveData<String>(null)
 
-    fun changePassword(changePasswordRequest: ChangePasswordRequest, onChangePWSuccess: (ApiResponse<ChangePasswordResponse>) -> Unit){
+    fun changePassword(token:String, changePasswordRequest: ChangePasswordRequest, onChangePWSuccess: (ApiResponse<ChangePasswordResponse>) -> Unit){
         executeTask(
             request = {
-                changePassRepo.changePasswordConfirm(changePasswordRequest)
+                changePassRepo.changePasswordConfirm(token, changePasswordRequest)
             },
             onSuccess = {response ->
                 onChangePWSuccess(response)

@@ -84,6 +84,7 @@ interface ApiService {
 
     @PUT(APIConstant.EndPoint.CHANGE_PASSWORD)
     suspend fun changeUserPassword(
+        @Header("Authorization") token: String,
         @Body changePasswordRequest: ChangePasswordRequest
     ):ApiResponse<ChangePasswordResponse>
 }
