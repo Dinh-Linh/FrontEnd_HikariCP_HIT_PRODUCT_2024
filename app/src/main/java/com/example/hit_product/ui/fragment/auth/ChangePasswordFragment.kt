@@ -68,6 +68,7 @@ class ChangePasswordFragment : DialogFragment(){
 
     private fun initData() {
         requireActivity().getToken()?.let { viewModel2.getUserInformation(it) }
+
     }
 
 
