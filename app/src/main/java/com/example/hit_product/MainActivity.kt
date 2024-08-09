@@ -82,6 +82,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         }
         return super.onSupportNavigateUp()
     }
-
-
 }
