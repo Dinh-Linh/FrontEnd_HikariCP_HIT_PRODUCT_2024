@@ -38,6 +38,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -91,6 +92,8 @@ dependencies {
     implementation (libs.androidx.cardview)
 
     implementation("androidx.fragment:fragment-ktx:1.6.2")
+
+    implementation  (libs.bubbletabbar)
 
 }
 
