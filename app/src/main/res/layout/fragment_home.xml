@@ -82,9 +82,12 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="108dp"
+            android:layout_height="150dp"
             android:layout_marginEnd="12dp"
             android:layout_weight="1"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardUseCompatPadding="true"
             app:cardCornerRadius="20dp">
 
             <LinearLayout
@@ -116,8 +119,11 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="108dp"
+            android:layout_height="150dp"
             android:layout_weight="1"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/gray"
+            app:cardUseCompatPadding="true"
             app:cardCornerRadius="20dp">
 
             <LinearLayout

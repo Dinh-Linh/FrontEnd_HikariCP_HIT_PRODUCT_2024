@@ -40,13 +40,28 @@ class TimetableFragment :
         weekDates = getCurrentWeekDate()
         val currentDate = weekDates[0]
         val formatedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(currentDate)
-        requireActivity().getToken()?.let { viewModel.getClassByDay(formatedDate,"Class", it) }
+        requireActivity().getToken()?.let { viewModel.getClassByDay(formatedDate, "Class", it) }
+
     }
 
     override fun bindData() {
         updateWeekView()
         binding.classList.adapter = adapter
-        binding.classList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.classList.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        val today = Calendar.getInstance().time
+        val todayIndex = weekDates.indexOfFirst {
+            SimpleDateFormat(
+                "yyyy-MM-dd",
+                Locale.getDefault()
+            ).format(it) == SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(today)
+        }
+        if (todayIndex != -1){
+            highlightDay(todayIndex)
+            val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(today)
+            requireActivity().getToken()?.let { viewModel.getClassByDay(formattedDate, "Class", it) }
+        }
     }
 
     override fun observeData() {
@@ -54,9 +69,13 @@ class TimetableFragment :
             if (classList == null) {
                 adapter.setDataList(mutableListOf())
                 Log.d("Class list", " is empty")
+                binding.imgNoEvent.visibility = View.VISIBLE
+                binding.classList.visibility = View.GONE
             } else {
                 adapter.setDataList(listOf(classList).toMutableList())
                 Log.d("Class list", " is available")
+                binding.imgNoEvent.visibility = View.GONE
+                binding.classList.visibility = View.VISIBLE
             }
         })
     }
@@ -77,12 +96,12 @@ class TimetableFragment :
 
         val days = listOf(
             Quadruple(binding.monView, binding.mon, binding.dayMon, binding.lineMon),
-            Quadruple(binding.tueView,binding.tue, binding.dayTue, binding.lineTue),
-            Quadruple(binding.wedView,binding.wed, binding.dayWed, binding.lineWed),
-            Quadruple(binding.thuView,binding.thu, binding.dayThu, binding.lineThu),
-            Quadruple(binding.friView,binding.fri, binding.dayFri, binding.lineFri),
-            Quadruple(binding.satView,binding.sat, binding.daySat, binding.lineSat),
-            Quadruple(binding.sunView,binding.sun, binding.daySun, binding.lineSun)
+            Quadruple(binding.tueView, binding.tue, binding.dayTue, binding.lineTue),
+            Quadruple(binding.wedView, binding.wed, binding.dayWed, binding.lineWed),
+            Quadruple(binding.thuView, binding.thu, binding.dayThu, binding.lineThu),
+            Quadruple(binding.friView, binding.fri, binding.dayFri, binding.lineFri),
+            Quadruple(binding.satView, binding.sat, binding.daySat, binding.lineSat),
+            Quadruple(binding.sunView, binding.sun, binding.daySun, binding.lineSun)
         )
 
         for (i in days.indices) {
@@ -91,21 +110,23 @@ class TimetableFragment :
                 previouslyClickedDay?.setTextColor(Color.BLACK)
                 previouslyClickedDate?.setTextColor(Color.BLACK)
                 previouslyClickedLine?.setBackgroundColor(Color.TRANSPARENT)
-                dayName.setTextColor(Color.rgb(240,108,37))
-                dayDate.setTextColor(Color.rgb(240,108,37))
-                dayLine.setBackgroundColor(Color.rgb(240,108,37))
+                dayName.setTextColor(Color.rgb(240, 108, 37))
+                dayDate.setTextColor(Color.rgb(240, 108, 37))
+                dayLine.setBackgroundColor(Color.rgb(240, 108, 37))
 
                 previouslyClickedDay = dayName
                 previouslyClickedDate = dayDate
                 previouslyClickedLine = dayLine
 
                 val selectedDate = weekDates[i]
-                val formatedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate)
-                requireActivity().getToken()?.let { viewModel.getClassByDay(formatedDate, "Class", it) }
+                val formatedDate =
+                    SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate)
+                requireActivity().getToken()
+                    ?.let { viewModel.getClassByDay(formatedDate, "Class", it) }
             }
         }
 
-        binding.btnPreView.setOnClickListener{
+        binding.btnPreView.setOnClickListener {
             findNavController().navigate(R.id.action_timetableFragment_to_homeFragment)
         }
     }
@@ -155,6 +176,33 @@ class TimetableFragment :
             val formatDate = getFormattedDate(date)
             dayDate.text = formatDate
         }
+    }
+
+    private fun highlightDay(index: Int) {
+        if (binding != null){
+            val days = listOf(
+                Quadruple(binding.monView, binding.mon, binding.dayMon, binding.lineMon),
+                Quadruple(binding.tueView, binding.tue, binding.dayTue, binding.lineTue),
+                Quadruple(binding.wedView, binding.wed, binding.dayWed, binding.lineWed),
+                Quadruple(binding.thuView, binding.thu, binding.dayThu, binding.lineThu),
+                Quadruple(binding.friView, binding.fri, binding.dayFri, binding.lineFri),
+                Quadruple(binding.satView, binding.sat, binding.daySat, binding.lineSat),
+                Quadruple(binding.sunView, binding.sun, binding.daySun, binding.lineSun)
+            )
+
+            val (dayView, dayName, dayDate, dayLine) = days[index]
+            dayName.setTextColor(Color.rgb(240, 108, 37))
+            dayDate.setTextColor(Color.rgb(240, 108, 37))
+            dayLine.setBackgroundColor(Color.rgb(240, 108, 37))
+
+            previouslyClickedDay = dayName
+            previouslyClickedDate = dayDate
+            previouslyClickedLine = dayLine
+        }
+        else{
+            Log.d("Binding", "null")
+        }
+
     }
 }
 

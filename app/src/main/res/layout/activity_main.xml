@@ -35,7 +35,7 @@
         <io.ak1.BubbleTabBar
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:background="#FFF"
             android:padding="7dp"
             app:bubbletab_menuResource="@menu/bottom_navigation"
