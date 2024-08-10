@@ -57,6 +57,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginRight="60dp"
             android:text="Nhập mã OTP được gửi về Email của bạn"
+            android:gravity="center"
             android:fontFamily="@font/poppins_light"/>
 
 
