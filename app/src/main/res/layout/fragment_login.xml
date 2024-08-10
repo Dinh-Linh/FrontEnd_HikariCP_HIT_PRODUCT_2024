@@ -66,7 +66,9 @@
                 android:fontFamily="@font/poppins_light"
                 android:hint="Tên đăng nhập"
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor" />
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:maxLines="1"
+                android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +94,8 @@
                 android:hint="Mật khẩu"
                 android:inputType="textPassword"
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor"/>
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -105,8 +108,7 @@
             android:fontFamily="@font/poppins_light"
             android:text="Quên mật khẩu?"
             android:textColor="@color/orange"
-
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
