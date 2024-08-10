@@ -56,10 +56,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:text="Nhập Email của bạn để khôi phục mật khẩu"
             android:fontFamily="@font/poppins_light"/>
-
 
     </LinearLayout>
 
