@@ -95,11 +95,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
                 android:hint="Mật khẩu"
-                android:textSize="18sp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor" />
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView

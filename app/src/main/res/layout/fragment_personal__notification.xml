@@ -30,11 +30,35 @@
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_medium"/>
     </LinearLayout>
-    <ImageView
-        android:id="@+id/noPersonalNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_no_event"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/noPersonalNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_no_event"
+             src:layout_constraintBottom_toBottomOf="parent"
+            src:layout_constraintEnd_toEndOf="parent"
+            src:layout_constraintStart_toStartOf="parent"
+            src:layout_constraintTop_toTopOf="parent"
+            src:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Không có thông báo"
+            android:textSize="20sp"
+            src:layout_constraintBottom_toBottomOf="@+id/noPersonalNotification"
+            src:layout_constraintEnd_toEndOf="@+id/noPersonalNotification"
+            src:layout_constraintStart_toStartOf="@+id/noPersonalNotification"
+            src:layout_constraintTop_toTopOf="@+id/noPersonalNotification"
+            src:layout_constraintVertical_bias="0.74" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
