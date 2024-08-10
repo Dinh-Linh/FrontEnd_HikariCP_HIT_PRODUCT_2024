@@ -95,5 +95,7 @@ dependencies {
 
     implementation  (libs.bubbletabbar)
 
+    implementation (libs.ssp.android)
+
 }
 

@@ -13,18 +13,19 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
+
         <androidx.cardview.widget.CardView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:cardCornerRadius="25dp"
-            android:layout_marginEnd="18dp">
+            android:layout_marginEnd="18dp"
+            app:cardCornerRadius="25dp">
 
             <ImageView
                 android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/default_avatar"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_avatar" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -38,8 +39,8 @@
                 style="@style/CustomTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Hi Username!" />
+                android:text="Hi Username!"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,14 +62,14 @@
                     android:id="@+id/btnPersonalNotification"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:background="@drawable/btn_login"
                     android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="10dp"
                     android:src="@drawable/notification" />
             </androidx.cardview.widget.CardView>
-            
+
         </FrameLayout>
     </LinearLayout>
 
@@ -92,9 +93,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
-                android:gravity="center"
                 android:clickable="true"
                 android:focusable="true"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -125,9 +126,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/btn_login"
                 android:backgroundTint="@color/white"
-                android:gravity="center"
                 android:clickable="true"
                 android:focusable="true"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -149,18 +150,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hôm nay"
+        android:fontFamily="@font/poppins_bold"
         android:padding="10dp"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_bold"/>
+        android:text="Hôm nay"
+        android:textSize="16sp" />
 
-    <TextView
+    <ImageView
         android:id="@+id/tvNoEvent"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="There are no events for today"
-        android:gravity="center"
-        style="@style/CustomTextViewStyle"/>
+        android:src="@drawable/img_no_event" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclToday"

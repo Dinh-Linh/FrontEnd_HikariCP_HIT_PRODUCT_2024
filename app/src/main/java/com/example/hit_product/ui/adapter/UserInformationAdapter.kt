@@ -10,7 +10,8 @@ import com.example.hit_product.data.data_class.UserInformation
 import com.example.hit_product.databinding.ClassInformationBinding
 
 
-class UserInformationAdapter() : BaseAdapter<UserInformation, ClassInformationBinding>(ClassInformationBinding::inflate){
+class UserInformationAdapter() :
+    BaseAdapter<UserInformation, ClassInformationBinding>(ClassInformationBinding::inflate) {
 
     private val userInformation = mutableListOf<UserInformation>()
 
@@ -25,21 +26,31 @@ class UserInformationAdapter() : BaseAdapter<UserInformation, ClassInformationBi
         binding.fullName.text = item.fullName
         binding.className.text = item.className
 
-        Glide.with(binding.avatar.context)
-            .load(item.avatar ?: R.drawable.fake_infor)
-            .placeholder(R.drawable.fake_infor)
-            .error(R.drawable.fake_infor)
-            .into(binding.avatar)
+        if (item.avatar?.isEmpty() == true) {
+            binding.avatar.setImageResource(R.drawable.default_avatar)
+        } else {
+            Glide.with(binding.avatar.context)
+                .load("${item.avatar}")
+                .into(binding.avatar)
+        }
 
-        Glide.with(binding.qr.context)
-            .load(item.qr ?: R.drawable.qr_zalo)
-            .placeholder(R.drawable.qr_zalo)
-            .error(R.drawable.qr_zalo)
-            .into(binding.qr)
+
+        if (item.qr?.isEmpty() == true){
+            binding.qr.setImageResource(R.drawable.qr_zalo)
+        }
+        else{
+            Glide.with(binding.qr.context)
+                .load("${item.qr}").into(binding.qr)
+        }
+
     }
 
 
-    override fun onItemClick(binding: ClassInformationBinding, item: UserInformation, position: Int) {
+    override fun onItemClick(
+        binding: ClassInformationBinding,
+        item: UserInformation,
+        position: Int
+    ) {
 
     }
 
@@ -51,7 +62,6 @@ class UserInformationAdapter() : BaseAdapter<UserInformation, ClassInformationBi
         val binding = ClassInformationBinding.inflate(inflate, parent, false)
         return BaseViewHolder(binding)
     }
-
 
 
 }

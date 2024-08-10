@@ -64,7 +64,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         viewModel2.userInformation.observe(viewLifecycleOwner, Observer { inf ->
             inf?.let {
                 binding.memberName.text = "Hi ${it.fullName}"
-                //Glide.with(requireContext()).load(it.avatar).into(binding.avatar)
+                if(it.avatar?.isEmpty() == true){
+                    binding.avatar.setImageResource(R.drawable.default_avatar)
+                }
+                else{
+                    Glide.with(requireContext()).load("${it.avatar}").into(binding.avatar)
+                }
             }
         })
     }

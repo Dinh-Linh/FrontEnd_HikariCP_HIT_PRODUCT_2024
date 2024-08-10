@@ -33,6 +33,7 @@ navigationBar = "1.7.9"
 
 #Splash Screen
 splashScreen = "1.0.1"
+sspAndroid = "1.1.1"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -67,6 +68,7 @@ splash-screen = {module = "androidx.core:core-splashscreen", version.ref = "spla
 
 #navigation bar
 navigation-bar = {module =  "com.github.ibrahimsn98:SmoothBottomBar", version.ref = "navigationBar"}
+ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
 
 
 [plugins]
