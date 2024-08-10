@@ -559,10 +559,29 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom ="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Offline hàng tháng, tổ chức team building, các sự kiện năm học của CLB..."
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom ="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="Các thành viên trong CLB không chỉ quen biết nhau qua lớp học mà còn hiểu nhau hơn qua các buổi team building và cùng nhau tổ chức các sự kiện lớn của CLB"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom ="20dp"/>
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:background="@drawable/hoat_dong_ngoai_khoa"/>
 
