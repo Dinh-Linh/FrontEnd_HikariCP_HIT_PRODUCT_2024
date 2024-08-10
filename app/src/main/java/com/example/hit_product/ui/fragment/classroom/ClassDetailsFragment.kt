@@ -148,7 +148,7 @@ class ClassDetailsFragment :
                                 binding.btnClassRegistration.text =
                                     context?.getString(R.string.pending)
                                 isRegistered = true
-                                navigateToNextScreenWithDelay()
+                                findNavController().popBackStack()
                             }
                         })
                 }
@@ -192,9 +192,4 @@ class ClassDetailsFragment :
         }
     }
 
-    private fun navigateToNextScreenWithDelay() {
-        Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_classInformationFragment_to_classRegistrationFragment)
-        }, CustomViewToast.LONG)
-    }
 }
