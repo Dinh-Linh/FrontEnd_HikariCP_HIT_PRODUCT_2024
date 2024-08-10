@@ -55,10 +55,6 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(FragmentSettingBind
                 val savedPassword = pref.getString("saved_password", "")
                 Log.d("SettingFragment", "Switch is checked. Username: $savedUsername, Password: $savedPassword")
                 Log.d("SettingFragment", "Da luu mat khau thanh cong")
-            } else {
-                editor.remove("saved_username").commit()
-                editor.remove("saved_password").commit()
-                Log.d("SettingFragment", "Xoa mat khau thanh cong")
             }
             Log.d("SettingFragment", "Trạng thái lưu mật khẩu : $isChecked")
         }
