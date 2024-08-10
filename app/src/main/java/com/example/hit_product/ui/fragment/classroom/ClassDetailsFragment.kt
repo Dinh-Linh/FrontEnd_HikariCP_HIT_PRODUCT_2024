@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.hit_product.R
@@ -58,10 +59,9 @@ class ClassDetailsFragment :
             binding.className.text = name
             binding.leaderName.text = leader
             binding.introClass.text = detail
-            if (picture?.isEmpty() == true){
+            if (picture?.isEmpty() == true) {
                 binding.avtLeader.setImageResource(R.drawable.default_avatar)
-            }
-            else{
+            } else {
                 Glide.with(requireContext()).load("$picture").into(binding.avtLeader)
             }
 
@@ -194,7 +194,12 @@ class ClassDetailsFragment :
         }
 
         binding.btnPrev.setOnClickListener {
-            findNavController().navigate(R.id.action_classInformationFragment_to_classRegistrationFragment)
+            findNavController().navigate(
+                R.id.action_classInformationFragment_to_classRegistrationFragment,
+                null,
+                NavOptions.Builder().setPopUpTo(R.id.homeFragment, false).build()
+            )
+
         }
     }
 

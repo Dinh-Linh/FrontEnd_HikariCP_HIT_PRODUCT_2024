@@ -3,6 +3,7 @@ package com.example.hit_product.ui.fragment.classroom
 import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
@@ -32,15 +33,18 @@ class ClassRegistrationFragment :
 
     @SuppressLint("CommitTransaction")
     override fun setOnClick() {
+        val currentFragment = childFragmentManager.findFragmentById(R.id.fmClassRegistration)
         binding.tvListClass.setTextColor(Color.rgb(240, 108, 37))
         binding.viewListClass.setBackgroundColor(Color.rgb(240, 108, 37))
         childFragmentManager.beginTransaction().replace(R.id.fmClassRegistration, fmListClass)
             .addToBackStack(null).commit()
 
         binding.listClass.setOnClickListener {
-            childFragmentManager.popBackStack()
-            childFragmentManager.beginTransaction().replace(R.id.fmClassRegistration, fmListClass)
-                .addToBackStack(null).commit()
+            if (currentFragment !is ListCourseFragment) {
+                childFragmentManager.beginTransaction()
+                    .replace(R.id.fmClassRegistration, fmListClass)
+                    .addToBackStack(null).commit()
+            }
 
             binding.tvListClass.setTextColor(Color.rgb(240, 108, 37))
             binding.viewListClass.setBackgroundColor(Color.rgb(240, 108, 37))
@@ -49,9 +53,11 @@ class ClassRegistrationFragment :
         }
 
         binding.classRegistered.setOnClickListener {
-            childFragmentManager.popBackStack()
-            childFragmentManager.beginTransaction()
-                .replace(R.id.fmClassRegistration, fmClassRegistered).addToBackStack(null).commit()
+            if (currentFragment !is ListCourseFragment) {
+                childFragmentManager.beginTransaction()
+                    .replace(R.id.fmClassRegistration, fmClassRegistered).addToBackStack(null)
+                    .commit()
+            }
 
             binding.tvListClass.setTextColor(Color.rgb(87, 92, 107))
             binding.viewListClass.setBackgroundColor(Color.TRANSPARENT)
@@ -60,7 +66,11 @@ class ClassRegistrationFragment :
         }
 
         binding.btnPre.setOnClickListener {
-            findNavController().navigate(R.id.action_classRegistrationFragment_to_homeFragment)
+            findNavController().navigate(
+                R.id.action_classRegistrationFragment_to_homeFragment,
+                null,
+                NavOptions.Builder().setPopUpTo(R.id.classRegistrationFragment, true).build()
+            )
         }
     }
 }
