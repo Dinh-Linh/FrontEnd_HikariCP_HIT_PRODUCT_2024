@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_login"
     android:orientation="vertical"
     tools:context=".ui.fragment.auth.AccountFragment">
@@ -86,13 +87,24 @@
             android:layout_height="wrap_content"
             android:background="@drawable/account_input_bg">
 
-            <TextView
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center|left"
-                android:layout_marginLeft="20dp"
-                android:text="************" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="310dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:passwordToggleEnabled="true"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeColor="@color/transparent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/showPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:enabled="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ImageButton
                 android:id="@+id/btnChangePassword"

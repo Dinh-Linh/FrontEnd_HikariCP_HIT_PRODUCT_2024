@@ -61,10 +61,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
+                android:textColorHint="@color/gray"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/icon_person"
                 android:fontFamily="@font/poppins_light"
                 android:hint="Tên đăng nhập"
+                android:textSize="18sp"
                 android:textColor="@color/orange"
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:maxLines="1"
@@ -79,6 +81,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             app:boxCornerRadiusBottomEnd="10dp"
+            android:textColorHint="@color/gray"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
@@ -93,9 +96,10 @@
                 android:fontFamily="@font/poppins_light"
                 android:hint="Mật khẩu"
                 android:inputType="textPassword"
+                android:maxLines="1"
                 android:textColor="@color/orange"
                 android:textCursorDrawable="@drawable/custom_cursor"
-                android:maxLines="1"/>
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView

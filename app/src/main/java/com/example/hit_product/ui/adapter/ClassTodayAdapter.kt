@@ -18,7 +18,11 @@ class ClassTodayAdapter() : BaseAdapter<Classes, ClassTodayBinding>(ClassTodayBi
         val dateFormat = SimpleDateFormat("HH.mm", Locale.getDefault())
         binding.className.text = item.name
         binding.location.text = item.location
-        //binding.time.text = "${dateFormat.format(item.startTime)} - ${dateFormat.format(item.endTime)}"
+        val specificStartTime = "18:00"
+        val specificEndTime = "20:00" //set cứng
+        binding.time.text = "$specificStartTime - $specificEndTime"
+
+//        binding.time.text = "${dateFormat.format(item.startTime)} - ${dateFormat.format(item.endTime)}"
     }
 
     override fun onItemClick(binding: ClassTodayBinding, item: Classes, position: Int) {

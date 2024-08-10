@@ -17,12 +17,16 @@
         android:layout_marginTop="30dp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rclUserInformation"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:itemCount="1"
-        tools:listitem="@layout/class_information" />
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rclUserInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
+            tools:listitem="@layout/class_information" />
+    </ScrollView>
 
 </LinearLayout>
