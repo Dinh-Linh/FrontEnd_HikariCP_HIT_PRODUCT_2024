@@ -56,8 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="60dp"
+            android:layout_gravity="center"
             android:text="Nhập Email của bạn để khôi phục mật khẩu"
             android:fontFamily="@font/poppins_light"/>
 
@@ -89,7 +88,8 @@
                 android:fontFamily="@font/poppins_light"
                 android:hint="Email..."
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor"/>
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:maxLines="1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
