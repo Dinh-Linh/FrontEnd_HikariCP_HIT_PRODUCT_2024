@@ -43,6 +43,7 @@
             android:src="@drawable/previous" />
 
         <LinearLayout
+            android:id="@+id/monView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -74,6 +75,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/tueView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -105,6 +107,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/wedView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -136,6 +139,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/thuView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -167,6 +171,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/friView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -198,6 +203,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/satView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -229,6 +235,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/sunView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

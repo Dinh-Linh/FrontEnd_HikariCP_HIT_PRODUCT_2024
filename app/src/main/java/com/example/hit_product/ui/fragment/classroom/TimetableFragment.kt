@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
+import com.example.hit_product.data.data_class.Quadruple
 import com.example.hit_product.databinding.FragmentTimetableBinding
 import com.example.hit_product.ui.adapter.ClassTodayAdapter
 import com.example.hit_product.ui.view_model.HomeViewModel
@@ -75,18 +76,18 @@ class TimetableFragment :
         }
 
         val days = listOf(
-            Triple(binding.mon, binding.dayMon, binding.lineMon),
-            Triple(binding.tue, binding.dayTue, binding.lineTue),
-            Triple(binding.wed, binding.dayWed, binding.lineWed),
-            Triple(binding.thu, binding.dayThu, binding.lineThu),
-            Triple(binding.fri, binding.dayFri, binding.lineFri),
-            Triple(binding.sat, binding.daySat, binding.lineSat),
-            Triple(binding.sun, binding.daySun, binding.lineSun)
+            Quadruple(binding.monView, binding.mon, binding.dayMon, binding.lineMon),
+            Quadruple(binding.tueView,binding.tue, binding.dayTue, binding.lineTue),
+            Quadruple(binding.wedView,binding.wed, binding.dayWed, binding.lineWed),
+            Quadruple(binding.thuView,binding.thu, binding.dayThu, binding.lineThu),
+            Quadruple(binding.friView,binding.fri, binding.dayFri, binding.lineFri),
+            Quadruple(binding.satView,binding.sat, binding.daySat, binding.lineSat),
+            Quadruple(binding.sunView,binding.sun, binding.daySun, binding.lineSun)
         )
 
         for (i in days.indices) {
-            val (dayName, dayDate, dayLine) = days[i]
-            dayName.setOnClickListener {
+            val (dayView, dayName, dayDate, dayLine) = days[i]
+            dayView.setOnClickListener {
                 previouslyClickedDay?.setTextColor(Color.BLACK)
                 previouslyClickedDate?.setTextColor(Color.BLACK)
                 previouslyClickedLine?.setBackgroundColor(Color.TRANSPARENT)
