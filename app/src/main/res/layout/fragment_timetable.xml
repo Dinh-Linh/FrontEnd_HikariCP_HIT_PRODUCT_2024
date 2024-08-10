@@ -280,6 +280,14 @@
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
         android:src="@drawable/img_no_event"/>
+    <TextView
+        android:id="@+id/tvNoEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Không có lịch học"
+        android:fontFamily="@font/poppins_medium"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/classList"
         android:layout_width="match_parent"

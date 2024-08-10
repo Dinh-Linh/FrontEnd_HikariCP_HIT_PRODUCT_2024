@@ -70,12 +70,14 @@ class TimetableFragment :
                 adapter.setDataList(mutableListOf())
                 Log.d("Class list", " is empty")
                 binding.imgNoEvent.visibility = View.VISIBLE
+                binding.tvNoEvent.visibility = View.VISIBLE
                 binding.classList.visibility = View.GONE
             } else {
                 adapter.setDataList(listOf(classList).toMutableList())
                 Log.d("Class list", " is available")
                 binding.imgNoEvent.visibility = View.GONE
                 binding.classList.visibility = View.VISIBLE
+                binding.tvNoEvent.visibility = View.GONE
             }
         })
     }

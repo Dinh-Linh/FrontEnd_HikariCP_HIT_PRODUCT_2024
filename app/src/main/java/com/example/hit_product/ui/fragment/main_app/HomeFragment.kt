@@ -52,10 +52,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             if (classList == null) {
                 binding.tvNoEvent.visibility = View.VISIBLE
                 binding.rclToday.visibility = View.GONE
+                binding.imgNoEvent.visibility = View.VISIBLE
                 Log.d("Class list", " is empty")
             } else {
                 binding.tvNoEvent.visibility = View.GONE
                 binding.rclToday.visibility = View.VISIBLE
+                binding.imgNoEvent.visibility = View.GONE
                 classAdapter.setDataList(listOf(classList).toMutableList())
                 Log.d("Class list", " is available")
             }

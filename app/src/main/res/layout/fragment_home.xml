@@ -156,10 +156,19 @@
         android:textSize="16sp" />
 
     <ImageView
-        android:id="@+id/tvNoEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imgNoEvent"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
         android:src="@drawable/img_no_event" />
+    <TextView
+        android:id="@+id/tvNoEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="Không có lịch học"
+        android:fontFamily="@font/poppins_medium"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclToday"
