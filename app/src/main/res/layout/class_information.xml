@@ -71,13 +71,21 @@
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/qr"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:padding="15dp"
-                android:layout_gravity="right|center"
-                android:src="@drawable/user_box" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/qr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/qr_zalo" />
+
+                </androidx.cardview.widget.CardView>
 
         </FrameLayout>
 
