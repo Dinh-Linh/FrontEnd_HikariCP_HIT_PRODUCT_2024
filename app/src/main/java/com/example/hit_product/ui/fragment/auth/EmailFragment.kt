@@ -37,17 +37,22 @@ class EmailFragment : BaseFragment<FragmentForgetEmailBinding>(FragmentForgetEma
         binding.btnConfirmEmail.setOnClickListener {
             val email = binding.edtEmail.text.toString()
             val emailRequest = EmailRequest(email)
-            viewModel.email(
-                emailRequest,
-                onEmailSuccess = { apiResponse ->
-                    val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
-                    pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
-                    findNavController().navigate(R.id.action_emailFragment_to_OTPFragment)
-                    context?.let {
-                        Toast.makeText(it, "Đã gửi OTP", Toast.LENGTH_SHORT).show()
+            if(email.isNotEmpty()){
+                viewModel.email(
+                    emailRequest,
+                    onEmailSuccess = { apiResponse ->
+                        val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+                        pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
+                        pref.edit().putString("saved_email", email).commit()
+                        findNavController().navigate(R.id.action_emailFragment_to_OTPFragment)
+                        context?.let {
+                            Toast.makeText(it, "Đã gửi OTP", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
-            )
+                )
+            }else{
+                Toast.makeText(requireContext(), "Vui lòng nhập email ", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnBackToLogin.setOnClickListener {
