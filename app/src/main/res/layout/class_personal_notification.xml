@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Name"
-            android:textColor="@color/orange"
+            android:text="Time"
+            android:textColor="@color/black"
             android:textSize="18sp" />
         <TextView
             android:id="@+id/name"

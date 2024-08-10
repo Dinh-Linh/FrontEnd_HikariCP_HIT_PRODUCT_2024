@@ -1,8 +1,9 @@
 package com.example.hit_product.ui.fragment.auth
 
-
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.hit_product.R
 import com.example.hit_product.data.data_class.ChangePasswordRequest
 import com.example.hit_product.databinding.FragmentChangePasswordBinding
@@ -91,6 +93,10 @@ class ChangePasswordFragment : DialogFragment(){
             val oldPassword = binding.edtOldPassword.text.toString()
             val newPassword = binding.edtNewPassword.text.toString()
             val confirmNewPassword = binding.edtConfirmNewPassword.text.toString()
+            if (newPassword.isEmpty() || confirmNewPassword.isEmpty() || oldPassword.isEmpty()){
+                customViewToast.makeText(requireContext(), "Bạn cần nhập đầy đủ thông tin!", Toast.LENGTH_LONG.toLong(), R.drawable.failure_icon_toast).show()
+                return@setOnClickListener
+            }
             val changePasswordRequest = ChangePasswordRequest(memberId, oldPassword, newPassword)
             val token = requireActivity().getToken()
             if (newPassword == confirmNewPassword) {
@@ -99,8 +105,13 @@ class ChangePasswordFragment : DialogFragment(){
                     onChangePWSuccess = { apiResponse ->
                         val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
                         pref.edit().putString("token", "Bearer ${apiResponse.data?.accessToken}").commit()
-
                         customViewToast.makeText(requireContext(), "Đổi mật khẩu thành công!", Toast.LENGTH_LONG.toLong(), R.drawable.success_icon_toast).show()
+                        findNavController().navigate(R.id.action_accountFragment_to_loginFragment)
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            if (isAdded) {
+                                dialog?.dismiss()
+                            }
+                        }, 500)
                     }
                 )
             } else {
