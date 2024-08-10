@@ -3,6 +3,8 @@ package com.example.hit_product.ui.fragment.auth
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -58,7 +60,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     override fun setOnClick() {
         binding.btnLogin.setOnClickListener {
-            val username = binding.edtUsername.text.toString()
+            val username = binding.edtUsername.text.toString().trim()
             val password = binding.edtPassword.text.toString()
             val loginRequest = LoginRequest(username, password)
             if (username.isNotEmpty() && password.isNotEmpty()) {
@@ -73,7 +75,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                             editor.putString("saved_username", username)
                             editor.putString("saved_password", password)
                             editor.commit()
-                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                            Handler(Looper.getMainLooper()).postDelayed({
+                                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                                toast.makeText(requireContext(), "Đăng nhập thành công", CustomViewToast.SHORT, R.drawable.success_icon_toast).show()
+                            }, 2000)
                             dialog.dismiss()
                         },
                     )

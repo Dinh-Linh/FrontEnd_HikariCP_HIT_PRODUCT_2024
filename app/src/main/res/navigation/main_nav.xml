@@ -39,7 +39,9 @@
             app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_loginFragment_to_emailFragment"
-            app:destination="@id/emailFragment" />
+            app:destination="@id/emailFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -49,16 +51,23 @@
         <action
             android:id="@+id/action_homeFragment_to_timetableFragment"
             app:enterAnim="@anim/zoom_in"
-            app:destination="@id/timetableFragment" />
+            app:destination="@id/timetableFragment"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_homeFragment_to_informationFragment"
-            app:destination="@id/informationFragment" />
+            app:destination="@id/informationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_homeFragment_to_classRegistrationFragment"
-            app:destination="@id/classRegistrationFragment" />
+            app:destination="@id/classRegistrationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_homeFragment_to_introductionFragment"
-            app:destination="@id/introductionFragment" />
+            app:destination="@id/introductionFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_homeFragment_to_settingFragment"
             app:destination="@id/settingFragment"
@@ -68,10 +77,14 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_homeFragment_to_settingFragment2"
-            app:destination="@id/settingFragment" />
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_homeFragment_to_personal_NotificationFragment"
-            app:destination="@id/personal_NotificationFragment" />
+            app:destination="@id/personal_NotificationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -79,7 +92,9 @@
         android:label="TimetableFragment" >
         <action
             android:id="@+id/action_timetableFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/informationFragment"
@@ -94,7 +109,9 @@
         <action
             android:id="@+id/action_classInformationFragment_to_classRegistrationFragment"
             app:destination="@id/classRegistrationFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/classRegisteredFragment"
@@ -108,7 +125,9 @@
         tools:layout="@layout/fragment_class_registration" >
         <action
             android:id="@+id/action_classRegistrationFragment_to_classInformationFragment"
-            app:destination="@id/classInformationFragment" />
+            app:destination="@id/classInformationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_classRegistrationFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -126,10 +145,14 @@
         android:name="com.example.hit_product.ui.fragment.main_app.IntroductionFragment"
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" >
-        <action android:id="@+id/action_introductionFragment_to_notificationFragment" />
+        <action android:id="@+id/action_introductionFragment_to_notificationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_introductionFragment_to_generalNotificationFragment"
-            app:destination="@id/generalNotificationFragment" />
+            app:destination="@id/generalNotificationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/emailFragment"
@@ -138,10 +161,14 @@
         tools:layout="@layout/fragment_forget_email" >
         <action
             android:id="@+id/action_emailFragment_to_OTPFragment"
-            app:destination="@id/OTPFragment" />
+            app:destination="@id/OTPFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_emailFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/OTPFragment"
@@ -150,10 +177,14 @@
         tools:layout="@layout/fragment_otp" >
         <action
             android:id="@+id/action_OTPFragment_to_emailFragment"
-            app:destination="@id/emailFragment" />
+            app:destination="@id/emailFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_OTPFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
@@ -168,10 +199,14 @@
         <action
             android:id="@+id/action_settingFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_settingFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -180,13 +215,19 @@
         tools:layout="@layout/fragment_account" >
         <action
             android:id="@+id/action_accountFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_accountFragment_to_changePasswordFragment"
-            app:destination="@id/changePasswordFragment" />
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
         <action
             android:id="@+id/action_accountFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/generalNotificationFragment"
@@ -194,7 +235,9 @@
         android:label="GeneralNotificationFragment" >
         <action
             android:id="@+id/action_generalNotificationFragment_to_introductionFragment"
-            app:destination="@id/introductionFragment" />
+            app:destination="@id/introductionFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/personal_NotificationFragment"
@@ -202,7 +245,9 @@
         android:label="Personal_NotificationFragment" >
         <action
             android:id="@+id/action_personal_NotificationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
@@ -210,6 +255,8 @@
         android:label="ChangePasswordFragment" >
         <action
             android:id="@+id/action_changePasswordFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/zoom_out"/>
     </fragment>
 </navigation>
