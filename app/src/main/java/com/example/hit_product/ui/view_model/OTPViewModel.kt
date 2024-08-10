@@ -10,6 +10,7 @@ import com.example.hit_product.data.data_class.OTPResponse
 import com.example.hit_product.data.repository.OTPRepository
 import com.example.hit_product.data.source.network.ApiService
 import com.example.hit_product.data.source.network.RetrofitClient
+import com.example.hit_product.ui.DialogEmailOTPFailure
 import kotlinx.coroutines.launch
 
 class OTPViewModel : BaseViewModel(){
