@@ -40,6 +40,16 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>(FragmentOtpBinding::inflate
             val email = binding.edtEmail.text.toString()
             val newPassword = binding.edtNewPassword.text.toString()
             val confirmNewPassword = binding.edtConfirmNewPassword.text.toString()
+            if(otp.isEmpty()){
+                Toast.makeText(requireContext(), "Mã OTP chưa được nhập", Toast.LENGTH_SHORT).show()
+            }
+            else if(email.isEmpty()){
+                Toast.makeText(requireContext(), "Email chưa được nhập", Toast.LENGTH_SHORT).show()
+            }else if(newPassword.isEmpty()){
+                Toast.makeText(requireContext(), "Không để trống mật khẩu", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(requireContext(), "Chưa xác nhận mật khẩu", Toast.LENGTH_SHORT).show()
+            }
             val otpRequest = OTPRequest(email, otp, newPassword)
             if (newPassword == confirmNewPassword){
                 viewModel.otp(
