@@ -6,6 +6,8 @@ import com.example.hit_product.base.BaseAdapter
 import com.example.hit_product.base.BaseViewHolder
 import com.example.hit_product.data.data_class.GeneralNotification
 import com.example.hit_product.databinding.ClassPersonalNotificationBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class PersonalNotificationAdapter: BaseAdapter<GeneralNotification, ClassPersonalNotificationBinding>(ClassPersonalNotificationBinding::inflate){
     var onclick: ((GeneralNotification)->Unit?)? = null
@@ -14,7 +16,16 @@ class PersonalNotificationAdapter: BaseAdapter<GeneralNotification, ClassPersona
         item: GeneralNotification,
         position: Int
     ) {
-        binding.time.text = item.sendDate
+        val originalFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.getDefault())
+        val targetFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
+        try {
+            val date = originalFormat.parse(item.sendDate)
+            val formattedDate = targetFormat.format(date)
+            binding.time.text = formattedDate
+        } catch (e: Exception) {
+            e.printStackTrace()
+            binding.time.text = item.sendDate
+        }
         binding.name.text = item.name
         binding.detail.text = item.detail
     }

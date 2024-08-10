@@ -36,7 +36,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         viewModel.error.observe(viewLifecycleOwner) {
             if (it != null) {
                 loginDialogFailure.show()
-                dialog.dismiss()
+                if (dialog.isShowing) {
+                    dialog.dismiss()
+                }
             }
         }
     }
