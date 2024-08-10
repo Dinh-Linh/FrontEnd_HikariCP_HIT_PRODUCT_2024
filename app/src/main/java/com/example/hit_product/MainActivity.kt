@@ -32,6 +32,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             }
         }
         binding.bottomBar.setSelectedWithId(navController.currentDestination?.id ?: homeDestinationId, false)
+
         binding.bottomBar.addBubbleListener { item ->
             when (item) {
                 R.id.navHome -> {

@@ -85,7 +85,8 @@
                 android:hint="Nhập Email"
                 android:fontFamily="@font/poppins_light"
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor"/>
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:maxLines="1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,7 +110,8 @@
                 android:hint="Nhập OTP"
                 android:fontFamily="@font/poppins_light"
                 android:textColor="@color/orange"
-                android:textCursorDrawable="@drawable/custom_cursor"/>
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:maxLines="1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,7 +140,9 @@
                     android:hint="Mật khẩu mới"
                     android:fontFamily="@font/poppins_light"
                     android:textCursorDrawable="@drawable/custom_cursor"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/orange"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,7 +166,9 @@
                     android:hint="Xác nhận mật khẩu mới"
                     android:fontFamily="@font/poppins_light"
                     android:textCursorDrawable="@drawable/custom_cursor"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/orange"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
