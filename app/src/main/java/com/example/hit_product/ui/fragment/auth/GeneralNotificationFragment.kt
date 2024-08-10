@@ -36,9 +36,13 @@ class GeneralNotificationFragment : BaseFragment<FragmentGeneralNotificationBind
 
     override fun observeData() {
         viewModel.listGeneralGeneralNotification.observe(viewLifecycleOwner, Observer { generalNotification ->
-            if(generalNotification == null){
+            if(generalNotification.isEmpty()){
+                binding.noGeneralNotification.visibility = View.VISIBLE
+                binding.rclNotification.visibility = View.GONE
                 Log.d("General notification: ", "is null")
             }else{
+                binding.noGeneralNotification.visibility = View.GONE
+                binding.rclNotification.visibility = View.VISIBLE
                 adapter.setDataList(generalNotification.toMutableList())
             }
         })
