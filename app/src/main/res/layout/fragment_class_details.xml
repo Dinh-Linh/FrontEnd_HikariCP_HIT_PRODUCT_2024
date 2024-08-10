@@ -37,9 +37,10 @@
         app:cardCornerRadius="20dp">
 
         <ImageView
+            android:id="@+id/avtLeader"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
             android:src="@drawable/background1" />
     </androidx.cardview.widget.CardView>
 
@@ -59,11 +60,11 @@
             app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/avtLeader"
+                android:id="@+id/avtDefault"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/avt_dog" />
+                android:src="@drawable/default_avatar" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -93,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="CNTT02-K16" />
+                android:text="HAUI - HITClub" />
         </LinearLayout>
     </LinearLayout>
 
