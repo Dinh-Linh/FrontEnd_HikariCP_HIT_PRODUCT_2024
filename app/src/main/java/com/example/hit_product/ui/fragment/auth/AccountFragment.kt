@@ -1,5 +1,8 @@
 package com.example.hit_product.ui.fragment.auth
 
+import android.content.Context.MODE_PRIVATE
+import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,6 +31,12 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
             }
         })
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+            val savedPassword = pref.getString("saved_password", "")
+            binding.showPassword.setText(savedPassword)
+    }
 
     override fun setOnClick() {
         binding.btnBackToSetting.setOnClickListener {
@@ -37,7 +46,6 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
             val dialog = ChangePasswordFragment()
             dialog.show(parentFragmentManager, "ChangePasswordDialog")
         }
-
     }
 
 }
