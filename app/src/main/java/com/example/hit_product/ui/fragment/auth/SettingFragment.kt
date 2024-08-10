@@ -1,12 +1,15 @@
 package com.example.hit_product.ui.fragment.auth
 
+import android.annotation.SuppressLint
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.hit_product.MainActivity
 import com.example.hit_product.R
 import com.example.hit_product.base.BaseFragment
 import com.example.hit_product.databinding.FragmentSettingBinding
@@ -31,12 +34,16 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(FragmentSettingBind
         Log.d("SettingFragment", "Trạng thái lưu mật khẩu : $isSavePasswordEnabled")
     }
 
+    @SuppressLint("CommitPrefEdits")
     override fun setOnClick() {
         binding.btnlogOut.setOnClickListener {
             val token = requireActivity().getToken()
             if (token != null) {
                 viewModel.logOut(token)
-                findNavController().navigate(R.id.action_settingFragment_to_loginFragment)
+                val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
+                pref.edit().remove("token").commit()
+                startActivity(Intent(requireActivity(), MainActivity::class.java))
+                activity?.finish()
             }
         }
         binding.btnAccount.setOnClickListener{

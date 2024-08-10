@@ -58,7 +58,13 @@ class ClassDetailsFragment :
             binding.className.text = name
             binding.leaderName.text = leader
             binding.introClass.text = detail
-            Glide.with(requireContext()).load("$picture").into(binding.avtLeader)
+            if (picture?.isEmpty() == true){
+                binding.avtLeader.setImageResource(R.drawable.default_avatar)
+            }
+            else{
+                Glide.with(requireContext()).load("$picture").into(binding.avtLeader)
+            }
+
         }
     }
 
