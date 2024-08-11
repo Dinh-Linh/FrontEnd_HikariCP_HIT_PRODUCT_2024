@@ -66,7 +66,7 @@
                     android:maxLines="2"
                     android:text="Name content"
                     android:textColor="@android:color/white"
-                    android:textSize="23sp"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold"
                     tools:ignore="Suspicious0dp" />
 
@@ -77,7 +77,7 @@
                     android:layout_gravity="center"
                     android:text="Information content"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_16ssp" />
             </LinearLayout>
 
                 <androidx.cardview.widget.CardView
@@ -103,7 +103,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:weightSum="2">
 

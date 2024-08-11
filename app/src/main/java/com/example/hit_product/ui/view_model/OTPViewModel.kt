@@ -13,22 +13,22 @@ import com.example.hit_product.data.source.network.RetrofitClient
 import com.example.hit_product.ui.DialogEmailOTPFailure
 import kotlinx.coroutines.launch
 
-class OTPViewModel : BaseViewModel(){
+class OTPViewModel : BaseViewModel() {
     private val otpRepo = OTPRepository(
         RetrofitClient.getInstance().create(ApiService::class.java)
     )
     val error = MutableLiveData<String>(null)
 
-    fun otp(otpRequest: OTPRequest, onOTPSuccess: (ApiResponse<OTPResponse>)->Unit){
+    fun otp(otpRequest: OTPRequest, onOTPSuccess: (ApiResponse<OTPResponse>) -> Unit) {
         executeTask(
             request = {
                 otpRepo.otpConfirm(otpRequest)
             },
-            onSuccess = {response ->
+            onSuccess = { response ->
                 onOTPSuccess(response)
 
             },
-            onError = {exception ->
+            onError = { exception ->
                 error.value = exception.message
             }
 

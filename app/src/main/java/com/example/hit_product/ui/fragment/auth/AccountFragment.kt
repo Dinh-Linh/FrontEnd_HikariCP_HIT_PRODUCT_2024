@@ -17,7 +17,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         get() = ViewModelProvider(requireActivity())[UserInformationViewModel::class.java]
 
     override fun initData() {
-        requireActivity().getToken()?.let{ viewModel.getUserInformation(it)}
+        requireActivity().getToken()?.let { viewModel.getUserInformation(it) }
     }
 
     override fun bindData() {
@@ -25,17 +25,18 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     }
 
     override fun observeData() {
-        viewModel.userInformation.observe(viewLifecycleOwner, Observer{ inf ->
-            inf?.let{
+        viewModel.userInformation.observe(viewLifecycleOwner, Observer { inf ->
+            inf?.let {
                 binding.userName.text = "${it.username}"
             }
         })
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val pref = requireActivity().getSharedPreferences("account", MODE_PRIVATE)
-            val savedPassword = pref.getString("saved_password", "")
-            binding.showPassword.setText(savedPassword)
+        val savedPassword = pref.getString("saved_password", "")
+        binding.showPassword.setText(savedPassword)
     }
 
     override fun setOnClick() {
