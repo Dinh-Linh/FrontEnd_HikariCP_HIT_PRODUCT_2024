@@ -30,16 +30,21 @@
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_medium"/>
     </LinearLayout>
-        <ImageView
-            android:id="@+id/noPersonalNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_no_event"
-            src:layout_constraintBottom_toBottomOf="parent"
-            src:layout_constraintEnd_toEndOf="parent"
-            src:layout_constraintStart_toStartOf="parent"
-            src:layout_constraintTop_toTopOf="parent"
-            src:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:src="@drawable/img_no_event"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="Không có thông báo" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

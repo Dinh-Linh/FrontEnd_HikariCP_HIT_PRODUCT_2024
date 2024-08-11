@@ -60,11 +60,13 @@ class PersonalNotificationFragment :
             viewLifecycleOwner,
             Observer { personalNotification ->
                 if (personalNotification.isEmpty()) {
-                    binding.noPersonalNotification.visibility = View.VISIBLE
+                    binding.imageView.visibility = View.VISIBLE
+                    binding.textView.visibility = View.VISIBLE
                     binding.rclPersonalNotification.visibility = View.GONE
                     Log.d("Personal notification: ", "is null")
                 } else {
-                    binding.noPersonalNotification.visibility = View.GONE
+                    binding.imageView.visibility = View.GONE
+                    binding.textView.visibility = View.GONE
                     binding.rclPersonalNotification.visibility = View.VISIBLE
 
                     adapter.setDataList(personalNotification.toMutableList())
