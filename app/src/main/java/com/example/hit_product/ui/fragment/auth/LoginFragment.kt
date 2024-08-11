@@ -79,6 +79,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                                 toast.makeText(requireContext(), "Đăng nhập thành công", CustomViewToast.SHORT, R.drawable.success_icon_toast).show()
                             }, 2000)
+
                             dialog.dismiss()
                         },
                     )
