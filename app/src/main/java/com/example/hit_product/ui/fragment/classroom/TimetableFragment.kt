@@ -89,11 +89,13 @@ class TimetableFragment :
             calendar.add(Calendar.WEEK_OF_YEAR, -1)
             weekDates = getWeekDates(calendar)
             updateWeekView()
+            loadClassForWeek()
         }
         binding.btnNext.setOnClickListener {
             calendar.add(Calendar.WEEK_OF_YEAR, 1)
             weekDates = getWeekDates(calendar)
             updateWeekView()
+            loadClassForWeek()
         }
 
         val days = listOf(
@@ -181,30 +183,33 @@ class TimetableFragment :
     }
 
     private fun highlightDay(index: Int) {
-        if (binding != null){
-            val days = listOf(
-                Quadruple(binding.monView, binding.mon, binding.dayMon, binding.lineMon),
-                Quadruple(binding.tueView, binding.tue, binding.dayTue, binding.lineTue),
-                Quadruple(binding.wedView, binding.wed, binding.dayWed, binding.lineWed),
-                Quadruple(binding.thuView, binding.thu, binding.dayThu, binding.lineThu),
-                Quadruple(binding.friView, binding.fri, binding.dayFri, binding.lineFri),
-                Quadruple(binding.satView, binding.sat, binding.daySat, binding.lineSat),
-                Quadruple(binding.sunView, binding.sun, binding.daySun, binding.lineSun)
-            )
+        previouslyClickedDay?.setTextColor(Color.BLACK)
+        previouslyClickedDate?.setTextColor(Color.BLACK)
+        previouslyClickedLine?.setBackgroundColor(Color.TRANSPARENT)
+        val days = listOf(
+            Quadruple(binding.monView, binding.mon, binding.dayMon, binding.lineMon),
+            Quadruple(binding.tueView, binding.tue, binding.dayTue, binding.lineTue),
+            Quadruple(binding.wedView, binding.wed, binding.dayWed, binding.lineWed),
+            Quadruple(binding.thuView, binding.thu, binding.dayThu, binding.lineThu),
+            Quadruple(binding.friView, binding.fri, binding.dayFri, binding.lineFri),
+            Quadruple(binding.satView, binding.sat, binding.daySat, binding.lineSat),
+            Quadruple(binding.sunView, binding.sun, binding.daySun, binding.lineSun)
+        )
 
-            val (dayView, dayName, dayDate, dayLine) = days[index]
-            dayName.setTextColor(Color.rgb(240, 108, 37))
-            dayDate.setTextColor(Color.rgb(240, 108, 37))
-            dayLine.setBackgroundColor(Color.rgb(240, 108, 37))
+        val (dayView, dayName, dayDate, dayLine) = days[index]
+        dayName.setTextColor(Color.rgb(240, 108, 37))
+        dayDate.setTextColor(Color.rgb(240, 108, 37))
+        dayLine.setBackgroundColor(Color.rgb(240, 108, 37))
 
-            previouslyClickedDay = dayName
-            previouslyClickedDate = dayDate
-            previouslyClickedLine = dayLine
-        }
-        else{
-            Log.d("Binding", "null")
-        }
+        previouslyClickedDay = dayName
+        previouslyClickedDate = dayDate
+        previouslyClickedLine = dayLine
+    }
 
+    private fun loadClassForWeek(){
+        val firstDayOfWeek = weekDates[0]
+        val formatDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(firstDayOfWeek)
+        requireActivity().getToken().let { viewModel.getClassByDay(formatDate, "Class", it!!) }
     }
 }
 
